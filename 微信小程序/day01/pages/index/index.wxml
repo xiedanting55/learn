@@ -1,4 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-  hello world
+  <view wx:for="{{start}}">{{item}}</view>
+  <button bindtap="addStart">添加</button>
 </view>
