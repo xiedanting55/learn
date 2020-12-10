@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            强制类型转换-Number
+            1.使用Number()函数
+                - 字符串 --> 数字
+                    (1)如果是纯数字的字符串，则直接将其转换为数字
+                    (2)如果字符串中有非数字的内容，则会转换为NaN
+                    (3)如果字符串是一个空串或者是一个全是空格的字符串，则会转换为0
+        */
+
+        // 1.使用Number()函数
+        // (1)如果是纯数字的字符串，则直接将其转换为数字
+        var a = "123";
+        a = Number(a);
+        console.log(typeof a)
+        // (2)如果字符串中有非数字的内容，则会转换为NaN
+        var b = "123abc";
+        b = Number(b);
+        console.log(b);  //NaN
+        // (3)如果字符串是一个空串或者是一个全是空格的字符串，则会转换为0
+        var c = "";
+        c = Number(c);
+        console.log(c)
+    </script>
+</body>
+</html>
