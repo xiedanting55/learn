@@ -10,6 +10,7 @@ server.on('request', (request,  response)=> {
     // console.log('请求路径：' + request.url)
     // console.log(response)
     response.write('hello')
+    // 告诉客户端，我的话说完了，可以呈现给用户
     response.end()
 })
 
