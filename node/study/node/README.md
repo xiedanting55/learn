@@ -47,3 +47,63 @@ NodeJS 前端最主流JavaScript运行环境
 2. 删除文件夹(fs.rmdir)
 3. 删除文件(fs.unlink)
 4. 流程：引入fs模块->调用方法->异常捕获
+
+## 11. 服务器(client)与客户端(server)
+            request
+1. client------------->server
+            response
+2. client<-------------server
+
+## 12. 缓存区(Buffer) 可以在TCP流和文件系统操作等场景中处理二进制数据流
+
+## 13. 流(Stream) 在Node.js中是处理流数据的抽象接口
+
+## 14. 读取HTML文件 读取HTML文件并展示到页面中
+
+## 15. 读取JSON文件 读取JSON数据并展示到页面中
+
+## 16. 什么是NPM(Node Package Manager)
+1. NPM是随同NodeJS一起安装的包管理工具，能解决NodeJS代码部署上的很多问题
+
+## 17. NPM的应用
+1. 允许用户从NPM服务器下载别人编写的第三方包到本地使用
+2. 允许用户从NPM服务器下载别人并安装别人编写的命令行程序到本地使用
+3. 允许用户将自己编写的包或命令行程序上传到NPM服务器供别人使用
+
+## 18. 什么是package(Node package manager)
+1. package用于定义项目中所需要的各种模块，以及项目的配置信息(比如名称，版本，许可证等原数据)
+
+## 19. 什么是Express(Express框架)
+1. 基于NodeJS平台，快速，开放，极简的Web开发框架
+
+## 20. 什么是nodemon
+1. 在开发环境下，往往需要一个工具来自动重启项目工程，我们可以借助nodemon来代替node进行启动
+
+## 21. Express能做什么
+1. 已经封装好服务器
+2. 已经封装好路由
+3. 已经封装好中间件
+4. 已经封装好网络请求...
+
+## 22. Express怎么做？
+1. NPM安装Express框架
+2. 引入Express模块
+3. 实例化Express的对象
+4. 通过对象进行调用各种方法
+
+## 23. EJS模板引擎
+1. 快速编译和渲染
+2. 简单的模板标签
+3. 支持浏览器端和服务器端
+4. 支持express试图系统
+
+## 24. 实施计划(公共模板)
+1. 使用EJS替代HTML
+2. 创建导航(公共模板)
+3. 解决外部样式不可用的问题
+
+## 25. 实施计划(TodoApp)
+1. 启动新的项目
+2. 初始化package
+3. 安装express框架
+4. 安装ejs body-parser模块
