@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let</title>
+</head>
+<body>
+    <script>
+        // 声明变量
+        let a;
+        let b, c,d;
+        let e = 100;
+        let f = 521, g = 'has', h = [];
+
+        // 1. 变量不能重复声明    Identifier 'star' has already been declared
+        // let star = "罗志祥";
+        // let star = "小猪";
+
+        // 2. 块级作用域 全局，函数，eval
+        // if else while for
+        // {  //girl is not defined
+        //     let girl = "周扬青";
+        // }
+        // console.log(girl)
+
+        // 3. 不存在变量提升  Cannot access 'song' before initialization
+        // console.log(song)  
+        // let song = "大鱼";
+
+        // 4. 不影响作用域链
+        {
+            let school = "广州市学校";
+            function fn() {
+                console.log(school);
+            }
+            fn();  //广州市学校
+        }
+    </script>
+</body>
+</html>
