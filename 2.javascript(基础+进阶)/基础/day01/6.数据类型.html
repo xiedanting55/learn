@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+    <script>
+        /**
+         * 数据类型指的就是字面量的类型
+         * 在JS中一共有6种数据类型
+         *      String 字符型
+         *      Number 数值
+         *      Boolean 布尔值
+         *      Null 空值
+         *      Undefind 未定义
+         *      Object 对象
+         * 其实String Number Boolean Null Undefind属于基本数据类型
+         * 而Object属于引用数据类型
+        */
+
+        /**
+         * 字符串
+         * 在JS中字符串需要使用引用引起来
+         * 使用双引号或者单引号都可以，但是不要混着用
+         * 引号不能嵌套，双引号不能放双引号，单引号不能放单引号
+         * 在字符中可以使用\作为转义字符
+         * \n表示换行
+         * \t表示制表符
+         * \\表示\
+        */
+       var str = "Hello";
+       var str = "我说：\"今天天气真不错\"";
+    //    console.log(str);
+
+        /**
+         * 数值
+         * 在JS中所有的数值都是Number类型
+         * 包括整数和浮点数(小数)
+        */
+
+        // 可以使用一个运算符 typeof来检查一个变量类型 语法： typeof 变量
+       var a = 123;
+       var b = "123";
+       console.log(typeof a);
+       console.log(typeof b);
+       console.log(Number.MAX_VALUE); //数字的最大值
+       console.log(Number.MIN_VALUE); //数字的最小值
+       console.log(Number.MAX_VALUE * Number.MAX_VALUE);   // Infinity 无穷大
+       console.log(-Number.MAX_VALUE * Number.MAX_VALUE);   // -Infinity 负无穷大
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
