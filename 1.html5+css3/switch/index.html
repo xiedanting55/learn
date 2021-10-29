@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <style>
+        .container {
+            width: 500px;
+            margin: 0 auto;
+        }
+        .mySwiper img {
+            width: 100%;
+        }
+        .health {
+            text-align: center;
+            margin-top: -8px;
+            margin-left: 18px;
+        }
+        .health img {
+            width: 210px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/1_03.png" alt=""></div>
+                    <div class="swiper-slide"><img src="images/2_03.png" alt=""></div>
+                    <div class="swiper-slide"><img src="images/3_03.png" alt=""></div>
+                    <div class="swiper-slide"><img src="images/4_03.png" alt=""></div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="health">
+            <img src="images/b.png" alt="">
+        </div>
+    </div>
+
+    <script src="js/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          spaceBetween: 20,
+          loop: true
+        });
+      </script>
+</body>
+</html>
