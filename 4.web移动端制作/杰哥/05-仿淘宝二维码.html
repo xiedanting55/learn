@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿淘宝二维码</title>
+    <style type="text/css">
+        .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 70px;
+            height: 120px;
+            background-color: #ccc;
+            padding: 10px;
+        }
+        .box img {
+            width: 96%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>去领红包</p>
+        <img src="images/img.png" alt="">
+        <i class="close_btn">x</i>
+    </div>
+    <script>
+        var closeBtn = document.querySelector(".close_btn");
+        var box = document.querySelector(".box");
+        closeBtn.onclick = function() {
+            box.style.display = "none";
+        }
+    </script>
+</body>
+</html>

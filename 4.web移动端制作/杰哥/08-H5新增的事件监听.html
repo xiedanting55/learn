@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5新增的事件监听</title>
+</head>
+<body>
+    <div>我是一个div</div>
+
+    <script>
+        var div = document.querySelector("div");
+        div.addEventListener("click", function() {
+            console.log(this)  // this指向绑定事件的dom元素
+        })
+
+        function test() {
+            console.log(this)  //this指向window
+        }
+        window.test()
+
+
+        var obj = {
+            uname: "test",
+            getFun: function() {
+                console.log(this) //
+            }
+        }
+        obj.getFun();
+    </script>
+</body>
+</html>

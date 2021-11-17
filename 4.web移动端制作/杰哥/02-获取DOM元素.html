@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02-获取DOM元素</title>
+</head>
+<body>
+    <div id="box">我是一个div</div>
+    <div id="box1"><h2>我是一个div</h2></div>
+    <div>我也是一个div</div>
+    <script>
+        // 获取box的内容
+        // getElementById：参数事id的属性值，返回一个对象，表示选中的dom元素
+        var box = document.getElementById("box").innerHTML;
+        console.log(box);
+
+        // innerHTML 和 innerText的区别
+        var box1 = document.getElementById("box1");
+        console.log(box1.innerHTML, box1.innerText, );
+    </script>
+</body>
+</html>

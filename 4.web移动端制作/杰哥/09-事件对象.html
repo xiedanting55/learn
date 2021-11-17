@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件对象</title>
+</head>
+<body>
+    <script>
+        document.addEventListener("keyup", function(e) {
+            if(e.keyCode == 65) {
+                console.log("按下了a键")
+            }else {
+                console.log(e.keyCode)
+            }
+        })
+
+        document.addEventListener("keypress", function(e) {
+            if(e.keyCode == 65) {
+                console.log("按下了A键")
+            } else if(e.keyCode == 97){
+                console.log("按下了a键")
+            } else {
+                console.log(e.keyCode)
+            }
+        })
+    </script>
+</body>
+</html>

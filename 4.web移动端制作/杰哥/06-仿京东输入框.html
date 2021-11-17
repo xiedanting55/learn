@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿京东输入框</title>
+    <style>
+        .box input {
+            line-height: 36px;
+            padding: 0 10px;
+            color: #999;
+        }
+        .box .search {
+            height: 38px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="text" value="婴幼儿奶粉" placeholder="请输入内容">
+        <button class="search">搜索</button>
+    </div> 
+    <script>
+        var inp = document.querySelector("input");
+        var search = document.querySelector(".search");
+
+        inp.onfocus = function() {
+            inp.style.color = "#333";
+            if(inp.value == "婴幼儿奶粉") {
+                inp.value = "";
+            }
+        }
+
+        inp.onblur = function() {
+            inp.style.color = "#999";
+            if(inp.value == "") {
+                inp.value = "婴幼儿奶粉";
+            }
+        }
+    </script>
+</body>
+</html>
