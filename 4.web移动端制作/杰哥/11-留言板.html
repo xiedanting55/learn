@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 100px;
+        }
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid skyblue;
+            resize: none;
+            outline: none;
+        }
+        ul, li {
+            list-style: none;
+        }
+        li {
+            background-color: purple;
+            line-height: 24px;
+            margin-top: 10px;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    <button id="btn">提交</button>
+    <ul></ul>
+
+    <script>
+        var content = document.getElementById("content");
+        var btn = document.getElementById("btn");
+        var _ul = document.querySelector("ul");
+
+        btn.addEventListener("click", function() {
+            if(content.value == "") {
+                alert("请输入内容")
+                return
+            }
+            var _li = document.createElement("li");
+            _li.innerHTML = content.value;
+            _ul.insertBefore(_li, _ul.children[0]);
+            content.value = "";
+        })
+    </script>
+</body>
+</html>

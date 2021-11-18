@@ -319,23 +319,384 @@ domObj.addEventListener("click",function(e){
 </html>
 ```
 
+> 示例
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件冒泡</title>
+</head>
+<body>
+    <ul>
+        <li id="li_1">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        var _ul = document.querySelector("ul")
+        _ul.addEventListener("click", function(e) {
+            console.log(e)
+            console.log(this)
+            // 通过e.target得到具体操作的dom元素
+            console.log(e.target)
+        })
+
+        li_1.addEventListener("click", function(e) {
+            e.stopPropagation(); //阻止事件冒泡
+        })
+    </script>
+</body>
+</html>
+```
+
 
 
 ## 5.自学API
+
+1. 结点操作相关的API(增删改查)
+2. 结点关系相关的API(父子兄弟)
+
+> 练习：实现一个留言板
+
+要求：
+
+1. 当输入内容为空时。提示“请输入内容”
+2. 每次发布的留言在最上面显示
+3. 发布完后，清除之前写的内容
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 100px;
+        }
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid skyblue;
+            resize: none;
+            outline: none;
+        }
+        ul, li {
+            list-style: none;
+        }
+        li {
+            background-color: purple;
+            line-height: 24px;
+            margin-top: 10px;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    <button id="btn">提交</button>
+    <ul></ul>
+
+    <script>
+        var content = document.getElementById("content");
+        var btn = document.getElementById("btn");
+        var _ul = document.querySelector("ul");
+
+        btn.addEventListener("click", function() {
+            if(content.value == "") {
+                alert("请输入内容")
+                return
+            }
+            var _li = document.createElement("li");
+            _li.innerHTML = content.value;
+            _ul.insertBefore(_li, _ul.children[0]);
+            content.value = "";
+        })
+    </script>
+</body>
+</html>
+```
+
+
 
 # 二.BOM介绍
 
 ## 1.什么是BOM
 
+> BOM(Browser Object Model)浏览器对象模型
+
+它提供了独立于内容而与浏览器窗口进行交互的对象，其核心对象时window,
+
+由于每个浏览器厂商实现方式不同，BOM的表现会略有差异
+
+![3](./images/3.png)
+
+BOM由一系列相关的对象构成，并且每个对象都提供了很多方法与属性
+
+包括：
+
+- location：URL相关
+- navigator：浏览器相关
+- screen：窗口相关
+- history：浏览器历史
+
+其中，BOM比DOM更大，它包含了DOM
+
+![4](./images/4.png)
+
 ## 2.常用方法
+
+window对象提供了很多可用的方法
+
+像之前，我们经常用到的方法都是window对象的方法
+
+- alert
+- prompt
+
+这里，我们重点介绍
+
+- 定时器
+- location对象
+- history对象
 
 ## 3.定时器
 
+window对象提供了2种定时器
+
+- setTimeout()
+- setInterval()
+
 ### 01）setTimeout
+
+> 语法
+
+```
+setTimeout(函数,ms时间)
+```
+
+当时间到了，会执行函数，只执行一次
+
+> 示例
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+    <script>
+        // 当计时结束，函数只执行一次
+        setTimeout(function() {
+            console.log('1s')
+        }, 1000)
+    </script>
+</body>
+</html>
+```
+
+> 回调函数
+
+像上面这样的函数，我们一般叫做 **回调函数**
+
+顾名思义，回调函数(callback)就是“现在不执行，过一段时间回过头来执行”
+
+回调函数都有一个触发时机，比如
+
+- 事件处理函数：当按钮点击时触发
+- 定时器函数：当时间到了触发
 
 ### 02）setInterval
 
+> 语法
+
+```
+setInterval(函数，ms时间)
+```
+
+每隔一段时间，执行一次函数，会执行多次
+
+> 示例
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+    <script>
+        // 每隔一段时间，执行一次函数
+        setInterval(function() {
+            console.log('1s')
+        },1000)
+    </script>
+</body>
+</html>
+```
+
 ### 02）clearInterval
+
+通过clearInterval停止setInterval设置的定时器
+
+> 示例
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clearInterval</title>
+</head>
+<body>
+    <script>
+        var timer = 3
+        var id = setInterval(function() {
+            if(timer <= 0) {
+                clearInterval(id)
+                return;
+            }
+            timer--
+            console.log(timer + "s")
+        },1000)
+    </script>
+</body>
+</html>
+```
+
+应用场景：
+
+- 倒计时
+- 发送验证码，60s后重试
+- 抽奖
+
+> 示例-模拟发送验证码倒计时
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟发送验证码倒计时</title>
+</head>
+<body>
+    手机号：<input type="text">
+    <button>发送验证码</button>
+
+    <script>
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", function() {
+            btn.disabled = true;
+            var timer = 3;
+            var id = setInterval(function() {
+                if(timer<= 0) {
+                    btn.innerHTML = "重新发送";
+                    btn.disabled = false;
+                    clearInterval(id);
+                    return;
+                }
+                btn.innerHTML = timer + "s重试";
+                timer--;
+            },1000);
+        })
+    </script>
+</body>
+</html>
+```
+
+
 
 ## 4.location对象
 
+### 01)作用
+
+location对象用于获取设置URL
+
+> 什么是URL
+
+URL(Uniform Resource Locator)，统一资源定位符
+
+在计算机网络中，可以通过统一资源定位符(**URL**)请求对应得服务器 **资源**(Resource)
+
+```
+Schema://host[:port]/path[?query-string]#anchor
+```
+
+- Schema：使用的协议类型，如http/https/ftp等
+- host：主机域名或IP
+- port：端口号(可选)
+- path：路径
+- query-string：查询参数(可选)
+
+### 02）常用属性
+
+| 属性名            | 说明              |
+| ----------------- | ----------------- |
+| location.href     | 获取或者设置URL   |
+| location.pathname | 返回路径部分      |
+| lacation.hash     | 返回#后面的锚链接 |
+
+> 示例-3s后跳转
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3s跳转</title>
+</head>
+<body>
+    <script>
+        var timer = 3;
+        var id = setInterval(function() {
+            if(timer<=0) {
+                window.location.href = "01-DOM树.html";
+                clearInterval(id);
+            }
+            timer --
+        },1000)
+    </script>
+</body>
+</html>
+```
+
+## 5.history对象
+
+### 01）作用
+
+history对象类似于浏览器的前进后退功能，访问历史记录
+
+### 02）常用属性方法
+
+| 属性方法  | 说明                                              |
+| --------- | ------------------------------------------------- |
+| back()    | 后退，返回到上一次的访问的页面                    |
+| forward() | 前进                                              |
+| go(参数)  | 前进或后退，1表示前进一个页面，-1表示后退一个页面 |
+
+## 6.自学
+
+自学navigator对象

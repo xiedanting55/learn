@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3s跳转</title>
+</head>
+<body>
+    <script>
+        var timer = 3;
+        var id = setInterval(function() {
+            if(timer<=0) {
+                window.location.href = "01-DOM树.html";
+                clearInterval(id);
+            }
+            timer --
+        },1000)
+    </script>
+</body>
+</html>

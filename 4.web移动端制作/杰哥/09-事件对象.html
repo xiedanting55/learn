@@ -7,22 +7,34 @@
     <title>事件对象</title>
 </head>
 <body>
+    <input type="text" id="inp">
     <script>
-        document.addEventListener("keyup", function(e) {
-            if(e.keyCode == 65) {
-                console.log("按下了a键")
-            }else {
-                console.log(e.keyCode)
-            }
-        })
+        // document.addEventListener("keyup", function(e) {
+        //     if(e.keyCode == 65) {
+        //         console.log("按下了a键")
+        //     }else {
+        //         console.log(e.keyCode)
+        //     }
+        // })
 
-        document.addEventListener("keypress", function(e) {
-            if(e.keyCode == 65) {
-                console.log("按下了A键")
-            } else if(e.keyCode == 97){
-                console.log("按下了a键")
-            } else {
-                console.log(e.keyCode)
+        // document.addEventListener("keypress", function(e) {
+        //     if(e.keyCode == 65) {
+        //         console.log("按下了A键")
+        //     } else if(e.keyCode == 97){
+        //         console.log("按下了a键")
+        //     } else {
+        //         console.log(e.keyCode)
+        //     }
+        // })
+
+        // 模拟jd搜索框的聚焦
+        var txt = document.getElementById("inp");
+        document.addEventListener("keyup", function(e) {
+            if(e.keyCode == 83) {
+                txt.focus();
+            }
+            if(e.keyCode == 13) {// 搜索数据
+                console.log("搜索")
             }
         })
     </script>

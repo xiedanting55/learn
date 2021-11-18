@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟发送验证码倒计时</title>
+</head>
+<body>
+    手机号：<input type="text">
+    <button>发送验证码</button>
+
+    <script>
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", function() {
+            btn.disabled = true;
+            var timer = 3;
+            var id = setInterval(function() {
+                if(timer<= 0) {
+                    btn.innerHTML = "重新发送";
+                    btn.disabled = false;
+                    clearInterval(id);
+                    return;
+                }
+                btn.innerHTML = timer + "s重试";
+                timer--;
+            },1000);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件冒泡</title>
+</head>
+<body>
+    <ul>
+        <li id="li_1">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        var _ul = document.querySelector("ul")
+        _ul.addEventListener("click", function(e) {
+            console.log(e)
+            console.log(this)
+            // 通过e.target得到具体操作的dom元素
+            console.log(e.target)
+        })
+
+        li_1.addEventListener("click", function(e) {
+            e.stopPropagation(); //阻止事件冒泡
+        })
+    </script>
+</body>
+</html>
