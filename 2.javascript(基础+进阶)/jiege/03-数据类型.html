@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+</head>
+<body>
+    <script>
+        var num = 10;  // num 数字(数值)型
+        var PI = 3.14;  // PI 数字(数值)型
+        var hex = 0xff;  // 16进制
+        console.log(typeof hex);
+
+        var nan = "字符串" - 100;
+        console.log(nan)  // NaN(Not a Number)
+
+        console.log(Number.MAX_VALUE) //数字型的最大值
+        console.log(Number.MIN_VALUE) //数字型的最小值
+        console.log(Number.MAX_VALUE * 2) //Infinity 无穷大
+        console.log(-Number.MAX_VALUE * 2) //-Infinity 无穷小
+
+        // 字符型(使用''或者"")
+        // var str = "字符串";
+        // var str1 = '字符串';
+        // var str = 'hello' + ' world'
+        // console.log(str)  // hello world
+
+        var str = '我是一个"美女"程序媛';
+        console.log(str);
+        console.log(typeof str);
+        // 字符串转义字符 都是用\开头 但是这些转义字符写到引号里面
+        var str1 = "我是一个'美女'程序媛";
+        console.log(str1);
+
+        // 布尔值
+        console.log(true);  //true
+        console.log(false);  //false
+        console.log(typeof true);
+
+        // undefined
+        var test;
+        console.log(test);  //undefined
+        console.log(typeof test);
+
+        // Null
+    </script>
+</body>
+</html>
