@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短路运算</title>
+</head>
+<body>
+    <script>
+        // 当通过第一个表达式就可以确定表达式的值时，第一个表达式就不会执行
+        console.log(123 && 456)  //456
+        var num = 0
+        console.log(0 && (num=1)) //0
+        console.log(num)  //0
+
+        function a() {
+            console.log("aaa")
+        }
+
+        // a()函数存在就调用，不存在就什么也不做
+        a && a();
+
+
+        console.log(123 || 456) //123
+
+        function b(i) {
+            var i = i || 10
+            console.log(i) 
+        }
+        b(20)
+    </script>
+</body>
+</html>
