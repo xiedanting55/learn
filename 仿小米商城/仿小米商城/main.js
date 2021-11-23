@@ -1,4 +1,7 @@
 import App from './App'
+import store from "./store"
+
+Vue.prototype.$store = store;
 
 // #ifndef VUE3
 import Vue from 'vue'
@@ -10,6 +13,7 @@ Vue.component('divider', divider)
 
 App.mpType = 'app'
 const app = new Vue({
+	store,
     ...App
 })
 app.$mount()

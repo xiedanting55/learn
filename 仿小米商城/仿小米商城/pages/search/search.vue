@@ -11,9 +11,6 @@
 				
 			}
 		},
-		onLoad() {
-			console.log(this.$store.state)
-		},
 		methods: {
 			
 		}

@@ -306,7 +306,15 @@
 					}
 				]
 			}
+			
+			// 监听当前窗口
+			uni.onNavigationBarSearchInputClicked(()=> {
+				uni.navigateTo({
+					url: "../search/search"
+				})
+			})
 		},
+			
 		onLoad() {
 			// 获取可视区域高度
 			uni.getSystemInfo({
