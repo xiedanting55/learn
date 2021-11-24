@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/common/divider":1};
+/******/ 		var cssChunks = {"components/common/divider":1,"components/uni-ui/uni-nav-bar/uni-nav-bar":1,"components/uni-ui/uni-number-box/uni-number-box":1,"components/uni-ui/uni-status-bar/uni-status-bar":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/common/divider":"components/common/divider","components/common/card":"components/common/card","components/common/common-list":"components/common/common-list","components/index/index.nav":"components/index/index.nav","components/index/swiper-image":"components/index/swiper-image","components/index/tree-adv":"components/index/tree-adv","components/common/price":"components/common/price"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/common/divider":"components/common/divider","components/common/card":"components/common/card","components/common/common-list":"components/common/common-list","components/index/index.nav":"components/index/index.nav","components/index/swiper-image":"components/index/swiper-image","components/index/tree-adv":"components/index/tree-adv","components/common/price":"components/common/price","components/uni-ui/uni-nav-bar/uni-nav-bar":"components/uni-ui/uni-nav-bar/uni-nav-bar","components/uni-ui/uni-number-box/uni-number-box":"components/uni-ui/uni-number-box/uni-number-box","components/uni-ui/uni-status-bar/uni-status-bar":"components/uni-ui/uni-status-bar/uni-status-bar"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
