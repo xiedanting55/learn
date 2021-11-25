@@ -14,7 +14,7 @@
 		<view class="bg-white py-2">
 			<!-- 列表 -->
 			<view class="d-flex a-center py-3 border-bottom border-light-secondary" v-for="(item, index) in list" :key="index">
-				<label class="radio d-flex a-center j-center flex-shrink" style="width: 100upx; height: 100upx;">
+				<label class="radio d-flex a-center j-center flex-shrink" style="width: 100upx; height: 100upx;" @click="selectItem(index)">
 					<radio :value="item.id" :checked="item.checked" color="#FD6801" />
 				</label>
 				<image :src="item.cover" mode="widthFix" style="width: 80upx; height: 80upx;"
@@ -37,11 +37,11 @@
 		<!-- 合计 -->
 		<view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary a-stretch" style="height: 100upx; z-index: 100;">
 			<label class="radio d-flex a-center j-center flex-shrink" style="width: 100upx; height: 100upx;" @click="doSelectAll">
-				<radio value="1" color="#FD6801" :checked="checkedAll" />
+				<radio value="1" color="#FD6801" :checked="checkedAll" :disabled="disableSelectAll" />
 			</label>
 			<view class="flex-1 d-flex a-center j-center font-md">
 				合计
-				<price>366</price>
+				<price>{{totalPrice}}</price>
 			</view>
 			<view class="flex-1 d-flex a-center j-center main-bg-color text-white font-md" hover-class="main-bg-hover-color">结算</view>
 		</view>
@@ -52,7 +52,7 @@
 	import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue"
 	import price from "@/components/common/price.vue"
 	import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
-	import {mapState, mapGetters, mapActions} from 'vuex'
+	import {mapState, mapGetters, mapMutations, mapActions} from 'vuex'
 	export default {
 		components: {
 			uniNavBar,
@@ -71,10 +71,11 @@
 			...mapState({
 				list: state => state.cart.list
 			}),
-			...mapGetters(["checkedAll"])
+			...mapGetters(["checkedAll", "totalPrice", "disableSelectAll"])
 		},
 		methods: {
 			...mapActions(["doSelectAll"]),
+			...mapMutations(["selectItem"]),
 			changeNumber(event,item, index) {
 				item.num = event;
 				console.log(event,item, index)

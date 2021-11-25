@@ -306,15 +306,13 @@
 					}
 				]
 			}
-			
-			// 监听当前窗口
-			uni.onNavigationBarSearchInputClicked(()=> {
-				uni.navigateTo({
-					url: "../search/search"
-				})
+		},	
+		// 监听当前窗口  新版本改成生命周期函数
+		onNavigationBarSearchInputClicked(e) {
+			uni.navigateTo({
+				url: "../search/search"
 			})
 		},
-			
 		onLoad() {
 			// 获取可视区域高度
 			uni.getSystemInfo({

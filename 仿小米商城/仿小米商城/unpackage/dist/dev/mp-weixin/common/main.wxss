@@ -5695,7 +5695,7 @@ image {
 }
 .main-border-color {  /*主边框颜色
  */
-	border-color:  #FD6801;
+	border-color:  #F1F1F1;
 }
 /*公共样式 */
 
