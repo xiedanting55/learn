@@ -3,7 +3,7 @@
 		<!-- head -->
 		<view v-if="showHead" class="p-2 main-border-color" :class="getHeadClass">
 			<slot name="title">
-				<text v-if="headTitle" class="font-md font-weight">{{headTitle}}</text>
+				<text v-if="headTitle" class="font-md" :class="headTitleWeight ? 'font-weight': ''">{{headTitle}}</text>
 			</slot>
 		</view>
 		<!-- body -->
@@ -24,6 +24,10 @@
 				default: true
 			},
 			headBorderBottom: {  //是否显示下边线
+				type: Boolean,
+				default: true
+			},
+			headTitleWeight: {  //是否显示头部加粗
 				type: Boolean,
 				default: true
 			},
