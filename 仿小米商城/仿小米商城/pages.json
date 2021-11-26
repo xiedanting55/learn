@@ -118,11 +118,19 @@
         }
         ,{
             "path" : "pages/detail/detail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
+            "style" :  {
+				"app-plus": {
+					"scrollIndicator":"none",
+					"titleNView": {
+						"type":"transparent",
+						"buttons": [
+							{
+								"type":"menu"
+							}
+						]
+					}
+				}
+			}
             
         }
         ,{

@@ -1,5 +1,6 @@
 {
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "swiper-image": "/components/index/swiper-image",
+    "price": "/components/common/price"
+  }
 }

@@ -17,8 +17,10 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 3));function _i
 _vue.default.config.productionTip = false;
 
 // 引入全局组件
-var divider = function divider() {__webpack_require__.e(/*! require.ensure | components/common/divider */ "components/common/divider").then((function () {return resolve(__webpack_require__(/*! @/components/common/divider.vue */ 45));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+var divider = function divider() {__webpack_require__.e(/*! require.ensure | components/common/divider */ "components/common/divider").then((function () {return resolve(__webpack_require__(/*! @/components/common/divider.vue */ 68));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var loading = function loading() {__webpack_require__.e(/*! require.ensure | components/common/loading */ "components/common/loading").then((function () {return resolve(__webpack_require__(/*! @/components/common/loading.vue */ 166));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+//加载动画
 _vue.default.component('divider', divider);
+_vue.default.component('loading', loading);
 
 _App.default.mpType = 'app';
 var app = new _vue.default(_objectSpread({

@@ -9,7 +9,9 @@ Vue.config.productionTip = false
 
 // 引入全局组件
 import divider from '@/components/common/divider.vue'
+import loading from '@/components/common/loading.vue';  //加载动画
 Vue.component('divider', divider)
+Vue.component('loading', loading)
 
 App.mpType = 'app'
 const app = new Vue({

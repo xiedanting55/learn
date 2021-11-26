@@ -25,11 +25,12 @@
 						<text v-if="title" class="uni-list-item__content-title"
 							:class="[ellipsis !== 0 && ellipsis <= 2 ? 'uni-ellipsis-' + ellipsis : '']">{{ title }}</text>
 						<text v-if="note" class="uni-list-item__content-note">{{ note }}</text>
+						<slot></slot>
 					</view>
 				</slot>
 				<slot name="footer">
 					<view v-if="rightText || showBadge || showSwitch" class="uni-list-item__extra"
-						:class="{ 'flex--justify': direction === 'column' }">
+						:class="{ 'flex--justify': direction === 'column' }" :style="'width:'+extraWidth+';'">
 						<text v-if="rightText" class="uni-list-item__extra-text">{{ rightText }}</text>
 						<uni-badge v-if="showBadge" :type="badgeType" :text="badgeText" />
 						<switch v-if="showSwitch" :disabled="disabled" :checked="switchChecked"
@@ -78,10 +79,16 @@
 	 * @event {Function} 	click 							点击 uniListItem 触发事件
 	 * @event {Function} 	switchChange 					点击切换 Switch 时触发
 	 */
+	import uniBadge from "../uni-badge/uni-badge.vue"
+	import uniIcons from "../uni-icons/uni-icons.vue"
 	export default {
 		name: 'UniListItem',
 		emits: ['click', 'switchChange'],
 		props: {
+			extraWidth:{
+				type:String,
+				default:''
+			},
 			direction: {
 				type: String,
 				default: 'row'
@@ -170,6 +177,10 @@
 			}
 		},
 		// inject: ['list'],
+		components: {
+			uniBadge,
+			uniIcons
+		},
 		data() {
 			return {
 				isFirstChild: false
