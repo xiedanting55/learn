@@ -4,14 +4,14 @@
 		</uni-nav-bar>
 
 		<!-- 购物车为空 -->
-		<view class="py-5 d-flex a-center j-center bg-white">
+		<view class="py-5 d-flex a-center j-center bg-white" v-if="disableSelectAll">
 			<view class="iconfont icon-gouwuche text-light-muted" style="font-size: 50upx;"></view>
 			<text class="text-light-muted mx-2">购物车还是为空</text>
 			<view class="px-2 py-1 border border-light-secondary rounded" hover-class="bg-light-secondary">去逛逛</view>
 		</view>
 
 		<!-- 购物车商品列表 -->
-		<view class="bg-white py-2">
+		<view class="bg-white py-2" v-else>
 			<!-- 列表 -->
 			<view class="d-flex a-center py-3 border-bottom border-light-secondary" v-for="(item, index) in list" :key="index">
 				<label class="radio d-flex a-center j-center flex-shrink" style="width: 100upx; height: 100upx;" @click="selectItem(index)">
