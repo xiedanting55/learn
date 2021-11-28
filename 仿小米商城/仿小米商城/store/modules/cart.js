@@ -1,161 +1,163 @@
 export default {
 	state: {
-		// list: [{
-		// 		checked: false,
-		// 		id: 11,
-		// 		title: "商品标题111",
-		// 		cover: "/static/images/demo/list/1.jpg",
-		// 		// 选中商品属性
-		// 		attrs: [{
-		// 				title: "颜色",
-		// 				selected: 0,
-		// 				list: [{
-		// 						name: '火焰红',
-		// 					},
-		// 					{
-		// 						name: '炭黑',
-		// 					},
-		// 					{
-		// 						name: '冰川兰',
-		// 					}
-		// 				]
-		// 			},
-		// 			{
-		// 				title: "容量",
-		// 				selected: 0,
-		// 				list: [{
-		// 						name: '64GB',
-		// 					},
-		// 					{
-		// 						name: '128GB',
-		// 					},
-		// 				]
-		// 			},
-		// 			{
-		// 				title: "套餐",
-		// 				selected: 0,
-		// 				list: [{
-		// 						name: '标配',
-		// 					},
-		// 					{
-		// 						name: '套餐一',
-		// 					},
-		// 					{
-		// 						name: '套餐二',
-		// 					}
-		// 				]
-		// 			},
-		// 		],
-		// 		pprice: 336,
-		// 		num: 1,
-		// 		minnum: 1,
-		// 		maxnum: 10, // 该商品最大商品数，跟库存有关
-		// 	},
-		// 	{
-		// 		checked: false,
-		// 		id: 12,
-		// 		title: "商品标题111",
-		// 		cover: "/static/images/demo/list/1.jpg",
-		// 		// 选中商品属性
-		// 		attrs: [{
-		// 				title: "颜色",
-		// 				selected: 0,
-		// 				list: [{
-		// 						name: '火焰红',
-		// 					},
-		// 					{
-		// 						name: '炭黑',
-		// 					},
-		// 					{
-		// 						name: '冰川兰',
-		// 					}
-		// 				]
-		// 			},
-		// 			{
-		// 				title: "容量",
-		// 				selected: 0,
-		// 				list: [{
-		// 						name: '64GB',
-		// 					},
-		// 					{
-		// 						name: '128GB',
-		// 					},
-		// 				]
-		// 			},
-		// 			{
-		// 				title: "套餐",
-		// 				selected: 0,
-		// 				list: [{
-		// 						name: '标配',
-		// 					},
-		// 					{
-		// 						name: '套餐一',
-		// 					},
-		// 					{
-		// 						name: '套餐二',
-		// 					}
-		// 				]
-		// 			},
-		// 		],
-		// 		pprice: 336,
-		// 		num: 1,
-		// 		minnum: 1,
-		// 		maxnum: 10, // 该商品最大商品数，跟库存有关
-		// 	},
-		// 	{
-		// 		checked: false,
-		// 		id: 13,
-		// 		title: "商品标题111",
-		// 		cover: "/static/images/demo/list/1.jpg",
-		// 		// 选中商品属性
-		// 		attrs: [{
-		// 				title: "颜色",
-		// 				selected: 0,
-		// 				list: [{
-		// 						name: '火焰红',
-		// 					},
-		// 					{
-		// 						name: '炭黑',
-		// 					},
-		// 					{
-		// 						name: '冰川兰',
-		// 					}
-		// 				]
-		// 			},
-		// 			{
-		// 				title: "容量",
-		// 				selected: 0,
-		// 				list: [{
-		// 						name: '64GB',
-		// 					},
-		// 					{
-		// 						name: '128GB',
-		// 					},
-		// 				]
-		// 			},
-		// 			{
-		// 				title: "套餐",
-		// 				selected: 0,
-		// 				list: [{
-		// 						name: '标配',
-		// 					},
-		// 					{
-		// 						name: '套餐一',
-		// 					},
-		// 					{
-		// 						name: '套餐二',
-		// 					}
-		// 				]
-		// 			},
-		// 		],
-		// 		pprice: 336,
-		// 		num: 1,
-		// 		minnum: 1,
-		// 		maxnum: 10, // 该商品最大商品数，跟库存有关
-		// 	},
-		// ],
-		list: [],
+		list: [{
+				checked: false,
+				id: 11,
+				title: "商品标题111",
+				cover: "/static/images/demo/list/1.jpg",
+				// 选中商品属性
+				attrs: [{
+						title: "颜色",
+						selected: 0,
+						list: [{
+								name: '火焰红',
+							},
+							{
+								name: '炭黑',
+							},
+							{
+								name: '冰川兰',
+							}
+						]
+					},
+					{
+						title: "容量",
+						selected: 0,
+						list: [{
+								name: '64GB',
+							},
+							{
+								name: '128GB',
+							},
+						]
+					},
+					{
+						title: "套餐",
+						selected: 0,
+						list: [{
+								name: '标配',
+							},
+							{
+								name: '套餐一',
+							},
+							{
+								name: '套餐二',
+							}
+						]
+					},
+				],
+				pprice: 336,
+				num: 1,
+				minnum: 1,
+				maxnum: 10, // 该商品最大商品数，跟库存有关
+			},
+			{
+				checked: false,
+				id: 12,
+				title: "商品标题111",
+				cover: "/static/images/demo/list/1.jpg",
+				// 选中商品属性
+				attrs: [{
+						title: "颜色",
+						selected: 0,
+						list: [{
+								name: '火焰红',
+							},
+							{
+								name: '炭黑',
+							},
+							{
+								name: '冰川兰',
+							}
+						]
+					},
+					{
+						title: "容量",
+						selected: 0,
+						list: [{
+								name: '64GB',
+							},
+							{
+								name: '128GB',
+							},
+						]
+					},
+					{
+						title: "套餐",
+						selected: 0,
+						list: [{
+								name: '标配',
+							},
+							{
+								name: '套餐一',
+							},
+							{
+								name: '套餐二',
+							}
+						]
+					},
+				],
+				pprice: 336,
+				num: 1,
+				minnum: 1,
+				maxnum: 10, // 该商品最大商品数，跟库存有关
+			},
+			{
+				checked: false,
+				id: 13,
+				title: "商品标题111",
+				cover: "/static/images/demo/list/1.jpg",
+				// 选中商品属性
+				attrs: [{
+						title: "颜色",
+						selected: 0,
+						list: [{
+								name: '火焰红',
+							},
+							{
+								name: '炭黑',
+							},
+							{
+								name: '冰川兰',
+							}
+						]
+					},
+					{
+						title: "容量",
+						selected: 0,
+						list: [{
+								name: '64GB',
+							},
+							{
+								name: '128GB',
+							},
+						]
+					},
+					{
+						title: "套餐",
+						selected: 0,
+						list: [{
+								name: '标配',
+							},
+							{
+								name: '套餐一',
+							},
+							{
+								name: '套餐二',
+							}
+						]
+					},
+				],
+				pprice: 336,
+				num: 1,
+				minnum: 1,
+				maxnum: 10, // 该商品最大商品数，跟库存有关
+			},
+		],
+		// list: [],
 		selectedAll: [], //选中列表(存放选中的id)
+		popupShow: "none", //popup显示
+		popupIndex: -1,
 	},
 	getters: {
 		// 判断是否全选
@@ -175,6 +177,10 @@ export default {
 		// 禁用全选
 		disableSelectAll: (state) => {
 			return state.list.length === 0
+		},
+		// 拿到当前需要修改属性的商品
+		popupData: (state) => {
+			return state.popupIndex > -1 ? state.list[state.popupIndex] : "";
 		}
 	},
 	mutations: {
@@ -202,11 +208,49 @@ export default {
 				v.checked = false; // 设置取消选中状态
 			})
 			state.selectedAll = [];
+		},
+		// 删除选中
+		delGoods(state) {
+			state.list = state.list.filter(v => {
+				return state.selectedAll.indexOf(v.id) === -1;
+			})
+		},
+		// 初始化popupIndex
+		initPopupIndex(state, index) {
+			state.popupIndex = index;
+		},
+		// 加入购物车
+		addGoodsToCart(state, goods) {
+			state.list.unshift(goods);
 		}
 	},
 	actions: {
 		doSelectAll({commit,getters}) {
 			getters.checkedAll ? commit("unSelectAll") : commit("selectAll")
+		},
+		doDelGoods({commit}) {
+			uni.showModal({
+				content: "是否删除选中",
+				success: (res) => {
+					if(res.confirm) {
+						commit('delGoods');
+						uni.showToast({
+							title: "删除成功"
+						})
+					}
+				}
+			})
+		},
+		doShowPopup({state, commit}, index) {  //显示popup
+			commit('initPopupIndex', index);
+			state.popupShow = 'show';
+		},
+		doHidePopup({state, commit}) {  //隐藏popup
+			state.popupShow = 'hide';
+			setTimeout(()=> {
+				state.popupShow = 'none';
+				commit('initPopupIndex', -1);
+			},200)
 		}
 	}
 }

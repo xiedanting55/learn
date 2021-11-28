@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText": "uni-app",
-  "usingComponents": {}
+  "usingComponents": {
+    "card": "/components/common/card",
+    "divider": "/components/common/divider",
+    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item"
+  }
 }

@@ -7,7 +7,7 @@
 			</slot>
 		</view>
 		<!-- body -->
-		<view :class="getBodyClass">
+		<view :class="getBodyClass" :style="bodyStyle">
 			<image v-if="bodyCover" :src="bodyCover" mode="widthFix"></image>
 			<slot></slot>
 		</view>
@@ -34,7 +34,8 @@
 			bodyPadding: {  //是否给body加padding
 				type: Boolean,
 				default: false
-			}
+			},
+			bodyStyle: String
 		},
 		computed: {
 			getHeadClass() {

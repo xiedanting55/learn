@@ -1,5 +1,6 @@
 {
-  "navigationBarTitleText": "",
-  "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "navigationBarTitleText": "商品评价",
+  "usingComponents": {
+    "divider": "/components/common/divider"
+  }
 }
