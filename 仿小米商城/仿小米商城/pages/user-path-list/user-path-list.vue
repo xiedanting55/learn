@@ -1,28 +1,27 @@
 <template>
 	<view>
-		<uni-swipe-action :options="options" @click="bindClick">
-			<uni-list-item>
-				<view class="text-secondary">
-					<view class="d-flex a-center">
-						<text class="main-text-color">楚绵</text>
-						158****531
-						<text class="main-text-color">[默认]</text>
+		<block v-for="(item,index) in list" :key="index">
+			<uni-swipe-action :options="options" @click="bindClick($event,index)">
+				<uni-list-item>
+					<view class="text-secondary">
+						<view class="d-flex a-center">
+							<text class="main-text-color">{{item.name}}</text>
+							{{item.phone}}
+							<text class="main-text-color" v-if="item.isdefault">[默认]</text>
+						</view>
+						<view>{{item.path}}</view>
+						<view>{{item.detailPath}}</view>
 					</view>
-					<view>
-						广东省 广州市 白云区
-					</view>
-					<view>
-						XXXXX街道
-					</view>
-				</view>
-			</uni-list-item>
-		</uni-swipe-action>
+				</uni-list-item>
+			</uni-swipe-action>
+		</block>
 	</view>
 </template>
 
 <script>
 	import uniSwipeAction from "@/components/uni-ui/uni-swipe-action/uni-swipe-action.vue"
 	import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
+	import {mapState, mapMutations} from "vuex"
 	export default {
 		data() {
 			return {
@@ -36,7 +35,7 @@
 					style: {
 						backgroundColor: '#dd524d'
 					}
-				}],
+				}]
 			}
 		},
 		components: {
@@ -52,14 +51,36 @@
 				});
 			}
 		},
+		computed: {
+			...mapState({
+				list: state => state.path.list
+			}),	
+		},
 		methods: {
-			bindClick(value) {
+			...mapMutations(["delPath"]),
+			bindClick(value, i) {
 				switch (value.index) {
 					case 0: // 修改
-
+						let obj = JSON.stringify({
+							index: i,
+							item: this.list[i]
+						})
+						uni.navigateTo({
+							url: '../user-path-edit/user-path-edit?data=' + obj,
+						});
 						break;
 					case 1: // 删除
-
+						uni.showModal({
+							content: '要删除该收货地址吗？',
+							success: (res) => {
+								if (res.confirm) {
+									this.delPath(i)
+									uni.showToast({
+										title: '删除成功'
+									});
+								}
+							}
+						});
 						break;
 				}
 			},
