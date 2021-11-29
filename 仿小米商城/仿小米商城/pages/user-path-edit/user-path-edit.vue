@@ -51,7 +51,8 @@
 	import divider from "@/components/common/divider.vue"
 	import mpvueCityPicker from "@/components/uni-ui/mpvue-citypicker/mpvueCityPicker.vue"
 	import {
-		mapMutations
+		mapMutations,
+		mapActions
 	} from "vuex"
 	export default {
 		data() {
@@ -60,6 +61,7 @@
 				pickerValue: [0, 0, 1],
 				pickerText: '',
 				isedit: false,
+				index: -1,
 				form: {
 					name: "",
 					phone: "",
@@ -92,10 +94,14 @@
 				this.form = result.item;
 				this.index = result.index;
 				this.isedit = true;
+				uni.setNavigationBarTitle({
+					title: "修改收货地址"
+				})
 			}
 		},
 		methods: {
-			...mapMutations(['createPath', 'updatePath']),
+			...mapMutations(['createPath']),
+			...mapActions(["updatePathAction"]),
 			// 三级联动确定
 			onConfirm(e) {
 				this.form.path = e.label;
@@ -111,10 +117,10 @@
 
 				// 修改
 				if (this.isedit) {
-					this.updatePath({
+					this.updatePathAction({
 						index: this.index,
 						item: this.form
-					})
+					});
 					uni.showToast({
 						title: '修改成功'
 					});

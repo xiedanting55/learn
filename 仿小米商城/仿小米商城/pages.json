@@ -209,18 +209,7 @@
                 "navigationBarTitleText": "增加收货地址",
 				"app-plus": {
 					"scrollIndicator":"none",
-					"bounce": "none",
-					"titleNView": {
-						"buttons": [
-							{
-								"color":"#999999",
-								"colorPressed":"#BBBBBB",
-								"float":"right",
-								"text": "删除",
-								"fontSize":"16px"
-							}
-						]
-					}
+					"bounce": "none"
 				}
             }
             

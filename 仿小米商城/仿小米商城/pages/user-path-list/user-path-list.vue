@@ -65,9 +65,11 @@
 							index: i,
 							item: this.list[i]
 						})
-						uni.navigateTo({
-							url: '../user-path-edit/user-path-edit?data=' + obj,
-						});
+						setTimeout(()=> {
+							uni.navigateTo({
+								url: '../user-path-edit/user-path-edit?data=' + obj,
+							});
+						},50)
 						break;
 					case 1: // 删除
 						uni.showModal({

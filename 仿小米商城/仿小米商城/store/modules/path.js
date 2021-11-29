@@ -31,7 +31,23 @@ export default {
 			for (let key in item) {
 				state.list[index][key] = item[key]
 			}
+		},
+		// 取消默认地址
+		removeDefault(state) {
+			state.list.forEach(v=> {
+				if(v.isdefault) {
+					v.isdefault = false;
+				}
+			})
 		}
 	},
-	actions: {}
+	actions: {
+		// 修改地址
+		updatePathAction({commit},obj) {
+			if(obj.item.isdefault) {
+				commit("removeDefault");
+			}
+			commit("updatePath", obj);
+		}
+	}
 }

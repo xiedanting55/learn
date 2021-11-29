@@ -82,13 +82,13 @@
 		<common-popup :popupClass="popup.express" @hide="hide('express')">
 			<view class="d-flex a-center j-center font-md border-bottom border-light-secondary" style="height: 100rpx;">收货地址</view>
 			<scroll-view scroll-y class="w-100" style="height: 835rpx;">
-				<uni-list-item v-for="i in 10" :key="i">
-					<view class="iconfont icon-dingwei font-weight font-md">楚绵</view>
-					<view class="font text-light-muted">广东省广州市帝莎IT学院基地</view>
+				<uni-list-item v-for="(item,index) in list" :key="index">
+					<view class="iconfont icon-dingwei font-weight font-md">{{item.name}}</view>
+					<view class="font text-light-muted">{{item.path}} {{item.detailPath}}</view>
 				</uni-list-item>
 			</scroll-view>
 			<!-- 按钮(100rpx) -->
-			 <view class="main-bg-color text-white font-md d-flex a-center j-center" hover-class="main-bg-hover-color" style="height: 100rpx;margin-left: -30rpx;margin-right: -30rpx;" @tap.stop="hide('express')">选择新的地址</view>
+			 <view class="main-bg-color text-white font-md d-flex a-center j-center" hover-class="main-bg-hover-color" style="height: 100rpx;margin-left: -30rpx;margin-right: -30rpx;" @tap.stop="openCreatePath">选择新的地址</view>
 		</common-popup>
 		
 		<!-- 服务说明 -->
@@ -123,7 +123,7 @@
 	import price from "@/components/common/price.vue"
 	import zcmRadioGroup from "@/components/common/radio-group.vue"
 	import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
-	import {mapMutations} from 'vuex'
+	import {mapState, mapMutations} from 'vuex'
 	var htmlString = `
 	<p>
 		<img src="https://i8.mifile.cn/v1/a1/9c3e29dc-151f-75cb-b0a5-c423a5d13926.webp">
@@ -330,6 +330,11 @@
 				}
 			}
 		},
+		computed: {
+			...mapState({
+				list: state => state.path.list
+			})
+		},
 		methods: {
 			...mapMutations(["addGoodsToCart"]),
 			preview(src, e) {
@@ -339,6 +344,12 @@
 			navigate(href, e) {
 				// 如允许点击超链接跳转，则应该打开一个新页面，并传入href，由新页面内嵌webview组件负责显示该链接内容
 				console.log("href: " + href);
+			},
+			openCreatePath() {
+				uni.navigateTo({
+					url: "../user-path-edit/user-path-edit"
+				});
+				this.hide('express');
 			},
 			hide(key){
 				this.popup[key] = 'hide'
