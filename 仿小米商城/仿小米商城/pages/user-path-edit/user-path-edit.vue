@@ -51,7 +51,6 @@
 	import divider from "@/components/common/divider.vue"
 	import mpvueCityPicker from "@/components/uni-ui/mpvue-citypicker/mpvueCityPicker.vue"
 	import {
-		mapMutations,
 		mapActions
 	} from "vuex"
 	export default {
@@ -100,8 +99,7 @@
 			}
 		},
 		methods: {
-			...mapMutations(['createPath']),
-			...mapActions(["updatePathAction"]),
+			...mapActions(["updatePathAction", "createPathAction"]),
 			// 三级联动确定
 			onConfirm(e) {
 				this.form.path = e.label;
@@ -130,7 +128,7 @@
 				}
 
 				// 创建
-				this.createPath(this.form)
+				this.createPathAction(this.form);
 				uni.showToast({
 					title: '创建成功'
 				});

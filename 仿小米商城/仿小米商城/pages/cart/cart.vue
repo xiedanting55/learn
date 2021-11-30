@@ -39,10 +39,24 @@
 				</view>
 			</view>
 		</view>
+		
+		<!-- 为你推荐 -->
+		 <view class="text-center main-text-color font-md font-weight mt-5">
+			 为你推荐
+		 </view>
+		 <view class="position-relative d-flex a-center j-center text-secondary mb-3 pt-3">
+			<view style="background: #F5F5F5;z-index: 2;" class="px-2 position-absolute">
+				买的人还买了</view>
+			<view class="position-absolute" style="height: 1upx;left: 0;right: 0;background-color: #DDDDDD;"></view>
+		 </view>
+		<view class="row j-sb bg-white">
+			<common-list v-for="(item,index) in hotList" :key="index" :item="item" :index="index">
+			</common-list>
+		</view>
 		<!-- 占位 -->
 		<view style="height: 100upx;"></view>
 		<!-- 合计 -->
-		<view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary a-stretch"
+		<view class="d-flex a-center position-fixed left-0 right-0 bottom-0 border-top border-light-secondary a-stretch bg-white"
 			style="height: 100upx; z-index: 1000;">
 			<label class="radio d-flex a-center j-center flex-shrink" style="width: 100upx; height: 100upx;"
 				@click="doSelectAll">
@@ -54,7 +68,7 @@
 					<price>{{totalPrice}}</price>
 				</view>
 				<view class="flex-1 d-flex a-center j-center main-bg-color text-white font-md"
-					hover-class="main-bg-hover-color">结算</view>
+					hover-class="main-bg-hover-color" @tap="orderConfirm">结算</view>
 			</template>
 			<template v-else>
 				<view class="flex-1 d-flex a-center j-center font-md main-bg-color text-white">
@@ -97,6 +111,7 @@
 	import commonPopup from "@/components/common/common-popup.vue"
 	import card from "@/components/common/card.vue"
 	import zcmRadioGroup from "@/components/common/radio-group.vue"
+	import commonList from "@/components/common/common-list.vue"
 	import {
 		mapState,
 		mapGetters,
@@ -110,11 +125,55 @@
 			uniNumberBox,
 			commonPopup,
 			card,
-			zcmRadioGroup
+			zcmRadioGroup,
+			commonList
 		},
 		data() {
 			return {
-				isEdit: false
+				isEdit: false,
+				hotList: [{
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						desc: "1.5匹变频",
+						oprice: 2699,
+						pprice: 1399
+					},
+					{
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						desc: "1.5匹变频",
+						oprice: 2699,
+						pprice: 1399
+					},
+					{
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						desc: "1.5匹变频",
+						oprice: 2699,
+						pprice: 1399
+					},
+					{
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						desc: "1.5匹变频",
+						oprice: 2699,
+						pprice: 1399
+					},
+					{
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						desc: "1.5匹变频",
+						oprice: 2699,
+						pprice: 1399
+					},
+					{
+						cover: "/static/images/demo/list/1.jpg",
+						title: "米家空调",
+						desc: "1.5匹变频",
+						oprice: 2699,
+						pprice: 1399
+					}
+				]
 			}
 		},
 		onLoad() {
@@ -134,6 +193,12 @@
 				item.num = event;
 				console.log(event, item, index)
 			},
+			// 订单结算
+			orderConfirm() {
+				uni.navigateTo({
+					url: "../order-confirm/order-confirm"
+				})
+			}
 		}
 	}
 </script>

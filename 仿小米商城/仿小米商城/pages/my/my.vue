@@ -22,7 +22,7 @@
 		<card>
 			<view slot="title" class="d-flex a-center j-sb">
 				<text class="font-md font-weight">我的订单</text>
-				<view class="text-secondary font">
+				<view class="text-secondary font" @click="navigate('order')">
 					全部订单 <text class="iconfont icon-you font"></text>
 				</view>
 			</view>
@@ -47,7 +47,7 @@
 		</uni-list-item>
 		<divider></divider>
 		<uni-list-item showExtraIcon leftIconStyle="color:#808C98;" leftIcon="icon-icon_set_up" title="更多设置"
-			clickable @click="jump('user-set')"></uni-list-item>
+			clickable @click="navigate('user-set')"></uni-list-item>
 	</view>
 </template>
 
@@ -67,7 +67,7 @@
 			uniListItem
 		},
 		methods: {
-			jump(path) {
+			navigate(path) {
 				console.log(path)
 				if (!path) return;
 				uni.navigateTo({

@@ -16,7 +16,12 @@ export default {
 			}
 		]
 	},
-	getters: {},
+	getters: {
+		// 获取默认地址
+		defaultPath: (state) => {
+			return state.list.filter(v=>v.isdefault);
+		}
+	},
 	mutations: {
 		// 创建收货地址
 		createPath(state, item) {
@@ -48,6 +53,13 @@ export default {
 				commit("removeDefault");
 			}
 			commit("updatePath", obj);
+		},
+		// 增加地址
+		createPathAction({commit},item) {
+			if(item.isdefault) {
+				commit("removeDefault");
+			}
+			commit("createPath", item)
 		}
 	}
 }
