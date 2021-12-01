@@ -1,7 +1,8 @@
 <template>
-	<view class="d-flex border-top border-light-secondary" style="height: 100%;box-sizing: border-box;">
+	<view class="d-flex border-top border-light-secondary animated fadeIn faster" style="height: 100%;box-sizing: border-box;">
+		<loading-plus v-if="beforeReady"></loading-plus>
 		
-		<loading :show="showLoading"></loading>
+		<!-- <loading :show="showLoading"></loading> -->
 		
 		<scroll-view id="leftScroll" scroll-y style="flex: 1;height: 100%;" class="border-right border-light-secondary" :scroll-top="leftScrollTop">
 			<view class="border-bottom border-light-secondary py-1 left-scroll-item" hover-class="bg-light-secondary" v-for="(item,index) in cate" :key="index" @tap="changeCate(index)">
@@ -20,10 +21,11 @@
 </template>
 
 <script>
+	import loading from "@/common/mixin/loading.js"
 	export default {
 		data() {
 			return {
-				showLoading:true,
+				// showLoading:true,
 				// 当前选中的分类
 				activeIndex:0,
 				cate:[],
@@ -35,6 +37,7 @@
 				cateItemHeight:0
 			}
 		},
+		mixins:[loading],
 		watch: {
 			async activeIndex(newValue, oldValue) {
 				// 获取scroll-view高度，scrollTop
@@ -109,9 +112,9 @@
 						})
 					}
 				}
-				this.$nextTick(()=>{
-					this.showLoading = false
-				})
+				// this.$nextTick(()=>{
+				// 	this.showLoading = false
+				// })
 			},
 			// 点击左边分类
 			changeCate(index){

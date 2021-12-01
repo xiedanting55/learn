@@ -1,5 +1,8 @@
 <template>
-	<view style="background: #F5F5F5;">
+	<view class="animated fadeIn faster" style="background: #F5F5F5;">
+		
+		<loading-plus v-if="beforeReady"></loading-plus>
+			
 		<uni-nav-bar :right-text="isEdit ? '完成' : '编辑'" title="购物车" fixed statusBar @clickRight="isEdit = !isEdit">
 		</uni-nav-bar>
 
@@ -105,6 +108,7 @@
 </template>
 
 <script>
+	import loading from "@/common/mixin/loading.js"
 	import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue"
 	import price from "@/components/common/price.vue"
 	import uniNumberBox from "@/components/uni-ui/uni-number-box/uni-number-box.vue"
@@ -119,15 +123,6 @@
 		mapActions
 	} from 'vuex'
 	export default {
-		components: {
-			uniNavBar,
-			price,
-			uniNumberBox,
-			commonPopup,
-			card,
-			zcmRadioGroup,
-			commonList
-		},
 		data() {
 			return {
 				isEdit: false,
@@ -176,6 +171,16 @@
 				]
 			}
 		},
+		components: {
+			uniNavBar,
+			price,
+			uniNumberBox,
+			commonPopup,
+			card,
+			zcmRadioGroup,
+			commonList
+		},
+		mixins:[loading],
 		onLoad() {
 			console.log(this.$store)
 		},

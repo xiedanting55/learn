@@ -1,5 +1,6 @@
 <template>
-	<view>
+	<view class="animated fadeIn faster">
+		<loading-plus v-if="beforeReady"></loading-plus>
 		<!-- 头部 -->
 		<view class="position-relative d-flex a-center" style="height: 320rpx;">
 			<!-- 消息列表 -->
@@ -57,6 +58,7 @@
 </template>
 
 <script>
+	import loading from "@/common/mixin/loading.js"
 	import card from "@/components/common/card.vue"
 	import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
 	export default {
@@ -69,6 +71,7 @@
 			card,
 			uniListItem
 		},
+		mixins:[loading],
 		methods: {
 			navigate(path) {
 				console.log(path)

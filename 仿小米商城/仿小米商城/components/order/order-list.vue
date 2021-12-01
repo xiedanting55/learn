@@ -1,5 +1,5 @@
 <template>
-	<view class="bg-white">
+	<view class="bg-white" @click="openOrderDetail">
 		<divider></divider>
 		<!-- 头部 -->
 		<view class="d-flex a-center p-2 border-bottom border-light-secondary">
@@ -52,6 +52,13 @@
 			item: Object,
 			index:Number
 		},
+		methods: {
+			openOrderDetail() {
+				uni.navigateTo({
+					url: "../../pages/order-detail/order-detail"
+				})
+			}
+		}
 	}
 </script>
 

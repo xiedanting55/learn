@@ -8,10 +8,12 @@ import Vue from 'vue'
 Vue.config.productionTip = false
 
 // 引入全局组件
-import divider from '@/components/common/divider.vue'
+import divider from '@/components/common/divider.vue';
 import loading from '@/components/common/loading.vue';  //加载动画
+import loadingPlus from "@/common/mixin/loading-plus.vue";
 Vue.component('divider', divider)
 Vue.component('loading', loading)
+Vue.component('loading-plus',loadingPlus)
 
 App.mpType = 'app'
 const app = new Vue({

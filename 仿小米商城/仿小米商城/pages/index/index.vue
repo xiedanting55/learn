@@ -1,381 +1,461 @@
 <template>
-	<view>
-		<!-- 顶部选项卡 -->
-		<scroll-view scroll-x class="border-bottom scroll-row" style="height: 80upx;" :scroll-into-view="scrollinto"
-			:scroll-with-animation="true">
-			<view class="scroll-row-item px-3" @tap="changeTab(index)" style="height: 80upx; line-height: 80upx;"
-				v-for="(item, index) in tabBars" :key="index" :class="tabIndex === index ? 'main-text-color': ''"
-				:id="'tab'+index">
-				<text class="font-md">{{item.name}}</text>
+	<view class="uni-tab-bar">
+		<scroll-view id="tab-bar" class="uni-swiper-tab" scroll-x :scroll-left="scrollLeft">
+			<view v-for="(tab,index) in tabBars" :key="tab.id" class="swiper-tab-list"
+				:class="tabIndex==index ? 'active' : ''" :id="tab.id" :data-current="index" @click="tapTab(index)">
+				<view class="tabitems">{{tab.name}}</view>
 			</view>
 		</scroll-view>
+		<!-- 列表 -->
+		<swiper :current="tabIndex" class="swiper-box" :duration="300" @change="changeTab">
+			<swiper-item v-for="(tab,index1) in newsitems" :key="index1">
+				<scroll-view class="list" scroll-y @scrolltolower="loadMore(index1)">
 
-		<swiper :duration="150" :current="tabIndex" :style="'height: '+ scrollH +'px;'" @change="onChangeTab">
-			<swiper-item v-for="(item, index) in newsitems" :key="index">
-				<scroll-view scroll-y="true" :style="'height: '+ scrollH +'px;'" @scrolltolower="loadmore(index)">
-					<block v-for="(list, listIndex) in item.list" :key="listIndex">
-						<!-- 轮播图组件 -->
-						<swiperImage v-if="list.type === 'swiper'" :resData="list.data" />
 
-						<template v-else-if="list.type === 'indexnavs'">
-							<!-- 首页分类 -->
-							<indexNav :resData="list.data" />
-							<!-- 全局分割线 -->
-							<divider />
-						</template>
+					<!-- index模板 -->
+					<template v-if="tabBars[index1].template === 'index'">
 
-						<template v-else-if="list.type === 'treeAdv'">
-							<!-- 三图广告 -->
-							<treeAdv :resData="list.data" />
-							<divider />
-						</template>
+						<block v-for="(v,i) in tab.data" :key="i">
 
-						<!-- 大图广告位 -->
-						<!-- <card headTitle="每日精选" bodyCover="/static/images/demo/demo4.jpg" /> -->
-						<!-- <card :showHead="false">
-							<image src="/static/images/demo/demo4.jpg" mode="widthFix"></image>
-						</card> -->
+							<template v-if="v.type === 'swiper'">
+								<!-- 轮播图组件 -->
+								<swiper-image :resData="v.data" />
+							</template>
+							<template v-else-if="v.type === 'indexnavs'">
+								<!-- 首页分类 -->
+								<index-nav :resData="v.data" />
+								<divider />
+							</template>
+							<template v-else-if="v.type === 'threeAdv'">
+								<!-- 三图广告 -->
+								<three-adv :resData="v.data" />
+								<divider />
+							</template>
+							<template v-else-if="v.type === 'oneAdv'">
+								<!-- 大图广告位 -->
+								<card :headTitle="v.data.title" :bodyCover="v.data.cover" />
+							</template>
+							<template v-else-if="v.type === 'list'">
+								<!-- 公共列表组件 750 - 5 = 745   372.5-->
+								<view class="row j-sb">
+									<block v-for="(vlist,listindex) in v.data" :key="listindex">
+										<common-list :item="vlist" :index="listindex" />
+									</block>
+								</view>
+							</template>
 
-						<!-- 公共列表组件 -->
-						<view class="row j-sb" v-else-if="list.type === 'list'">
-							<block v-for="(item2, index2) in list.data" :key="index2">
-								<commonList :item="item2" :index="index2" />
-							</block>
-						</view>
-					</block>
-					<divider />
-					<!-- 上拉加载更多 -->
-					<view class="d-flex a-center j-center text-light-muted font-md py-3">{{item.loadtext}}</view>
+						</block>
+					</template>
+					<!-- special模板 -->
+					<template v-if="tabBars[index1].template === 'special'">
+						<block v-for="(v,i) in tab.data" :key="i">
+							<template v-if="v.type === 'swiper'">
+								<!-- 轮播图组件 -->
+								<swiper-image :resData="v.data" />
+							</template>
+							<template v-else-if="v.type === 'indexnavs'">
+								<!-- 首页分类 -->
+								<index-nav :resData="v.data" />
+								<divider />
+							</template>
+							<template v-else-if="v.type === 'list'">
+								<!-- 公共列表组件-->
+								<card headTitle="热卖爆品">
+									<view class="row j-sb">
+										<block v-for="(vlist,listindex) in v.data" :key="listindex">
+											<common-list :item="vlist" :index="listindex" />
+										</block>
+									</view>
+								</card>
+							</template>
+						</block>
+					</template>
+
+					<!-- 加载更多 -->
+					<view class="uni-tab-bar-loading">
+						{{tab.loadingText}}
+					</view>
 				</scroll-view>
 			</swiper-item>
 		</swiper>
 	</view>
 </template>
-
 <script>
-	let demoTabBars = [{
-			name: "关注"
-		},
-		{
-			name: "推荐"
-		},
-		{
-			name: "体育"
-		},
-		{
-			name: "热点"
-		},
-		{
-			name: "财经"
-		},
-		{
-			name: "娱乐"
-		},
-		{
-			name: "军事"
-		},
-		{
-			name: "历史"
-		},
-		{
-			name: "本地"
-		}
-	]
-	let demo1 = [{
-			type: "swiper",
-			data: [{
-					src: "/static/images/demo/demo4.jpg"
-				},
-				{
-					src: "/static/images/demo/demo4.jpg"
-				},
-				{
-					src: "/static/images/demo/demo4.jpg"
-				}
-			]
-		},
-		{
-			type: "indexnavs",
-			data: [{
-					src: "/static/images/indexnav/1.png",
-					text: "新品发布"
-				},
-				{
-					src: "/static/images/indexnav/2.gif",
-					text: "小米众筹"
-				},
-				{
-					src: "/static/images/indexnav/3.gif",
-					text: "以旧换新"
-				},
-				{
-					src: "/static/images/indexnav/4.gif",
-					text: "1分拼团"
-				},
-				{
-					src: "/static/images/indexnav/5.gif",
-					text: "超值特卖"
-				},
-				{
-					src: "/static/images/indexnav/6.gif",
-					text: "小米秒杀"
-				},
-				{
-					src: "/static/images/indexnav/7.gif",
-					text: "真心想要"
-				},
-				{
-					src: "/static/images/indexnav/8.gif",
-					text: "电视热卖"
-				},
-				{
-					src: "/static/images/indexnav/9.gif",
-					text: "家电热卖"
-				},
-				{
-					src: "/static/images/indexnav/10.gif",
-					text: "米粉卡"
-				}
-			]
-		},
-		{
-			type: "treeAdv",
-			data: {
-				big: {
-					src: "/static/images/demo/demo1.jpg"
-				},
-				smalltop: {
-					src: "/static/images/demo/demo2.jpg"
-				},
-				smallbottom: {
-					src: "/static/images/demo/demo3.jpg"
-				}
-			}
-		},
-		{
-			type: "list",
-			data: [{
-					cover: "/static/images/demo/list/1.jpg",
-					title: "米家空调",
-					desc: "1.5匹空调",
-					oprice: 2699,
-					pprice: 1399
-				},
-				{
-					cover: "/static/images/demo/list/2.jpg",
-					title: "米家空调",
-					desc: "1.5匹空调",
-					oprice: 2699,
-					pprice: 1399
-				},
-				{
-					cover: "/static/images/demo/list/3.jpg",
-					title: "米家空调",
-					desc: "1.5匹空调",
-					oprice: 2699,
-					pprice: 1399
-				},
-				{
-					cover: "/static/images/demo/list/4.jpg",
-					title: "米家空调",
-					desc: "1.5匹空调",
-					oprice: 2699,
-					pprice: 1399
-				}
-			]
-		},
-	]
+	import swiperImage from "@/components/index/swiper-image.vue";
+	import indexNav from "@/components/index/index-nav.vue";
+	import threeAdv from "@/components/index/three-adv.vue";
+	import card from "@/components/common/card.vue";
+	import commonList from "@/components/common/common-list.vue";
 
-	let demo2 = [{
-			type: "swiper",
-			data: [{
-					src: "/static/images/demo/demo4.jpg"
-				},
-				{
-					src: "/static/images/demo/demo4.jpg"
-				},
-				{
-					src: "/static/images/demo/demo4.jpg"
-				}
-			]
-		},
-		{
-			type: "indexnavs",
-			data: [{
-					src: "/static/images/indexnav/1.png",
-					text: "新品发布"
-				},
-				{
-					src: "/static/images/indexnav/2.gif",
-					text: "小米众筹"
-				},
-				{
-					src: "/static/images/indexnav/3.gif",
-					text: "以旧换新"
-				},
-				{
-					src: "/static/images/indexnav/4.gif",
-					text: "1分拼团"
-				},
-				{
-					src: "/static/images/indexnav/5.gif",
-					text: "超值特卖"
-				}
-			]
-		},
-		{
-			type: "list",
-			data: [{
-					cover: "/static/images/demo/list/1.jpg",
-					title: "米家空调",
-					desc: "1.5匹空调",
-					oprice: 2699,
-					pprice: 1399
-				},
-				{
-					cover: "/static/images/demo/list/2.jpg",
-					title: "米家空调",
-					desc: "1.5匹空调",
-					oprice: 2699,
-					pprice: 1399
-				},
-				{
-					cover: "/static/images/demo/list/3.jpg",
-					title: "米家空调",
-					desc: "1.5匹空调",
-					oprice: 2699,
-					pprice: 1399
-				}
-			]
-		},
-	];
-	import swiperImage from '@/components/index/swiper-image.vue';
-	import indexNav from '@/components/index/index.nav.vue';
-	import treeAdv from '@/components/index/tree-adv.vue';
-	import card from '@/components/common/card.vue';
-	import commonList from '@/components/common/common-list.vue';
 	export default {
 		components: {
 			swiperImage,
 			indexNav,
-			treeAdv,
+			threeAdv,
 			card,
 			commonList
 		},
 		data() {
 			return {
-				scrollinto: "",
-				scrollH: 500,
+				scrollLeft: 0,
+				isClickChange: false,
 				tabIndex: 0,
-				tabBars: [],
-				newsitems: [{
-						name: "关注",
-						list: []
-					},
-					{
-						name: "推荐",
-						list: []
-					},
-					{
-						name: "体育",
-						list: []
-					},
-					{
-						name: "热点",
-						list: []
-					},
-					{
-						name: "财经",
-						list: []
-					},
-					{
-						name: "娱乐",
-						list: []
-					},
-					{
-						name: "军事",
-						list: []
-					},
-					{
-						name: "历史",
-						list: []
-					},
-					{
-						name: "本地",
-						list: []
-					}
-				]
+				newsitems: [],
+				tabBars: [{
+					name: '关注',
+					id: 'guanzhu',
+					template: "index"
+				}, {
+					name: '推荐',
+					id: 'tuijian',
+					template: "special"
+				}, {
+					name: '体育',
+					id: 'tiyu',
+					template: "special"
+				}, {
+					name: '热点',
+					id: 'redian',
+					template: "special"
+				}, {
+					name: '财经',
+					id: 'caijing',
+					template: "special"
+				}, {
+					name: '娱乐',
+					id: 'yule',
+					template: "special"
+				}, {
+					name: '军事',
+					id: 'junshi',
+					template: "special"
+				}, {
+					name: '历史',
+					id: 'lishi',
+					template: "special"
+				}, {
+					name: '本地',
+					id: 'bendi',
+					template: "special"
+				}]
 			}
-		},	
-		// 监听当前窗口  新版本改成生命周期函数
-		onNavigationBarSearchInputClicked(e) {
-			uni.navigateTo({
-				url: "../search/search"
-			})
 		},
+		// 页面加载，加载数据
 		onLoad() {
-			// 获取可视区域高度
-			uni.getSystemInfo({
-				success: (res) => {
-					this.scrollH = res.windowHeight - uni.upx2px(82)
-				}
-			})
-			// 初始化事件
-			this._init();
+			this.newsitems = this.randomfn()
 		},
 		methods: {
-			// 初始化事件
-			_init() {
-				this.tabBars = demoTabBars; // 获取顶部选项卡
-				// 根据顶部选项卡生成页面
-				let arr = [];
-				for (var i = 0; i < this.tabBars.length; i++) {
-					let obj = {
-						list: [],
-						loadtext: "上拉加载更多" // 1.上拉加载更多 2.加载中... 3.没有更多了
-					}
-					if (i === 0) {
-						obj.list = demo1;
-					}
-					arr.push(obj)
+			// 加载更多
+			loadMore(e) {
+				setTimeout(() => {
+					this.addData(e);
+				}, 1200);
+			},
+			// 加载更多模拟数据
+			addData(e) { //拿到当前索引e
+				if (this.newsitems[e].data.length > 30) {
+					this.newsitems[e].loadingText = '没有更多了';
+					return;
 				}
-				this.newsitems = arr;
+				let arr = [{
+						type: "swiper",
+						data: [{
+								src: "../../static/images/demo/demo4.jpg"
+							},
+							{
+								src: "../../static/images/demo/demo4.jpg"
+							},
+							{
+								src: "../../static/images/demo/demo4.jpg"
+							}
+						]
+					},
+					{
+						type: "indexnavs",
+						data: [{
+								src: "/static/images/indexnav/1.png",
+								text: "新品发布"
+							},
+							{
+								src: "/static/images/indexnav/2.gif",
+								text: "小米众筹"
+							},
+							{
+								src: "/static/images/indexnav/3.gif",
+								text: "以旧换新"
+							},
+							{
+								src: "/static/images/indexnav/4.gif",
+								text: "一分换团"
+							},
+							{
+								src: "/static/images/indexnav/5.gif",
+								text: "超值特卖"
+							},
+						]
+					},
+					{
+						type: "list",
+						data: [{
+								cover: "/static/images/demo/list/1.jpg",
+								title: "米家空调",
+								desc: "1.5匹变频",
+								oprice: 2699,
+								pprice: 1399
+							},
+							{
+								cover: "/static/images/demo/list/1.jpg",
+								title: "米家空调",
+								desc: "1.5匹变频",
+								oprice: 2699,
+								pprice: 1399
+							},
+							{
+								cover: "/static/images/demo/list/1.jpg",
+								title: "米家空调",
+								desc: "1.5匹变频",
+								oprice: 2699,
+								pprice: 1399
+							},
+							{
+								cover: "/static/images/demo/list/1.jpg",
+								title: "米家空调",
+								desc: "1.5匹变频",
+								oprice: 2699,
+								pprice: 1399
+							},
+							{
+								cover: "/static/images/demo/list/1.jpg",
+								title: "米家空调",
+								desc: "1.5匹变频",
+								oprice: 2699,
+								pprice: 1399
+							},
+							{
+								cover: "/static/images/demo/list/1.jpg",
+								title: "米家空调",
+								desc: "1.5匹变频",
+								oprice: 2699,
+								pprice: 1399
+							}
+						]
+					}
+				];
+				this.newsitems[e].data = [...this.newsitems[e].data, ...arr];
 			},
-			// 切换选项卡
-			changeTab(index) {
-				if (this.tabIndex == index) return;
-				this.tabIndex = index;
-				this.scrollinto = "tab" + index;
-				this.addData();
+			// 改变tab
+			async changeTab(e) {
+				let index = e.target.current;
+				if (this.newsitems[index].data.length === 0) {
+					this.addData(index)
+				}
+				if (this.isClickChange) {
+					this.tabIndex = index;
+					this.isClickChange = false;
+					return;
+				}
+				let tabBar = await this.getElSize("tab-bar"),
+					tabBarScrollLeft = tabBar.scrollLeft;
+				let width = 0;
+
+				for (let i = 0; i < index; i++) {
+					let result = await this.getElSize(this.tabBars[i].id);
+					width += result.width;
+				}
+				let winWidth = uni.getSystemInfoSync().windowWidth,
+					nowElement = await this.getElSize(this.tabBars[index].id),
+					nowWidth = nowElement.width;
+				if (width + nowWidth - tabBarScrollLeft > winWidth) {
+					this.scrollLeft = width + nowWidth - winWidth;
+				}
+				if (width < tabBarScrollLeft) {
+					this.scrollLeft = width;
+				}
+				this.isClickChange = false;
+				this.tabIndex = index; //一旦访问data就会出问题
 			},
-			// 监听滑动列表
-			onChangeTab(e) {
-				this.changeTab(e.detail.current);
+			getElSize(id) { //得到元素的size
+				return new Promise((res, rej) => {
+					uni.createSelectorQuery().select("#" + id).fields({
+						size: true,
+						scrollOffset: true
+					}, (data) => {
+						res(data);
+					}).exec();
+				})
 			},
-			// 加载数据
-			addData() {
-				// 拿到当前索引
-				let index = this.tabIndex;
-				// 请求数据库
-				this.newsitems[index].list = demo2;
+			async tapTab(e) { //点击tab-bar
+				let tabIndex = e;
+				if (this.newsitems[tabIndex].data.length === 0) {
+					this.addData(tabIndex)
+				}
+				if (this.tabIndex === tabIndex) {
+					return false;
+				} else {
+					let tabBar = await this.getElSize("tab-bar"),
+						tabBarScrollLeft = tabBar.scrollLeft; //点击的时候记录并设置scrollLeft
+					this.scrollLeft = tabBarScrollLeft;
+					this.isClickChange = true;
+					this.tabIndex = tabIndex;
+				}
 			},
-			// 上拉加载更多
-			loadmore(index) {
-				let item = this.newsitems[index];
-				// 是否处于可加载状态
-				if (item.loadtext !== '上拉加载更多') return;
-				// 模拟加载
-				item.loadtext = "加载中...";
-				setTimeout(()=> {
-					 //加载数据
-					item.list = [...item.list, ...demo2];
-					 //恢复状态
-					item.loadtext = '上拉加载更多';
-				}, 2000)
+			// 生成随机数据
+			randomfn() {
+				let ary = [];
+				// 拿到tabbars的长度，根据长度生成页面
+				let tablength = this.tabBars.length;
+				for (let i = 0; i < tablength; i++) {
+					let aryItem = {
+						loadingText: '加载更多...',
+						data: []
+					};
+					// 给页面添加数据
+					if (this.tabBars[i].template === 'index') {
+						aryItem.data = [{
+								type: "swiper",
+								data: [{
+										src: "../../static/images/demo/demo4.jpg"
+									},
+									{
+										src: "../../static/images/demo/demo4.jpg"
+									},
+									{
+										src: "../../static/images/demo/demo4.jpg"
+									}
+								]
+							},
+							{
+								type: "indexnavs",
+								data: [{
+										src: "/static/images/indexnav/1.png",
+										text: "新品发布"
+									},{
+										src: "/static/images/indexnav/2.gif",
+										text: "小米众筹"
+									},{
+										src: "/static/images/indexnav/3.gif",
+										text: "以旧换新"
+									},
+									{
+										src: "/static/images/indexnav/4.gif",
+										text: "一分换团"
+									},
+									{
+										src: "/static/images/indexnav/5.gif",
+										text: "超值特卖"
+									},
+					 			{
+										src: "/static/images/indexnav/6.gif",
+										text: "小米秒杀"
+									},{
+										src: "/static/images/indexnav/7.gif",
+										text: "真心想要"
+									},
+									{
+										src: "/static/images/indexnav/8.gif",
+										text: "电视热卖"
+									},
+									{
+										src: "/static/images/indexnav/9.gif",
+										text: "家电热卖"
+									},
+									{
+										src: "/static/images/indexnav/10.gif",
+										text: "米粉卡"
+									},
+								]
+							},
+							{
+								type: "threeAdv",
+								data: {
+									big: {
+										src: "/static/images/demo/demo1.jpg"
+									},
+									smalltop: {
+										src: "/static/images/demo/demo2.jpg"
+									},
+									smallbottom: {
+										src: "/static/images/demo/demo2.jpg"
+									},
+								}
+							},
+							{
+								type: "oneAdv",
+								data: {
+									title: "每日精选",
+									cover: "/static/images/demo/demo4.jpg"
+								}
+							},
+							{
+								type: "list",
+								data: [{
+										cover: "/static/images/demo/list/1.jpg",
+										title: "米家空调",
+										desc: "1.5匹变频",
+										oprice: 2699,
+										pprice: 1399
+									},
+									{
+										cover: "/static/images/demo/list/1.jpg",
+										title: "米家空调",
+										desc: "1.5匹变频",
+										oprice: 2699,
+										pprice: 1399
+									},
+									{
+										cover: "/static/images/demo/list/1.jpg",
+										title: "米家空调",
+										desc: "1.5匹变频",
+										oprice: 2699,
+										pprice: 1399
+									},
+									{
+										cover: "/static/images/demo/list/1.jpg",
+										title: "米家空调",
+										desc: "1.5匹变频",
+										oprice: 2699,
+										pprice: 1399
+									},
+									{
+										cover: "/static/images/demo/list/1.jpg",
+										title: "米家空调",
+										desc: "1.5匹变频",
+										oprice: 2699,
+										pprice: 1399
+									},
+									{
+										cover: "/static/images/demo/list/1.jpg",
+										title: "米家空调",
+										desc: "1.5匹变频",
+										oprice: 2699,
+										pprice: 1399
+									}
+								]
+							}
+						];
+					}
+					ary.push(aryItem);
+				}
+				return ary;
 			}
 		}
 	}
 </script>
 
 <style>
+	.tabitems {
+		display: inline-block;
+		width: 75upx;
+		border-bottom: 5upx solid #FFFFFF;
+	}
+
+	.active .tabitems {
+		border-bottom-color: #FD6801;
+	}
+
+	.uni-tab-bar-loading {
+		text-align: center;
+		font-size: 28upx;
+		color: #999;
+	}
 </style>

@@ -282,6 +282,36 @@
             "style" : {
 				"navigationBarTitleText":"消息详情页"
             }
+        },
+		{
+            "path" : "pages/pay-methods/pay-methods",
+            "style" : {
+				"navigationBarTitleText":"选择支付方式"
+            } 
+        },
+		{
+            "path" : "pages/pay-result/pay-result",
+            "style" : {
+				"navigationBarTitleText":"支付成功"
+            }
+        },
+		{
+            "path" : "pages/order-coupon/order-coupon",
+            "style" : {
+				"navigationBarTitleText":"优惠券"
+            }
+        },
+		{
+            "path" : "pages/order-detail/order-detail",
+            "style" : {
+				"app-plus":{
+					"bounce":"none",
+					"titleNView":{
+						"type":"transparent"
+					}
+				}
+			}
+            
         }
     ],
 	// 全局配置
