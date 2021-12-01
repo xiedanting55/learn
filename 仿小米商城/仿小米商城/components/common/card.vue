@@ -1,5 +1,5 @@
 <template>
-	<view class="card">
+	<view class="card" :style="cardStyle">
 		<!-- head -->
 		<view v-if="showHead" class="p-2 main-border-color" :class="getHeadClass">
 			<slot name="title">
@@ -35,7 +35,11 @@
 				type: Boolean,
 				default: false
 			},
-			bodyStyle: String
+			bodyStyle: String,
+			cardStyle:{
+				type:String,
+				default:""
+			}
 		},
 		computed: {
 			getHeadClass() {

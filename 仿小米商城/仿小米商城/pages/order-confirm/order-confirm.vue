@@ -1,8 +1,7 @@
 <template>
 	<view style="background: #F5F5F5;min-height: 100%;height: auto;">
 		<!-- 地址选择 -->
-		<view class="main-bg-color text-white d-flex a-center px-3" 
-		style="height: 250rpx;" hover-class="main-bg-hover-color">
+		<view class="main-bg-color text-white d-flex a-center px-3" style="height: 250rpx;" hover-class="main-bg-hover-color" @click="openPathList">
 			<view>
 				<template v-if="path">
 					<view class="font-weight font-md d-flex a-center font-lg">
@@ -28,15 +27,9 @@
 			<view class="bg-white">
 				<uni-list-item showArrow>
 					<view class="d-flex a-center">
-						<image src="/static/images/demo/demo6.jpg"
-						style="width: 100rpx;height: 100rpx;" class="rounded mr-2"
-						></image>
-						<image src="/static/images/demo/demo6.jpg"
-						style="width: 100rpx;height: 100rpx;" class="rounded mr-2"
-						></image>
-						<image src="/static/images/demo/demo6.jpg"
-						style="width: 100rpx;height: 100rpx;" class="rounded mr-2"
-						></image>
+						<image src="/static/images/demo/demo6.jpg" style="width: 100rpx;height: 100rpx;" class="rounded mr-2"></image>
+						<image src="/static/images/demo/demo6.jpg" style="width: 100rpx;height: 100rpx;" class="rounded mr-2"></image>
+						<image src="/static/images/demo/demo6.jpg" style="width: 100rpx;height: 100rpx;" class="rounded mr-2"></image>
 					</view>
 					<view slot="rightContent">共3件</view>
 				</uni-list-item>
@@ -58,7 +51,7 @@
 					</view>
 				</uni-list-item>
 				<divider></divider>
-				<uni-list-item title="发票" extraWidth="40%">
+				<uni-list-item title="发票" extraWidth="40%" clickable @click="openOrderInvoice">
 					<view slot="rightContent">电子发票-个人</view>
 				</uni-list-item>
 				
@@ -70,10 +63,7 @@
 			<view class="ml-2">
 				<price>24.00</price>
 			</view>
-			<view class="ml-2 px-2 py-1 main-bg-color text-white font-md"
-			hover-class="main-bg-hover-color" style="border-radius: 80rpx;">
-				去支付
-			</view>
+			<view class="ml-2 px-2 py-1 main-bg-color text-white font-md" hover-class="main-bg-hover-color" style="border-radius: 80rpx;">去支付</view>
 		</view>
 		
 	</view>
@@ -101,9 +91,28 @@
 			if (this.defaultPath.length) {
 				this.path = this.defaultPath[0]
 			}
+			// 开启监听选择收获地址事件
+			uni.$on('chosePath', (res)=> {
+				this.path = res;
+			})
+		},
+		onUnload() {
+			// 关闭监听收货地址的事件
+			uni.$off('chosePath', (e)=> {
+				console.log('关闭监听收货地址');
+			});
 		},
 		methods: {
-			
+			openPathList() {
+				uni.navigateTo({
+					url: "../user-path-list/user-path-list?type=chose"
+				})
+			},
+			openOrderInvoice() {
+				uni.navigateTo({
+					url: "../order-invoice/order-invoice"
+				})
+			}
 		}
 	}
 </script>

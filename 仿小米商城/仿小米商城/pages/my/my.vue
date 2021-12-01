@@ -2,14 +2,19 @@
 	<view>
 		<!-- 头部 -->
 		<view class="position-relative d-flex a-center" style="height: 320rpx;">
-			<view class="iconfont icon-xiaoxi position-absolute text-white"
-				style="font-size: 50rpx;top: 75rpx;right: 20rpx;z-index: 100;"></view>
+			<!-- 消息列表 -->
+			<navigator url="../msg-list/msg-list">
+				<view class="iconfont icon-xiaoxi position-absolute text-white"
+					style="font-size: 50rpx;top: 75rpx;right: 20rpx;z-index: 100;"></view>
+			</navigator>
 			<image src="/static/images/bg.jpg" style="height: 320rpx;width: 100%;"></image>
 
 			<view class="d-flex a-center position-absolute left-0 right-0" style="bottom: 50rpx;">
 				<image src="/static/images/demo/demo6.jpg" style="height: 145rpx;width: 145rpx;border: 5rpx solid;"
 					class="rounded-circle border-light ml-4"></image>
-				<view class="ml-2 text-white font-md">测试昵称</view>
+				<navigator url="../login/login">
+					<view class="ml-2 text-white font-md">测试昵称</view>
+				</navigator>
 				<view class="d-flex a-center j-center a-self-end ml-auto px-2"
 					style="height: 70rpx;background: #FFD43F;color: #CC4A00;border-top-left-radius: 40rpx;border-bottom-left-radius: 40rpx;">
 					<view class="line-h iconfont icon-huangguan mr-1"></view>
@@ -46,14 +51,13 @@
 		<uni-list-item showExtraIcon leftIconStyle="color:#9ED45A;" leftIcon="icon-gengduo" title="更多功能">
 		</uni-list-item>
 		<divider></divider>
-		<uni-list-item showExtraIcon leftIconStyle="color:#808C98;" leftIcon="icon-icon_set_up" title="更多设置"
-			clickable @click="navigate('user-set')"></uni-list-item>
+		<uni-list-item showExtraIcon leftIconStyle="color:#808C98;" leftIcon="icon-icon_set_up" title="更多设置" clickable
+			@click="navigate('user-set')"></uni-list-item>
 	</view>
 </template>
 
 <script>
 	import card from "@/components/common/card.vue"
-	import divider from "@/components/common/divider.vue"
 	import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
 	export default {
 		data() {
@@ -63,7 +67,6 @@
 		},
 		components: {
 			card,
-			divider,
 			uniListItem
 		},
 		methods: {

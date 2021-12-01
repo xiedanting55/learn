@@ -200,7 +200,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var divider = function divider() {__webpack_require__.e(/*! require.ensure | components/common/divider */ "components/common/divider").then((function () {return resolve(__webpack_require__(/*! @/components/common/divider.vue */ 101));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var mpvueCityPicker = function mpvueCityPicker() {Promise.all(/*! require.ensure | components/uni-ui/mpvue-citypicker/mpvueCityPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-ui/mpvue-citypicker/mpvueCityPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/mpvue-citypicker/mpvueCityPicker.vue */ 235));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var divider = function divider() {__webpack_require__.e(/*! require.ensure | components/common/divider */ "components/common/divider").then((function () {return resolve(__webpack_require__(/*! @/components/common/divider.vue */ 115));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var mpvueCityPicker = function mpvueCityPicker() {Promise.all(/*! require.ensure | components/uni-ui/mpvue-citypicker/mpvueCityPicker */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-ui/mpvue-citypicker/mpvueCityPicker")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/mpvue-citypicker/mpvueCityPicker.vue */ 249));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 {
@@ -210,6 +210,7 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
       pickerValue: [0, 0, 1],
       pickerText: '',
       isedit: false,
+      index: -1,
       form: {
         name: "",
         phone: "",
@@ -242,10 +243,13 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
       this.form = result.item;
       this.index = result.index;
       this.isedit = true;
+      uni.setNavigationBarTitle({
+        title: "修改收货地址" });
+
     }
   },
   methods: _objectSpread(_objectSpread({},
-  (0, _vuex.mapMutations)(['createPath', 'updatePath'])), {}, {
+  (0, _vuex.mapActions)(["updatePathAction", "createPathAction"])), {}, {
     // 三级联动确定
     onConfirm: function onConfirm(e) {
       this.form.path = e.label;
@@ -261,7 +265,7 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
 
       // 修改
       if (this.isedit) {
-        this.updatePath({
+        this.updatePathAction({
           index: this.index,
           item: this.form });
 
@@ -274,7 +278,7 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
       }
 
       // 创建
-      this.createPath(this.form);
+      this.createPathAction(this.form);
       uni.showToast({
         title: '创建成功' });
 

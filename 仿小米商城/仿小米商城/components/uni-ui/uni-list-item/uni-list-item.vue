@@ -29,6 +29,7 @@
 					</view>
 				</slot>
 				<slot name="footer">
+					<slot name="rightContent"></slot>
 					<view v-if="rightText || showBadge || showSwitch" class="uni-list-item__extra"
 						:class="{ 'flex--justify': direction === 'column' }" :style="'width:'+extraWidth+';'">
 						<slot name="right">

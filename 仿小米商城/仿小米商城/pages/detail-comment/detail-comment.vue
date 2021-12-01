@@ -56,7 +56,6 @@
 </template>
 
 <script>
-	import divider from "@/components/common/divider.vue"
 	export default {
 		data() {
 			return {
@@ -84,9 +83,6 @@
 					},
 				],
 			}
-		},
-		components: {
-			divider
 		},
 		methods: {
 			cateChange(index) {

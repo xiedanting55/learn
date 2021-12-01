@@ -48,7 +48,6 @@
 </template>
 
 <script>
-	import divider from "@/components/common/divider.vue"
 	import mpvueCityPicker from "@/components/uni-ui/mpvue-citypicker/mpvueCityPicker.vue"
 	import {
 		mapActions
@@ -71,7 +70,6 @@
 			}
 		},
 		components: {
-			divider,
 			mpvueCityPicker
 		},
 		// 监听返回

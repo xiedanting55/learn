@@ -11,7 +11,9 @@
         "pages/user-set/user-set",
         "pages/user-userinfo/user-userinfo",
         "pages/user-path-list/user-path-list",
-        "pages/user-path-edit/user-path-edit"
+        "pages/user-path-edit/user-path-edit",
+        "pages/order/order",
+        "pages/order-confirm/order-confirm"
     ],
     "subPackages": [],
     "window": {

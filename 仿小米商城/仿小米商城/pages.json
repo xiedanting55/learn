@@ -252,6 +252,36 @@
 				"navigationBarTextStyle":"white"
             }
             
+        },
+		{
+            "path" : "pages/order-invoice/order-invoice",
+            "style" : {
+                "navigationBarTitleText": "发票"
+            }
+        },
+		{
+            "path" : "pages/login/login",
+            "style" : {
+				"app-plus": {
+					"bounce":"none",
+					"scrollIndicator":"none",
+					"titleNView": "none"
+				}
+            }
+            
+        },
+		{
+            "path" : "pages/msg-list/msg-list",
+            "style" : {
+				"navigationBarTitleText":"消息列表"
+            }
+            
+        },
+		{
+            "path" : "pages/msg-detail/msg-detail",
+            "style" : {
+				"navigationBarTitleText":"消息详情页"
+            }
         }
     ],
 	// 全局配置

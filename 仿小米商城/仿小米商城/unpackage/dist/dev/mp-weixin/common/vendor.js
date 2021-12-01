@@ -941,7 +941,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -3751,7 +3751,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-  getters: {},
+  getters: {
+    // 获取默认地址
+    defaultPath: function defaultPath(state) {
+      return state.list.filter(function (v) {return v.isdefault;});
+    } },
+
   mutations: {
     // 创建收货地址
     createPath: function createPath(state, item) {
@@ -3766,9 +3771,31 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
       for (var key in item) {
         state.list[index][key] = item[key];
       }
+    },
+    // 取消默认地址
+    removeDefault: function removeDefault(state) {
+      state.list.forEach(function (v) {
+        if (v.isdefault) {
+          v.isdefault = false;
+        }
+      });
     } },
 
-  actions: {} };exports.default = _default;
+  actions: {
+    // 修改地址
+    updatePathAction: function updatePathAction(_ref2, obj) {var commit = _ref2.commit;
+      if (obj.item.isdefault) {
+        commit("removeDefault");
+      }
+      commit("updatePath", obj);
+    },
+    // 增加地址
+    createPathAction: function createPathAction(_ref3, item) {var commit = _ref3.commit;
+      if (item.isdefault) {
+        commit("removeDefault");
+      }
+      commit("createPath", item);
+    } } };exports.default = _default;
 
 /***/ }),
 
@@ -3803,7 +3830,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 205:
+/***/ 219:
 /*!***************************************************************************!*\
   !*** D:/learn/仿小米商城/仿小米商城/components/uni-ui/uParse/src/libs/html2json.js ***!
   \***************************************************************************/
@@ -3825,8 +3852,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _wxDiscode = _interopRequireDefault(__webpack_require__(/*! ./wxDiscode */ 206));
-var _htmlparser = _interopRequireDefault(__webpack_require__(/*! ./htmlparser */ 207));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
+var _wxDiscode = _interopRequireDefault(__webpack_require__(/*! ./wxDiscode */ 220));
+var _htmlparser = _interopRequireDefault(__webpack_require__(/*! ./htmlparser */ 221));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} /**
                                                                                                                                                                  * html2Json 改造来自: https://github.com/Jxck/html2json
                                                                                                                                                                  *
                                                                                                                                                                  *
@@ -4075,7 +4102,7 @@ html2json;exports.default = _default;
 
 /***/ }),
 
-/***/ 206:
+/***/ 220:
 /*!***************************************************************************!*\
   !*** D:/learn/仿小米商城/仿小米商城/components/uni-ui/uParse/src/libs/wxDiscode.js ***!
   \***************************************************************************/
@@ -4280,7 +4307,7 @@ function urlToHttpUrl(url, domain) {
 
 /***/ }),
 
-/***/ 207:
+/***/ 221:
 /*!****************************************************************************!*\
   !*** D:/learn/仿小米商城/仿小米商城/components/uni-ui/uParse/src/libs/htmlparser.js ***!
   \****************************************************************************/
@@ -4447,7 +4474,7 @@ HTMLParser;exports.default = _default;
 
 /***/ }),
 
-/***/ 230:
+/***/ 244:
 /*!*********************************************************************!*\
   !*** D:/learn/仿小米商城/仿小米商城/components/uni-ui/uni-swipe-action/mp.js ***!
   \*********************************************************************/
@@ -4540,7 +4567,7 @@ HTMLParser;exports.default = _default;
 
 /***/ }),
 
-/***/ 240:
+/***/ 254:
 /*!*************************************************************************************!*\
   !*** D:/learn/仿小米商城/仿小米商城/components/uni-ui/mpvue-citypicker/city-data/province.js ***!
   \*************************************************************************************/
@@ -4690,7 +4717,7 @@ provinceData;exports.default = _default;
 
 /***/ }),
 
-/***/ 241:
+/***/ 255:
 /*!*********************************************************************************!*\
   !*** D:/learn/仿小米商城/仿小米商城/components/uni-ui/mpvue-citypicker/city-data/city.js ***!
   \*********************************************************************************/
@@ -6204,7 +6231,7 @@ cityData;exports.default = _default;
 
 /***/ }),
 
-/***/ 242:
+/***/ 256:
 /*!*********************************************************************************!*\
   !*** D:/learn/仿小米商城/仿小米商城/components/uni-ui/mpvue-citypicker/city-data/area.js ***!
   \*********************************************************************************/
@@ -18757,7 +18784,18 @@ areaData;exports.default = _default;
 
 /***/ }),
 
-/***/ 264:
+/***/ 28:
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ 29);
+
+/***/ }),
+
+/***/ 288:
 /*!*****************************************************************!*\
   !*** D:/learn/仿小米商城/仿小米商城/components/uni-ui/uni-icons/icons.js ***!
   \*****************************************************************/
@@ -19877,17 +19915,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     "font_class": "cart",
     "unicode": "e631",
     "unicode_decimal": 58929 }] };exports.default = _default;
-
-/***/ }),
-
-/***/ 28:
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! regenerator-runtime */ 29);
 
 /***/ }),
 
@@ -25466,7 +25493,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -25487,14 +25514,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -25580,7 +25607,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"仿小米商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));

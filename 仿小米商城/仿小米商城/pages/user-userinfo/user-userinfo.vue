@@ -21,7 +21,6 @@
 </template>
 
 <script>
-	import divider from "@/components/common/divider.vue"
 	import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
 	export default {
 		data() {
@@ -30,7 +29,6 @@
 			}
 		},
 		components: {
-			divider,
 			uniListItem
 		},
 		methods: {

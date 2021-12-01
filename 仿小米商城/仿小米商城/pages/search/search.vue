@@ -21,13 +21,11 @@
 <script>
 	import card from "@/components/common/card.vue"
 	import colorTag from "@/components/search/color-tag.vue"
-	import divider from "@/components/common/divider.vue"
 	import uniListItem from "@/components/uni-ui/uni-list-item/uni-list-item.vue"
 	export default {
 		components: {
 			card,
 			colorTag,
-			divider,
 			uniListItem
 		},
 		data() {

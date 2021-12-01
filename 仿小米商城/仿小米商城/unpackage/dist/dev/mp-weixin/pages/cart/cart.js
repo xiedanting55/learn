@@ -137,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -236,7 +236,22 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 140));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var price = function price() {__webpack_require__.e(/*! require.ensure | components/common/price */ "components/common/price").then((function () {return resolve(__webpack_require__(/*! @/components/common/price.vue */ 147));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniNumberBox = function uniNumberBox() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-number-box/uni-number-box */ "components/uni-ui/uni-number-box/uni-number-box").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-number-box/uni-number-box.vue */ 152));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var commonPopup = function commonPopup() {__webpack_require__.e(/*! require.ensure | components/common/common-popup */ "components/common/common-popup").then((function () {return resolve(__webpack_require__(/*! @/components/common/common-popup.vue */ 159));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var card = function card() {__webpack_require__.e(/*! require.ensure | components/common/card */ "components/common/card").then((function () {return resolve(__webpack_require__(/*! @/components/common/card.vue */ 130));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var zcmRadioGroup = function zcmRadioGroup() {__webpack_require__.e(/*! require.ensure | components/common/radio-group */ "components/common/radio-group").then((function () {return resolve(__webpack_require__(/*! @/components/common/radio-group.vue */ 166));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 154));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var price = function price() {__webpack_require__.e(/*! require.ensure | components/common/price */ "components/common/price").then((function () {return resolve(__webpack_require__(/*! @/components/common/price.vue */ 161));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniNumberBox = function uniNumberBox() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-number-box/uni-number-box */ "components/uni-ui/uni-number-box/uni-number-box").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-number-box/uni-number-box.vue */ 166));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var commonPopup = function commonPopup() {__webpack_require__.e(/*! require.ensure | components/common/common-popup */ "components/common/common-popup").then((function () {return resolve(__webpack_require__(/*! @/components/common/common-popup.vue */ 173));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var card = function card() {__webpack_require__.e(/*! require.ensure | components/common/card */ "components/common/card").then((function () {return resolve(__webpack_require__(/*! @/components/common/card.vue */ 144));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var zcmRadioGroup = function zcmRadioGroup() {__webpack_require__.e(/*! require.ensure | components/common/radio-group */ "components/common/radio-group").then((function () {return resolve(__webpack_require__(/*! @/components/common/radio-group.vue */ 180));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var commonList = function commonList() {__webpack_require__.e(/*! require.ensure | components/common/common-list */ "components/common/common-list").then((function () {return resolve(__webpack_require__(/*! @/components/common/common-list.vue */ 149));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -249,11 +264,55 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
     uniNumberBox: uniNumberBox,
     commonPopup: commonPopup,
     card: card,
-    zcmRadioGroup: zcmRadioGroup },
+    zcmRadioGroup: zcmRadioGroup,
+    commonList: commonList },
 
   data: function data() {
     return {
-      isEdit: false };
+      isEdit: false,
+      hotList: [{
+        cover: "/static/images/demo/list/1.jpg",
+        title: "米家空调",
+        desc: "1.5匹变频",
+        oprice: 2699,
+        pprice: 1399 },
+
+      {
+        cover: "/static/images/demo/list/1.jpg",
+        title: "米家空调",
+        desc: "1.5匹变频",
+        oprice: 2699,
+        pprice: 1399 },
+
+      {
+        cover: "/static/images/demo/list/1.jpg",
+        title: "米家空调",
+        desc: "1.5匹变频",
+        oprice: 2699,
+        pprice: 1399 },
+
+      {
+        cover: "/static/images/demo/list/1.jpg",
+        title: "米家空调",
+        desc: "1.5匹变频",
+        oprice: 2699,
+        pprice: 1399 },
+
+      {
+        cover: "/static/images/demo/list/1.jpg",
+        title: "米家空调",
+        desc: "1.5匹变频",
+        oprice: 2699,
+        pprice: 1399 },
+
+      {
+        cover: "/static/images/demo/list/1.jpg",
+        title: "米家空调",
+        desc: "1.5匹变频",
+        oprice: 2699,
+        pprice: 1399 }] };
+
+
 
   },
   onLoad: function onLoad() {
@@ -272,7 +331,14 @@ var _vuex = __webpack_require__(/*! vuex */ 13);function ownKeys(object, enumera
     changeNumber: function changeNumber(event, item, index) {
       item.num = event;
       console.log(event, item, index);
+    },
+    // 订单结算
+    orderConfirm: function orderConfirm() {
+      uni.navigateTo({
+        url: "../order-confirm/order-confirm" });
+
     } }) };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 

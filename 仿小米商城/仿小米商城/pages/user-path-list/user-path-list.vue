@@ -2,7 +2,7 @@
 	<view>
 		<block v-for="(item,index) in list" :key="index">
 			<uni-swipe-action :options="options" @click="bindClick($event,index)">
-				<uni-list-item>
+				<uni-list-item clickable @click="chose(item)">
 					<view class="text-secondary">
 						<view class="d-flex a-center">
 							<text class="main-text-color">{{item.name}}</text>
@@ -25,6 +25,7 @@
 	export default {
 		data() {
 			return {
+				isChose: false,
 				options: [{
 					text: '修改',
 					style: {
@@ -56,6 +57,9 @@
 				list: state => state.path.list
 			}),	
 		},
+		onLoad(e) {
+			e.type === 'chose' ? this.isChose = true : this.isChose = false;
+		},
 		methods: {
 			...mapMutations(["delPath"]),
 			bindClick(value, i) {
@@ -86,6 +90,17 @@
 						break;
 				}
 			},
+			// 选择收获地址
+			chose(item) {
+				if(this.isChose) {
+					// 通知订单提交页修改收获地址
+					uni.$emit('chosePath', item);
+					// 关闭当前页面
+					uni.navigateBack({
+						delta: 1
+					});
+				}
+			}
 		}
 	}
 </script>
