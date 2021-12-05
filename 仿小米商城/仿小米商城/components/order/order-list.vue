@@ -35,7 +35,11 @@
 		</view>
 		<view class="d-flex j-end a-center px-2 pb-2">
 			<view class="rounded border border-light-secondary py-1 px-2 text-secondary" 
-			hover-class="bg-light-secondary">
+			hover-class="bg-light-secondary" @click.stop="openAfterSale">
+				申请售后
+			</view> 
+			<view class="ml-2 rounded border border-light-secondary py-1 px-2 text-secondary" 
+			hover-class="bg-light-secondary" @click.stop="openLogisticsDetail">
 				查看物流
 			</view> 
 			<view class="ml-2 rounded border border-light-secondary py-1 px-2 text-secondary" 
@@ -53,6 +57,16 @@
 			index:Number
 		},
 		methods: {
+			openAfterSale() {
+				uni.navigateTo({
+					url: "../../pages/after-sale/after-sale"
+				})
+			},
+			openLogisticsDetail() {
+				uni.navigateTo({
+					url: "../../pages/logistics-detail/logistics-detail"
+				})
+			},
 			openOrderDetail() {
 				uni.navigateTo({
 					url: "../../pages/order-detail/order-detail"
