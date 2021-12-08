@@ -941,9 +941,120 @@ for(var i = 0; i <= num; i++) {
 }
 ```
 
+> 示例
 
+累加求和(1+10的值)
+
+```
+var sum = 0;
+for(var i = 1; i<=10; i++) {
+	sum += i;
+}
+console.log(sum)
+```
+
+> 练习
+
+提示用户输入两个数字，计算累加求和
+
+```
+var num1 = parseInt(prompt("请输入第一个数字"));
+var num2 = parseInt(prompt("请输入第二个数字"));
+var sum = 0;
+for (var i = num1; i <= num2; i++) {
+	sum += i
+}
+console.log(sum)
+```
+
+在for循环中，可以使用if和for循环
+
+> 示例
+
+分别求1-100的奇数和，偶数和
+
+```
+var oddSum = 0;  //奇数
+var evenSum = 0;  //偶数
+for (var i = 1; i <= 100; i++) {
+    if(i%2 == 0) {
+    	evenSum += i;
+    } else {
+    	oddSum += i;
+    }
+}
+console.log(oddSum, evenSum);
+```
+
+> 示例
+
+打印3行3列的星星
+
+```
+var start = "";
+for (var i = 1; i <=3; i++) {
+    for (var j = 1; j <=3; j++) {
+        start += "*";
+    }
+	start += "\n";
+}
+console.log(start)
+```
+
+> 练习
+
+打印n行m列的星星
+
+```
+var n = parseInt(prompt("请行的个数"));
+var m = parseInt(prompt("请列的行数"));
+var start = "";
+for (var i = 1; i <= n; i++) {
+    for (var j = 1; j <= m; j++) {
+    	start += "*";
+    }
+	start += "\n";
+}
+console.log(start)
+```
+
+> 示例
+
+打印9*9乘法表
+
+```
+var str = "";
+for (var i = 1; i <= 9; i++) {
+    for (var j = 1; j <= i; j++) {
+        str += j + "x" + i + ' = ' + j*i + " "; 
+    }
+	str += '\n'
+}
+console.log(str);
+```
 
 ### 02）while循环
+
+> 语法
+
+```
+while(条件表达式) {
+	// 当...条件满足时，一直执行循环体
+	//循环体代码
+}
+```
+
+do...while
+
+```
+do {
+	// 循环体代码-条件表达式为true时执行循环体代码
+}while(条件表达式)
+```
+
+当条件满足时，执行
+
+**区别是do...while会先执行一次再判断**
 
 ### 03）跳出循环
 
