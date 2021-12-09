@@ -40,46 +40,37 @@
         let left = document.getElementById("left");  //left arrow
         let right = document.getElementById("right");  //right arrow
         let key = 0;
-        // 0 5 4 3 2 1
-        // left.onclick = function () {
-        //     if (key == photo.length - 1) key = 0;
-        //     key--
-        // }
-        // 0 1 2 3 4 5
-        right.onclick = function () {
-            if (key == photo.length - 1) key = 0;
-            key++;
-            for (let i = 0; i < photo.length; i++) {
-                if (key == i) {
-                    photo[i].style.display = "block";
-                } else {
-                    photo[i].style.display = "none";
-                }
+        let oldPhoto = photo[key] //第一张  标记的是 即将要取消类名的旧 li
+        let oldPhotoSlider = photoSlider[key] //第一张  标记的是 即将要取消类名的旧 li
+        left.onclick = function () {
+            key--; //num  = 1
+            if (key < 0) {//到序号(最后一张)再往下点时 
+                key = 4;
             }
+            run();
+        }
+        right.onclick = function () {
+            key++;
+            if (key > photo.length - 1) {//到序号(最后一张)再往下点时 
+                key = 0;
+            }
+            run();
         }
 
         for (let i = 0; i < photoSlider.length; i++) {
-            if (key == i) {
-                photoSlider[i].classList.add("current");
-            } else {
-                photoSlider[i].classList.remove("current");
-            }
             photoSlider[i].onclick = function () {
                 key = i;
-                this.classList.add("current");
-                changeBig(i);
+                run()
             }
-            console.log(key)
         }
 
-        function changeBig(value) {
-            for (let i = 0; i < photo.length; i++) {
-                if (value == i) {
-                    photo[i].style.display = "block";
-                } else {
-                    photo[i].style.display = "none";
-                }
-            }
+        function run() {
+            oldPhoto.style.display = "none"; //每次取消上一次的li 
+            oldPhotoSlider.classList.remove("current");
+            oldPhoto = photo[key]; //是把 oldLi 更新为当前的 li
+            oldPhotoSlider = photoSlider[key]
+            photo[key].style.display = "block";
+            photoSlider[key].classList.add("current");
         }
 
     </script>
