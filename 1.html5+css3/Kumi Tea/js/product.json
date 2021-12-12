@@ -1,0 +1,74 @@
+let product = [
+    {
+        "id": 0,
+        "src": "../images/pro1.png",
+        "name": "Tsarevna Bio",
+        "unit": "Boîte 120 gr",
+        "eval": "85",
+        "price": "20,90 €",
+        "number": 0
+    },
+    {
+        "id": 1,
+        "src": "../images/pro2.png",
+        "name": "Tsarevna Bio",
+        "unit": "Boîte 120 gr",
+        "eval": "85",
+        "price": "20,90 €",
+        "number": 0
+    },
+    {
+        "id": 2,
+        "src": "../images/pro3.png",
+        "name": "Tsarevna Bio",
+        "unit": "Boîte 120 gr",
+        "eval": "85",
+        "price": "20,90 €",
+        "number": 0
+    },
+    {
+        "id": 3,
+        "src": "../images/pro4.png",
+        "name": "Tsarevna Bio",
+        "unit": "Boîte 120 gr",
+        "eval": "85",
+        "price": "20,90 €",
+        "number": 0
+    },
+    {
+        "id": 4,
+        "src": "../images/pro5.png",
+        "name": "Tsarevna Bio",
+        "unit": "Boîte 120 gr",
+        "eval": "85",
+        "price": "20,90 €",
+        "number": 0
+    },
+    {
+        "id": 5,
+        "src": "../images/pro6.png",
+        "name": "Tsarevna Bio",
+        "unit": "Boîte 120 gr",
+        "eval": "85",
+        "price": "20,90 €",
+        "number": 0
+    },
+    {
+        "id": 6,
+        "src": "../images/pro7.png",
+        "name": "Tsarevna Bio",
+        "unit": "Boîte 120 gr",
+        "eval": "85",
+        "price": "20,90 €",
+        "number": 0
+    },
+    {
+        "id": 7,
+        "src": "../images/pro8.png",
+        "name": "Tsarevna Bio",
+        "unit": "Boîte 120 gr",
+        "eval": "85",
+        "price": "20,90 €",
+        "number": 0
+    }
+] 

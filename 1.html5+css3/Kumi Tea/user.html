@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <title>USER</title>
+</head>
+
+<body>
+    <div class="w3-container">
+        <div class="w3-content w3-padding-16 w3-rest" style="max-width: 1200px;">
+            <a href="index.html" class="w3-col s2"><img src="images/logo.svg" alt=""></a>
+            <div class="w3-row w3-col s8">
+                <div class="w3-col s2">
+                    <a href="index.html" class="w3-button w3-block">HOME</a>
+                </div>
+                <div class="w3-col s2">
+                    <a href="user.html" class="w3-button w3-block">USER</a>
+                </div>
+                <div class="w3-col s3">
+                    <a href="product.html" class="w3-button w3-block">PRODUCT</a>
+                </div>
+                <div class="w3-col s3">
+                    <a href="shoppingCart.html" class="w3-button w3-block">SHOPPING CART</a>
+                </div>
+                <div class="w3-col s2">
+                    <a href="about.html" class="w3-button w3-block">ABOUT</a>
+                </div>
+            </div>
+            <div class="w3-row w3-col s2 w3-right-align w3-a ">
+                <a href="" class="w3-margin-right"><img src="images/dingwei.png" alt=""></a>
+                <a href="user.html" class="w3-margin-right"><img src="images/yonghu.png" alt=""></a>
+                <a href="shoppingCart.html"><img src="images/shouye.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="w3-container">
+        <div class="w3-content w3-padding-32" style="max-width:1200px">
+            <div class="w3-row w3-center w3-card w3-padding">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'LOGIN');" id="myLink">
+                    <div class="w3-col s6 tablink w3-dark-grey">LOGIN</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'REGISTER');">
+                    <div class="w3-col s6 tablink">REGISTER</div>
+                </a>
+            </div>
+
+            <div id="LOGIN" class="w3-container menu w3-padding-48 w3-card" style="display: block;">
+                <h5>Connexion</h5>
+                <form onsubmit="event.preventDefault();">
+                    <div class="w3-margin-bottom">
+                        <label for="log-email"><b class="red">*</b>E-mail</label>
+                        <input class="w3-input w3-border" type="text" placeholder="enter your email" id="log-email">
+                    </div>
+                    <div class="w3-margin-bottom">
+                        <label for="log-passe"><b class="red">*</b>Mot de passe</label>
+                        <input class="w3-input w3-border" type="password" placeholder="enter your passe" id="log-passe">
+                    </div>
+                    <div class="w3-margin-bottom w3-padding-16 w3-center">
+                        <button class="w3-button w3-black" onclick="validationConnexion()">Connexion</button>
+                        <button class="w3-button w3-grey" onclick="resetConnexion()">Reast</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="REGISTER" class="w3-container menu w3-padding-48 w3-card" style="display: none;">
+                <h5>Créer un compte</h5>
+                <form onsubmit="event.preventDefault();">
+                    <div class="w3-margin-bottom">
+                        <label for="reg-gender"><b class="red">*</b>Préfixe / Genre</label><br />
+                        <input class="w3-radio" type="radio" name="reg-gender" value="femme" checked>
+                        <label>Femme</label>
+                        <input class="w3-radio" type="radio" name="reg-gender" value="homme">
+                        <label>Homme</label>
+                    </div>
+                    <div class="w3-margin-bottom">
+                        <label for="reg-nom"><b class="red">*</b>Nom</label>
+                        <input class="w3-input w3-border" type="text" placeholder="enter your nom" id="reg-nom">
+                    </div>
+                    <div class="w3-margin-bottom">
+                        <label for="reg-date"><b class="red">*</b>Date de naissance</label>
+                        <input class="w3-input w3-border" type="date" id="reg-date">
+                    </div>
+                    <div class="w3-margin-bottom">
+                        <label for="reg-email"><b class="red">*</b>E-mail</label>
+                        <input class="w3-input w3-border" type="text" placeholder="enter your email" id="reg-email">
+                    </div>
+                    <div class="w3-margin-bottom">
+                        <label for="reg-passe"><b class="red">*</b>Mot de passe</label>
+                        <input class="w3-input w3-border" type="text" placeholder="enter your passe" id="reg-passe">
+                    </div>
+                    <div class="w3-margin-bottom">
+                        <label for="reg-pays"><b class="red">*</b>Pays</label>
+                        <select class="w3-select w3-border" name="reg-pays" id="reg-pays">
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                    </div>
+                    <div class="w3-margin-bottom">
+                        <label for="reg-address"><b class="red">*</b>Address</label>
+                        <input class="w3-input w3-border" type="text" placeholder="enter your address" id="reg-address">
+                    </div>
+                    <div class="w3-margin-bottom">
+                        <label for="reg-postal"><b class="red">*</b>Code postal</label>
+                        <input class="w3-input w3-border" type="text" placeholder="enter your code postal"
+                            id="reg-postal">
+                    </div>
+                    <div class="w3-margin-bottom">
+                        <label for="reg-mobile"><b class="red">*</b>N° téléphone mobile</label>
+                        <input class="w3-input w3-border" type="text" placeholder="enter your N° téléphone mobile"
+                            id="reg-mobile">
+                    </div>
+                    <div class="w3-margin-bottom w3-padding-16 w3-center">
+                        <button class="w3-button w3-black" onclick="validationRegister()">Créer un compte</button>
+                        <button class="w3-button w3-grey" onclick="resetFunRegister()">Reast</button>
+                    </div>
+                </form>
+                <p class="w3-text-grey w3-margin-top">En cliquant sur « CREER UN COMPTE », vous reconnaissez être
+                    informé et vous
+                    acceptez que vos données
+                    soient traitées selon les conditions suivantes et conformément à notre POLITIQUE DE CONFIDENTIALITE.
+                    En cochant une ou plusieurs cases, vous acceptez expressément de recevoir les offres promotionnelles
+                    et
+                    actualités KUSMI TEA par email et/ou par SMS et/ou par courrier selon les conditions suivantes et
+                    conformément à notre POLITIQUE DE CONFIDENTIALITE.</p>
+                <p class="w3-text-grey">Vos données sont collectées par la société ORIENTIS GOURMET, responsable de
+                    traitement exploitant les
+                    marques KUSMI TEA et LØV ORGANIC et sont réservées à l’usage des sociétés du Groupe ORIENTIS
+                    GOURMET, y
+                    compris celles situées en dehors de l’Union Européenne. Ces données sont destinées à la gestion et
+                    au
+                    suivi de nos relations commerciales, à la réalisation d’enquête de satisfaction, de statistiques,
+                    d’études marketing et comportementales ainsi qu’à la personnalisation de nos produits et services
+                    Conformément à la règlementation européenne applicable en matière de données à caractère personnel,
+                    vous
+                    bénéficiez, en particulier, du droit de retirer votre consentement, d'un droit d'accès, de
+                    rectification, d’effacement et d’opposition à la prospection et au profilage des données qui vous
+                    concernent. Vous pouvez les exercer à tout moment en écrivant à ORIENTIS GOURMET Parc du Hode -
+                    76430
+                    Saint Vigor d'Ymonville ou à l'adresse suivante : privacy@orientis.fr. La protection de vos données
+                    est
+                    importante pour nous. Pour plus d’informations, nous vous invitons à consulter notre POLITIQUE DE
+                    CONFIDENTIALITE</p>
+                <p class="w3-text-grey">* Informations obligatoires</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-container" id="col-show" style="background-color:#016a63;">
+        <div class="w3-content w3-padding-32 w3-rest" style="max-width: 1200px">
+            <div class="w3-col s3">
+                <img src="images/2021-icon-madeinnormandie.png" alt="">
+                <span class="w3-text-white" style="width: 60%;">Made in Normandie</span>
+            </div>
+            <div class="w3-col s3">
+                <img src="images/2021-icon-bio.png" alt="">
+                <span class="w3-text-white">Kusmi devient bio</span>
+            </div>
+            <div class="w3-col s3">
+                <img src="images/2021-icon-0plastique.png" alt="">
+                <span class="w3-text-white">Objectif zéro plastique</span>
+            </div>
+            <div class="w3-col s3">
+                <img src="images/2021-icon-recycler.png" alt="">
+                <span class="w3-text-white">Nos boutiques collectent vos capsules</span>
+            </div>
+        </div>
+    </div>
+    <footer class="w3-center w3-light-grey w3-padding-large">
+        <div class="w3-rest">
+            <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom w3-left">
+                <i class="fa fa-arrow-up w3-margin-right"></i>
+                To the top
+            </a>
+            <p class="w3-right">@copyright 2021/12/12</p>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/login.json"></script>
+    <script>
+        window.onload = function () {
+            // 获取本地用户已有的账户内容
+            let loginInfoList = localStorage.getItem("loginInfo");
+            // 判断本地是否存储了数据，如果有数据则不存储
+            if (loginInfoList == null) localStorage.setItem("loginInfoList", JSON.stringify(loginInfo));
+            // 切换登录和注册按钮
+            document.getElementById("myLink").click();
+        }
+        // login form dom
+        let logEmail = $("#log-email");
+        let logPasse = $("#log-passe");
+
+        // register form dom
+        let w3Radio = $(".w3-radio");
+        let w3RadioVal = "";
+        let regNom = $("#reg-nom");
+        let regDate = $("#reg-date");
+        let regEmail = $("#reg-email");
+        let regPasse = $("#reg-passe");
+        let regPays = $("#reg-pays");
+        let regAddress = $("#reg-address");
+        let regPostal = $("#reg-postal");
+        let regMobile = $("#reg-mobile");
+        for (var i = 0; i < w3Radio.length; i++) {
+            if (w3Radio[i].checked) {
+                w3RadioVal = w3Radio[i].value;
+            }
+        }
+
+        // 登录
+        function validationConnexion() {
+            let loginInfoList = JSON.parse(localStorage.getItem("loginInfoList"));
+            if (logEmail.val() == "") {
+                alert("E-mail Ce champ est obligatoire.");
+                return false;
+            }
+            if (logPasse.val() == "") {
+                alert("Mot de passe Ce champ est obligatoire.");
+                return false;
+            }
+            if (logEmail.val() && logPasse.val()) {
+                // 判断登录信息是否一致
+                let logData = loginInfoList.filter(v => v.email === logEmail.val() && v.password === logPasse.val())
+                if (logData.length > 0) {
+                    // 登录成功
+                    localStorage.setItem("login", JSON.stringify(logData[0]));
+                    alert("Login succee");
+                } else {
+                    // 登录失败
+                    alert("Login fail");
+                }
+            }
+        }
+
+        // 清空登录填写的内容
+        function resetConnexion() {
+            logEmail.val("");
+            logPasse.val("");
+        }
+        // 注册
+        function validationRegister() {
+            let loginInfoList = JSON.parse(localStorage.getItem("loginInfoList"));
+            if (regNom.val() == "") {
+                alert("Nom Ce champ est obligatoire.");
+                return false;
+            }
+            if (regDate.val() == "") {
+                alert("Date de naissance Ce champ est obligatoire.");
+                return false;
+            }
+            if (regEmail.val() == "") {
+                alert("E-mail Ce champ est obligatoire.");
+                return false;
+            }
+            if (regPasse.val() == "") {
+                alert("Mot de passe Ce champ est obligatoire.");
+                return false;
+            }
+            if (regPays.val() == "") {
+                alert("Pays Ce champ est obligatoire.");
+                return false;
+            }
+            if (regAddress.val() == "") {
+                alert("Address Ce champ est obligatoire.");
+                return false;
+            }
+            if (regPostal.val() == "") {
+                alert("PostalCe champ est obligatoire.");
+                return false;
+            }
+            if (regMobile.val() == "") {
+                alert("Mobile champ est obligatoire.");
+                return false;
+            }
+            console.log(regNom.val(), regDate.val(), regEmail.val(), regPasse.val(), regPays.val(), regAddress.val(), regPostal.val(), regMobile.val())
+            if (regNom.val() && regDate.val() && regEmail.val() && regPasse.val() && regPays.val() && regAddress.val() && regPostal.val() && regMobile.val()) {
+                // 判断是否有一致的邮箱，有注册失败
+                let regData = loginInfoList.filter(v => v.email === regEmail.val())
+                if (regData.length > 0) {
+                    // 注册失败
+                    alert("Register fail, Duplicate mailbox");
+                } else {
+                    // 注册成功
+                    let obj = {
+                        "id": loginInfoList.length,
+                        "gender": w3RadioVal,
+                        "nom": regNom.val(),
+                        "date": regDate.val(),
+                        "email": regEmail.val(),
+                        "password": regPasse.val(),
+                        "pays": regPays.val(),
+                        "address": regAddress.val(),
+                        "codePostal": regPostal.val(),
+                        "moblie": regMobile.val()
+                    }
+                    loginInfoList.push(obj);
+                    localStorage.setItem("loginInfoList", JSON.stringify(loginInfoList));
+                    alert("Register succee");
+                }
+            }
+        }
+
+        // 清空注册填写的内容
+        function resetFunRegister() {
+            for (var i = 0; i < w3Radio.length; i++) {
+                if (i == 0) w3Radio[i].checked = true;
+            }
+            regNom.val("");
+            regDate.val("");
+            regEmail.val("");
+            regPasse.val("");
+            regPays.val("");
+            regAddress.val("");
+            regPostal.val("");
+            regMobile.val("");
+        }
+        // 登录和注册切换事件函数
+        function openMenu(evt, menuName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("menu");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+            }
+            document.getElementById(menuName).style.display = "block";
+            evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+        }
+    </script>
+</body>
+
+</html>
