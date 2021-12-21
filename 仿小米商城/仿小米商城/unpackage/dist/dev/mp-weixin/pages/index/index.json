@@ -1,8 +1,8 @@
 {
   "usingComponents": {
     "swiper-image": "/components/index/swiper-image",
-    "index-nav": "/components/index/index.nav",
-    "tree-adv": "/components/index/tree-adv",
+    "index-nav": "/components/index/index-nav",
+    "three-adv": "/components/index/three-adv",
     "card": "/components/common/card",
     "common-list": "/components/common/common-list"
   }

@@ -15,73 +15,81 @@
 					<text class="font-md text-muted">{{list.refreshText}}</text>
 				</refresh>
 
-
-				<!-- 首页模板 -->
-				<template v-if="tabBars[listIndex].template === 'index'">
-					<cell v-for="(listItem,ItemIndex) in list.data" :key="ItemIndex">
-						<!-- 轮播图组件 -->
-						<sum-slider v-if="listItem.type ==='swiper'" :swipers="listItem.data" />
-						<!-- 图标分类组件 -->
-						<template v-if="listItem.type ==='indexnavs'">
-							<sum-index-navs :resdata="listItem.data" />
-							<divider />
-						</template>
-						<!-- 三图广告 -->
-						<template v-if="listItem.type ==='threeAdv'">
-							<sum-three-adv :item="listItem.data" />
-							<divider />
-						</template>
-						<!-- 大图广告 -->
-						<sum-one-adv v-if="listItem.type ==='oneAdv'" :item="listItem.data" />
-						<!-- 公共列表组件 -->
-						<div class="row w-100" v-if="listItem.type ==='list'">
-							<block v-for="(item,index) in listItem.data" :key="index">
-								<common-list :item="item" :index="index"></common-list>
-							</block>
-						</div>
-
-					</cell>
-				</template>
-
-				<!-- 专题页 -->
-				<template v-else-if="tabBars[listIndex].template === 'special'">
-					<cell v-for="(listItem,ItemIndex) in list.data" :key="ItemIndex">
-						<!-- 轮播图组件 -->
-						<sum-slider v-if="listItem.type ==='swiper'" :swipers="listItem.data" />
-						<!-- 图标分类组件 -->
-						<template v-if="listItem.type ==='indexnavs'">
-							<sum-index-navs :resdata="listItem.data" />
-						</template>
-						<!-- 公共列表组件 -->
-						<div class="w-100" v-if="listItem.type ==='list'">
-							<div class="p-2 border-bottom border-top">
-								<text class="text-dark font-md font-weight">热卖爆品</text>
-							</div>
-							<div class="row w-100">
+				<template v-if="list.data.length > 0 && list.firstLoad === 'after'">
+					<!-- 首页模板 -->
+					<template v-if="tabBars[listIndex].template === 'index'">
+						<cell v-for="(listItem,ItemIndex) in list.data" :key="ItemIndex">
+							<!-- 轮播图组件 -->
+							<sum-slider v-if="listItem.type ==='swiper'" :swipers="listItem.data" />
+							<!-- 图标分类组件 -->
+							<template v-if="listItem.type ==='indexnavs'">
+								<sum-index-navs :resdata="listItem.data" />
+								<divider />
+							</template>
+							<!-- 三图广告 -->
+							<template v-if="listItem.type ==='threeAdv'">
+								<sum-three-adv :item="listItem.data" />
+								<divider />
+							</template>
+							<!-- 大图广告 -->
+							<sum-one-adv v-if="listItem.type ==='oneAdv'" :item="listItem.data" />
+							<!-- 公共列表组件 -->
+							<div class="row w-100" v-if="listItem.type ==='list'">
 								<block v-for="(item,index) in listItem.data" :key="index">
 									<common-list :item="item" :index="index"></common-list>
 								</block>
 							</div>
-						</div>
+						</cell>
+					</template>
+					<!-- 专题页 -->
+					<template v-else-if="tabBars[listIndex].template === 'special'">
+						<cell v-for="(listItem,ItemIndex) in list.data" :key="ItemIndex">
+							<!-- 轮播图组件 -->
+							<sum-slider v-if="listItem.type ==='swiper'" :swipers="listItem.data" />
+							<!-- 图标分类组件 -->
+							<template v-if="listItem.type ==='indexnavs'">
+								<sum-index-navs :resdata="listItem.data" />
+							</template>
+							<!-- 公共列表组件 -->
+							<div class="w-100" v-if="listItem.type ==='list'">
+								<div class="p-2 border-bottom border-top">
+									<text class="text-dark font-md font-weight">热卖爆品</text>
+								</div>
+								<div class="row w-100">
+									<block v-for="(item,index) in listItem.data" :key="index">
+										<common-list :item="item" :index="index"></common-list>
+									</block>
+								</div>
+							</div>
 
+						</cell>
+					</template>
+				</template>
+				<!-- 加载中 -->
+				<template v-else-if="list.firstLoad === 'ing'">
+					<cell class="j-center a-center pt-5">
+						<text class="font-md text-light-muted">加载中...</text>
 					</cell>
 				</template>
-
+				<!-- 空数据 -->
+				<template v-else>
+					<cell class="j-center a-center pt-5">
+						<text class="font-md text-light-muted">暂无数据</text>
+					</cell>
+				</template>
 				<!-- 上拉加载 -->
 				<loading class="w-100 j-center a-center" style="height: 70px;" @loading="onLoading"
 					:display="list.loadingShow">
 					<text class="text-muted font-md">Loading...</text>
 				</loading>
 			</list>
-
-
-
 		</slider>
 
 	</div>
 </template>
 
 <script>
+	import $H from "@/common/lib/request.js"
 	import sumTabbar from "@/components/index/nvue/sum-tabbar.nvue"
 	import sumSlider from "@/components/index/nvue/sum-slider.nvue";
 	import sumIndexNavs from "@/components/index/nvue/sum-index-navs.nvue";
@@ -95,43 +103,7 @@
 		data() {
 			return {
 				tabIndex: 0,
-				tabBars: [{
-					name: '关注',
-					id: 'guanzhu',
-					template: "index"
-				}, {
-					name: '推荐',
-					id: 'tuijian',
-					template: "special"
-				}, {
-					name: '体育',
-					id: 'tiyu',
-					template: "special"
-				}, {
-					name: '热点',
-					id: 'redian',
-					template: "special"
-				}, {
-					name: '财经',
-					id: 'caijing',
-					template: "special"
-				}, {
-					name: '娱乐',
-					id: 'yule',
-					template: "special"
-				}, {
-					name: '军事',
-					id: 'junshi',
-					template: "special"
-				}, {
-					name: '历史',
-					id: 'lishi',
-					template: "special"
-				}, {
-					name: '本地',
-					id: 'bendi',
-					template: "special"
-				}],
+				tabBars: [],
 				newsitems: [],
 			}
 		},
@@ -149,11 +121,11 @@
 			currentWebview.addEventListener('show', e => {
 				console.log('indexShow')
 			})
-			// 生成随机数据
-			this.newsitems = this.randomfn()
+			// 初始化数据
+			this.__init();
 		},
 		// 监听点击搜索框
-		onNavigationBarSearchInputClicked(){
+		onNavigationBarSearchInputClicked() {
 			uni.navigateTo({
 				url: '../search/search',
 			});
@@ -163,261 +135,125 @@
 			currentWebview.removeEventListener('show', e => {})
 		},
 		methods: {
-			// 加载更多模拟数据
-			addData() { //拿到当前索引
-				let e = this.tabIndex
-				if (this.newsitems[e].data.length > 30) {
-					this.newsitems[e].loadingText = '没有更多了';
-					return;
-				}
-				let arr = [{
-						type: "swiper",
-						data: [{
-								src: "../../static/images/demo/demo4.jpg"
-							},
-							{
-								src: "../../static/images/demo/demo4.jpg"
-							},
-							{
-								src: "../../static/images/demo/demo4.jpg"
-							}
-						]
-					},
-					{
-						type: "indexnavs",
-						data: [{
-								src: "/static/images/indexnav/1.png",
-								name: "新品发布"
-							},
-							{
-								src: "/static/images/indexnav/2.gif",
-								name: "小米众筹"
-							},
-							{
-								src: "/static/images/indexnav/3.gif",
-								name: "以旧换新"
-							},
-							{
-								src: "/static/images/indexnav/4.gif",
-								name: "一分换团"
-							},
-							{
-								src: "/static/images/indexnav/5.gif",
-								name: "超值特卖"
-							},
-						]
-					},
-					{
-						type: "list",
-						data: [{
-								cover: "/static/images/demo/list/1.jpg",
-								title: "米家空调",
-								desc: "1.5匹变频",
-								oprice: 2699,
-								pprice: 1399
-							},
-							{
-								cover: "/static/images/demo/list/1.jpg",
-								title: "米家空调",
-								desc: "1.5匹变频",
-								oprice: 2699,
-								pprice: 1399
-							},
-							{
-								cover: "/static/images/demo/list/1.jpg",
-								title: "米家空调",
-								desc: "1.5匹变频",
-								oprice: 2699,
-								pprice: 1399
-							},
-							{
-								cover: "/static/images/demo/list/1.jpg",
-								title: "米家空调",
-								desc: "1.5匹变频",
-								oprice: 2699,
-								pprice: 1399
-							},
-							{
-								cover: "/static/images/demo/list/1.jpg",
-								title: "米家空调",
-								desc: "1.5匹变频",
-								oprice: 2699,
-								pprice: 1399
-							},
-							{
-								cover: "/static/images/demo/list/1.jpg",
-								title: "米家空调",
-								desc: "1.5匹变频",
-								oprice: 2699,
-								pprice: 1399
-							}
-						]
-					}
-				];
-				this.newsitems[e].data = [...this.newsitems[e].data, ...arr];
+			async __init() {
+				$H.get("/index_category/data").then(data => {
+					console.log(data)
+					this.tabBars = data.category; //初始化tabBars
+					this.newsitems = this.setNewsItems(data); //初始化页面
+				})
+				// 第三种 await
+				// let [err, res] = await uni.request({
+				// 	url: 'http://ceshi3.dishait.cn/api/index_category/data',
+				// 	method: 'GET'
+				// });
+				// if (err) {// 错误
+				// 	return uni.showToast({
+				// 		title: err.errMsg,
+				// 		icon: 'none'
+				// 	})
+				// }
+				// if (res.statusCode !== 200) {// 失败
+				// 	return uni.showToast({
+				// 		title: res.data.msg,
+				// 		icon: 'none'
+				// 	}) //错误信息
+				// }
+				// let data = res.data.data //成功
 			},
-			randomfn() {
+			// 加载、刷新数据
+			async addData(callback = false, refresh = false) {
+				let e = this.tabIndex; //拿到当前索引
+				let id = this.tabBars[e].id; // 拿到当前分类id
+				let page = !refresh ? (Math.ceil(this.newsitems[e].data.length / 5) + 1) : 1; // 拿到当前分类的分页数
+				if(page === 1 && this.newsitems[e].refreshShow === 'hide') {// 修改请求状态 首次加载中...
+					this.newsitems[e].firstLoad = "ing";
+				}
+				// let [err, res] = await uni.request({
+				// 	url: 'http://ceshi3.dishait.cn/api/index_category/' + id + '/data/' + page,
+				// 	method: 'GET'
+				// });
+				// if(page === 1 && this.newsitems[e].refreshShow === 'hide') {// 修改请求状态 首次加载完成
+				// 	this.newsitems[e].firstLoad = "after";
+				// }
+				// if (err) {// 错误
+				// 	return uni.showToast({
+				// 		title: err.errMsg,
+				// 		icon: 'none'
+				// 	})
+				// }
+				// if (res.statusCode !== 200) {// 失败
+				// 	return uni.showToast({
+				// 		title: res.data.msg,
+				// 		icon: 'none'
+				// 	}) //错误信息
+				// }
+				// let data = res.data.data; //成功
+				$H.get(`/index_category/${id}/data/${page}`).then(data => {
+					if(page === 1 && this.newsitems[e].refreshShow === 'hide') {// 修改请求状态 首次加载完成
+						this.newsitems[e].firstLoad = "after";
+					}
+					this.newsitems[e].data = !refresh ? [...this.newsitems[e].data, ...data] : [...data]; // 赋值，渲染
+					if (typeof callback === 'function') {// 执行回调函数
+						callback();
+					}
+					if (data.length < 5) {// 没有更多了
+						this.newsitems[e].loadingText = '没有更多了';
+						return;
+					}
+				})
+			},
+			// 初始化页面
+			setNewsItems(e) {
 				let ary = [];
-				// 拿到tabbars的长度，根据长度生成页面
-				let tablength = this.tabBars.length;
+				let tablength = this.tabBars.length;// 拿到tabbars的长度，根据长度生成页面
 				for (let i = 0; i < tablength; i++) {
+					let firstLoad = i === 0 ? "after" : "before";
 					let aryItem = {
 						refreshShow: 'hide',
 						refreshText: '下拉可以刷新',
 						loadingShow: 'hide',
-						data: []
+						data: [],
+						firstLoad: firstLoad
 					};
-					// 给页面添加数据
-					if (this.tabBars[i].template === 'index') {
-						aryItem.data = [{
-								type: "swiper",
-								data: [{
-										src: "../../static/images/demo/demo4.jpg"
-									},
-									{
-										src: "../../static/images/demo/demo4.jpg"
-									},
-									{
-										src: "../../static/images/demo/demo4.jpg"
-									}
-								]
-							},
-							{
-								type: "indexnavs",
-								data: [{
-										src: "/static/images/indexnav/1.png",
-										name: "新品发布"
-									},
-									{
-										src: "/static/images/indexnav/2.gif",
-										name: "小米众筹"
-									},
-									{
-										src: "/static/images/indexnav/3.gif",
-										name: "以旧换新"
-									},
-									{
-										src: "/static/images/indexnav/4.gif",
-										name: "一分换团"
-									},
-									{
-										src: "/static/images/indexnav/5.gif",
-										name: "超值特卖"
-									},
-									{
-										src: "/static/images/indexnav/6.gif",
-										name: "小米秒杀"
-									},
-									{
-										src: "/static/images/indexnav/7.gif",
-										name: "真心想要"
-									},
-									{
-										src: "/static/images/indexnav/8.gif",
-										name: "电视热卖"
-									},
-									{
-										src: "/static/images/indexnav/9.gif",
-										name: "家电热卖"
-									},
-									{
-										src: "/static/images/indexnav/10.gif",
-										name: "米粉卡"
-									},
-								]
-							},
-							{
-								type: "threeAdv",
-								data: [{
-										src: "/static/images/demo/demo1.jpg"
-									},
-									{
-										src: "/static/images/demo/demo2.jpg"
-									},
-									{
-										src: "/static/images/demo/demo2.jpg"
-									},
-								]
-							},
-							{
-								type: "oneAdv",
-								data: {
-									title: "每日精选",
-									cover: "/static/images/demo/demo4.jpg"
-								}
-							},
-							{
-								type: "list",
-								data: [{
-										cover: "/static/images/demo/list/1.jpg",
-										title: "米家空调",
-										desc: "1.5匹变频",
-										oprice: 2699,
-										pprice: 1399
-									},
-									{
-										cover: "/static/images/demo/list/1.jpg",
-										title: "米家空调",
-										desc: "1.5匹变频",
-										oprice: 2699,
-										pprice: 1399
-									},
-									{
-										cover: "/static/images/demo/list/1.jpg",
-										title: "米家空调",
-										desc: "1.5匹变频",
-										oprice: 2699,
-										pprice: 1399
-									},
-									{
-										cover: "/static/images/demo/list/1.jpg",
-										title: "米家空调",
-										desc: "1.5匹变频",
-										oprice: 2699,
-										pprice: 1399
-									},
-									{
-										cover: "/static/images/demo/list/1.jpg",
-										title: "米家空调",
-										desc: "1.5匹变频",
-										oprice: 2699,
-										pprice: 1399
-									},
-									{
-										cover: "/static/images/demo/list/1.jpg",
-										title: "米家空调",
-										desc: "1.5匹变频",
-										oprice: 2699,
-										pprice: 1399
-									}
-								]
-							}
-						];
+					if (this.tabBars[i].template === 'index') {// 首屏初始化数据
+						aryItem.data = e.data;
 					}
 					ary.push(aryItem);
 				}
 				return ary;
 			},
+			// 点击选项卡触发事件
 			tabChange(index) {
-				this.tabIndex = index
-				// 加载数据
-				this.addData();
+				this.tabIndex = index;
 			},
 			// 监听横向滚动列表事件
 			sliderChange(e) {
 				this.tabIndex = e.index
-				this.addData();
+				if(this.newsitems[this.tabIndex].firstLoad === 'before') {
+					this.addData();
+				}
 			},
 			// 上拉加载事件
 			onLoading() {
 				// 存储当前索引
 				var index = this.tabIndex
 				this.newsitems[index].loadingShow = 'show';
-				setTimeout(() => {
-					// 加载数据
-					this.addData();
+				// 没有更多了
+				if (this.newsitems[index].loadingText === '没有更多了') {
+					uni.showToast({
+						title: "没有更多了",
+						icon: "none"
+					})
+					return this.newsitems[index].loadingShow = 'hide';
+				}
+				// 加载数据
+				this.addData(() => {
+					uni.showToast({
+						title: "加载成功",
+						icon: "none"
+					})
 					this.newsitems[index].loadingShow = 'hide';
-				}, 2000)
+				});
 			},
 			// 执行刷新
 			refresh(e) {
@@ -425,11 +261,15 @@
 				var index = this.tabIndex
 				this.newsitems[index].refreshShow = 'show';
 				this.newsitems[index].refreshText = '正在刷新...';
-				setTimeout(() => {
-					this.randomfn();
+				// 请求刷新数据
+				this.addData(() => {
+					uni.showToast({
+						title: "下拉刷新成功",
+						icon: "none"
+					});
 					this.newsitems[index].refreshShow = 'hide';
 					this.newsitems[index].refreshText = '下拉可以刷新';
-				}, 1200)
+				}, true);
 			},
 			// 判断下拉刷新状态
 			pullingdown(e) {
