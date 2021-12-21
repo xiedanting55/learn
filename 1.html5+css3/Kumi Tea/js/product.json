@@ -1,7 +1,7 @@
 let product = [
     {
         "id": 0,
-        "src": "../images/pro1.png",
+        "src": "/images/pro1.png",
         "name": "Tsarevna Bio",
         "unit": "Boîte 120 gr",
         "eval": "85",
@@ -10,7 +10,7 @@ let product = [
     },
     {
         "id": 1,
-        "src": "../images/pro2.png",
+        "src": "/images/pro2.png",
         "name": "Tsarevna Bio",
         "unit": "Boîte 120 gr",
         "eval": "85",
@@ -19,7 +19,7 @@ let product = [
     },
     {
         "id": 2,
-        "src": "../images/pro3.png",
+        "src": "/images/pro3.png",
         "name": "Tsarevna Bio",
         "unit": "Boîte 120 gr",
         "eval": "85",
@@ -28,7 +28,7 @@ let product = [
     },
     {
         "id": 3,
-        "src": "../images/pro4.png",
+        "src": "/images/pro4.png",
         "name": "Tsarevna Bio",
         "unit": "Boîte 120 gr",
         "eval": "85",
@@ -37,7 +37,7 @@ let product = [
     },
     {
         "id": 4,
-        "src": "../images/pro5.png",
+        "src": "/images/pro5.png",
         "name": "Tsarevna Bio",
         "unit": "Boîte 120 gr",
         "eval": "85",
@@ -46,7 +46,7 @@ let product = [
     },
     {
         "id": 5,
-        "src": "../images/pro6.png",
+        "src": "/images/pro6.png",
         "name": "Tsarevna Bio",
         "unit": "Boîte 120 gr",
         "eval": "85",
@@ -55,7 +55,7 @@ let product = [
     },
     {
         "id": 6,
-        "src": "../images/pro7.png",
+        "src": "/images/pro7.png",
         "name": "Tsarevna Bio",
         "unit": "Boîte 120 gr",
         "eval": "85",
@@ -64,7 +64,7 @@ let product = [
     },
     {
         "id": 7,
-        "src": "../images/pro8.png",
+        "src": "/images/pro8.png",
         "name": "Tsarevna Bio",
         "unit": "Boîte 120 gr",
         "eval": "85",
