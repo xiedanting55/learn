@@ -2,8 +2,8 @@
 	<view class="p-2">
 		<scroll-view scroll-x class="scroll-row">
 
-			<view class="scroll-row-item rounded bg-light-secondary mr-2 p-2" v-for="(item,index) in comments"
-				:key="index" style="width: 620rpx;height: 380rpx;">
+			<view class="scroll-row-item rounded bg-light-secondary p-2" v-for="(item,index) in comments"
+				:key="index" style="width: 670rpx;height: 380rpx;">
 
 				<view class="d-flex a-center mb-1">
 					<image :src="item.userpic" mode="widthFix" style="width: 70rpx;height: 70rpx;"
