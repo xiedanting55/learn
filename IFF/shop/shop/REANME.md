@@ -5,6 +5,7 @@
 优惠卷 pages/coupon/coupon
 购物车 pages/car/car
 购物车-确定订单 pages/order-confirm/order-confirm
+购物车-确定订单状态 pages/order-confirm-status/order-confirm-status
 我的界面-售后/退换 pages/after-sale/after-sale
 我的界面-售后类型 pages/after-sale/after-sale-type
 我的界面-售后退款 pages/after-sale-refund/after-sale-refund

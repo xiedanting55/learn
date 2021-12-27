@@ -1,9 +1,6 @@
 <template>
 	<view>
-		<text>IFF商城会员注册协议</text>
-		<view>
-			<text></text>
-		</view>
+		
 	</view>
 </template>
 
