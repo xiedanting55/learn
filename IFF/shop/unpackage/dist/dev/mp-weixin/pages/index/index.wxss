@@ -1,0 +1,15 @@
+
+page {
+	background-color: #ebebeb;
+}
+
+
+.ewm.data-v-57280228 {
+	width: 48rpx;
+	height: 45rpx;
+}
+.txm.data-v-57280228 {
+	width: 50rpx;
+	height: 48rpx;
+}
+

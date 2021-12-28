@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "uni-easyinput": "/components/uni-ui/uni-easyinput/uni-easyinput"
+  }
+}

@@ -1,0 +1,170 @@
+{
+	"pages": [
+		{
+            "path" : "pages/my/my",
+            "style" : {
+                "app-plus": {
+					"titleNView": false
+				},
+				"navigationStyle":"custom"
+            }
+        },
+        {
+            "path" : "pages/maintenance/maintenance",
+            "style" : {
+                "navigationBarTitleText": "维修保养",
+                "enablePullDownRefresh": false
+            } 
+        },
+        {
+            "path" : "pages/maintenance-appointment/maintenance-appointment",
+            "style" :   {
+                "navigationBarTitleText": "维修预约",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+            "path" : "pages/coupon/coupon",
+            "style" : {
+                "navigationBarTitleText": "我的优惠卷",
+                "enablePullDownRefresh": false
+            } 
+        },
+		{
+            "path" : "pages/relevant-policies/relevant-policies",
+            "style" :  {
+                "navigationBarTitleText": "相关政策",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+			"path": "pages/index/index"
+		}
+        ,{
+            "path" : "pages/car/car",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/order-confirm/order-confirm",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/after-sale/after-sale",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/after-sale-type/after-sale-type",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/after-sale-refund/after-sale-refund",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/my-evaluate/my-evaluate",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        
+        ,{
+            "path" : "pages/order-confirm-status/order-confirm-status",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/goods/goods",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/adviser/adviser",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"tabBar": {
+		"color" : "#2e2e2e",
+		"selectedColor" : "#00332a",
+		"borderStyle" : "white",
+		"backgroundColor" : "#FFFFFF",
+		"list" : [
+			{
+				"pagePath":"pages/goods/goods",
+				"text":"全部商品",
+				"iconPath":"static/tabbar/goods.png",
+				"selectedIconPath":"static/tabbar/goods.png"
+			},
+			{
+				"pagePath":"pages/car/car",
+				"text":"购物车",
+				"iconPath":"static/tabbar/car.png",
+				"selectedIconPath":"static/tabbar/car.png"
+			},
+		    {
+				"pagePath":"pages/index/index",
+				"text":"首页",
+				"iconPath":"static/tabbar/home.png",
+				"selectedIconPath":"static/tabbar/home-active.png"
+		    },
+			{
+				"pagePath":"pages/adviser/adviser",
+				"text":"专属顾问",
+				"iconPath":"static/tabbar/adviser.png",
+				"selectedIconPath":"static/tabbar/adviser.png"
+			},
+			{
+				"pagePath":"pages/my/my",
+				"text":"我的",
+				"iconPath":"static/tabbar/my.png",
+				"selectedIconPath":"static/tabbar/my-active.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "IFF",
+		"navigationBarBackgroundColor": "#00332a",
+		"backgroundColor": "#FFFFFF"
+	}
+}
