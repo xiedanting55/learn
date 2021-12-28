@@ -9,35 +9,35 @@
 			<view class="row j-sb flex-wrap">
 				<view class="span-9 row a-center mt-2" @click="linkTo">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">清洗</text>
 						<text class="text2">超声波强清洗</text>
 					</view>
 				</view>
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">抛光</text>
 						<text class="text2">精细抛光消痕</text>
 					</view>
 				</view>
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">电镀</text>
 						<text class="text2">专业电镀翻新</text>
 					</view>
 				</view>
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">整形</text>
 						<text class="text2">重塑矫正还原</text>
 					</view>
 				</view>
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">深度保养</text>
 						<text class="text2">一步到位护理</text>
 					</view>
@@ -49,42 +49,42 @@
 			<view class="row j-sb flex-wrap">
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">加固</text>
 						<text class="text2">宝石镶嵌固定</text>
 					</view>
 				</view>
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">补石</text>
 						<text class="text2">配石镶嵌</text>
 					</view>
 				</view>
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">刻字</text>
 						<text class="text2">创意激光打字</text>
 					</view>
 				</view>
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">修改尺寸</text>
 						<text class="text2">更改指圈尺寸</text>
 					</view>
 				</view>
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">锻炼焊接</text>
 						<text class="text2">店铺优惠卷</text>
 					</view>
 				</view>
 				<view class="span-9 row a-center mt-2">
 					<image src="/static/images/my_1.png" class="rounded-4" mode="widthFix"></image>
-					<view class="row flex-column ml-2">
+					<view class="d-flex flex-column ml-2">
 						<text class="text1">综合维护</text>
 						<text class="text2">店铺优惠卷</text>
 					</view>

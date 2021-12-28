@@ -1,6 +1,6 @@
 <template>
 	<view class="content">
-		<view class="row a-center j-sb m-3">
+		<view class="d-flex a-center j-sb m-3">
 			<uni-easyinput class="col-9" :inputBorder="false" suffixIcon="search" v-model="value" placeholder="搜索..." @iconClick="iconClick"></uni-easyinput>
 			<image src="/static/images/ewm.png" class="ewm"></image>
 			<image src="/static/images/txm.png" class="txm"></image>

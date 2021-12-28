@@ -1,8 +1,11 @@
 {
   "pages": [
     "pages/my/my",
+    "pages/address/address",
+    "pages/add-edit-address/add-edit-address",
     "pages/maintenance/maintenance",
     "pages/maintenance-appointment/maintenance-appointment",
+    "pages/order-confirm-status/order-confirm-status",
     "pages/coupon/coupon",
     "pages/relevant-policies/relevant-policies",
     "pages/index/index",
@@ -12,7 +15,6 @@
     "pages/after-sale-type/after-sale-type",
     "pages/after-sale-refund/after-sale-refund",
     "pages/my-evaluate/my-evaluate",
-    "pages/order-confirm-status/order-confirm-status",
     "pages/goods/goods",
     "pages/adviser/adviser"
   ],

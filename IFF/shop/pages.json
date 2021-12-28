@@ -10,6 +10,20 @@
             }
         },
         {
+            "path" : "pages/address/address",
+            "style" : {
+                "navigationBarTitleText": "地址管理",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+		    "path" : "pages/add-edit-address/add-edit-address",
+		    "style" :  {
+		        "navigationBarTitleText": "新建收货地址",
+		        "enablePullDownRefresh": false
+		    }
+		},
+        {
             "path" : "pages/maintenance/maintenance",
             "style" : {
                 "navigationBarTitleText": "维修保养",
@@ -23,6 +37,13 @@
                 "enablePullDownRefresh": false
             }
         },
+		{
+		    "path" : "pages/order-confirm-status/order-confirm-status",
+		    "style" : {
+		        "navigationBarTitleText": "提交成功",
+		        "enablePullDownRefresh": false
+		    } 
+		},
 		{
             "path" : "pages/coupon/coupon",
             "style" : {
@@ -95,15 +116,7 @@
             
         }
         
-        ,{
-            "path" : "pages/order-confirm-status/order-confirm-status",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
+        
         ,{
             "path" : "pages/goods/goods",
             "style" :                                                                                    
@@ -122,6 +135,7 @@
             }
             
         }
+        
     ],
 	"tabBar": {
 		"color" : "#2e2e2e",
