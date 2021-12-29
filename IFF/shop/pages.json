@@ -1,12 +1,26 @@
 {
 	"pages": [
 		{
+            "path" : "pages/goods/goods",
+            "style" : {
+                "navigationBarTitleText": "全部商品",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
             "path" : "pages/my/my",
             "style" : {
                 "app-plus": {
 					"titleNView": false
 				},
 				"navigationStyle":"custom"
+            }
+        },
+        {
+            "path" : "pages/my-info/my-info",
+            "style" :  {
+                "navigationBarTitleText": "个人信息",
+                "enablePullDownRefresh": false
             }
         },
         {
@@ -115,17 +129,6 @@
             }
             
         }
-        
-        
-        ,{
-            "path" : "pages/goods/goods",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
         ,{
             "path" : "pages/adviser/adviser",
             "style" :                                                                                    
@@ -140,7 +143,7 @@
 	"tabBar": {
 		"color" : "#2e2e2e",
 		"selectedColor" : "#00332a",
-		"borderStyle" : "white",
+		"borderStyle" : "black",
 		"backgroundColor" : "#FFFFFF",
 		"list" : [
 			{

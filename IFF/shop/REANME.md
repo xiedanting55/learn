@@ -12,6 +12,7 @@
 我的界面-售后退款 pages/after-sale-refund/after-sale-refund
 我的界面-我的评价 pages/my-evaluate/my-evaluate
 
+我的界面-个人信息 pages/my-info/my-info
 我的界面-地址管理 pages/address/address
 我的界面-edit/add 地址管理 pages/add-edit-address/add-edit-address
 我的界面-维修保养 pages/maintenance/maintenance

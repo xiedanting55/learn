@@ -14,7 +14,7 @@
 				<text class="text1 pl-1">产品数量</text>
 				<text class="text2 pl-1">count</text>
 			</view>
-			<view class="d-flex row-max a-center border-bottom py-1">
+			<view class="d-flex row-max a-start border-bottom py-1">
 				<text class="text1 pl-1">备注</text>
 				<text class="text2 pl-1">remarks</text>
 			</view>
@@ -41,7 +41,7 @@
 					<text class="pl-1">定位</text>
 				</view>
 			</view>
-			<view class="d-flex row-max a-center border-bottom py-1">
+			<view class="d-flex row-max a-start border-bottom py-1">
 				<text class="text1 pl-1">详细地址</text>
 				<text class="text2 pl-1">草埔西吓围新村</text>
 				<view class="d-flex a-center j-end mr-1 row-re">

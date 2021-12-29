@@ -19,7 +19,7 @@
 				 :size="18" color="#c0c4cc" @click="onEyes"></uni-icons>
 			</template>
 			<template v-else-if="suffixIcon">
-				<uni-icons v-if="suffixIcon" class="content-clear-icon" :type="suffixIcon" color="#c0c4cc" @click="onClickIcon('suffix')"></uni-icons>
+				<uni-icons v-if="suffixIcon" class="content-clear-icon" :type="suffixIcon" :size="size" :color="colorIcon" @click="onClickIcon('suffix')"></uni-icons>
 			</template>
 			<template v-else>
 				<uni-icons class="content-clear-icon" :class="{'is-textarea-icon':type==='textarea'}" type="clear" :size="clearSize"
@@ -77,7 +77,7 @@
 	 * @event {Function}	iconClick	点击图标时触发
 	 * @example <uni-easyinput v-model="mobile"></uni-easyinput>
 	 */
-
+	// colorIcon 变化颜色
 	 export default {
 		name: 'uni-easyinput',
 		emits:['click','iconClick','update:modelValue','input','focus','blur','confirm'],
@@ -156,6 +156,14 @@
 			errorMessage:{
 				type:[String,Boolean],
 				default:''
+			},
+			colorIcon: {
+				default: String,
+				default:"#c0c4cc"
+			},
+			size: {
+				default: Number,
+				default: 18
 			}
 		},
 		data() {

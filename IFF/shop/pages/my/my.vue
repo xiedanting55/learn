@@ -87,7 +87,7 @@
 						id: 0,
 						src: "/static/images/my_list_1.png",
 						text: "个人信息",
-						navigate: ""
+						navigate: "/pages/my-info/my-info"
 					},
 					{
 						id: 1,
@@ -99,7 +99,7 @@
 						id: 2,
 						src: "/static/images/my_list_3.png",
 						text: "地址管理",
-						navigate: ""
+						navigate: "/pages/address/address"
 					},
 					{
 						id: 3,

@@ -1,5 +1,7 @@
 {
-  "navigationBarTitleText": "",
+  "navigationBarTitleText": "全部商品",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-easyinput": "/components/uni-ui/uni-easyinput/uni-easyinput"
+  }
 }

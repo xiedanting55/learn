@@ -28,7 +28,7 @@
 			</view>
 			<image src="/static/images/edit.png" mode="widthFix"></image>
 		</view>
-		<view class="position-fixed btn d-flex a-center j-center main-bg-color rounded-4">
+		<view class="position-fixed btn d-flex a-center j-center main-bg-color rounded-4" @click="linkTo">
 			<image src="/static/images/add.png" mode="widthFix"></image>
 			<text class="text-white font-weight ml-1">新建收获地址</text>
 		</view>
@@ -43,7 +43,11 @@
 			}
 		},
 		methods: {
-			
+			linkTo() {
+				uni.navigateTo({
+					url: "../add-edit-address/add-edit-address?status=add"
+				})
+			}
 		}
 	}
 </script>

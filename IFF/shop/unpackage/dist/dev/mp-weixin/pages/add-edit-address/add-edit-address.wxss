@@ -51,4 +51,30 @@
 .add-edit-address .row-re.data-v-01ca3f26 {
   width: 115rpx;
 }
+.add-edit-address .item-row .item-chose text.data-v-01ca3f26 {
+  font-size: 18rpx;
+  line-height: 40rpx;
+}
+.add-edit-address .item-row .add-icon.data-v-01ca3f26 {
+  line-height: 40rpx;
+}
+.add-edit-address .item-row .add-icon image.data-v-01ca3f26 {
+  width: 20rpx;
+}
+.add-edit-address .text4.data-v-01ca3f26 {
+  font-size: 18rpx;
+}
+.add-edit-address .text5.data-v-01ca3f26 {
+  font-size: 16rpx;
+  color: #909090;
+}
+.add-edit-address .btn.data-v-01ca3f26 {
+  width: 400rpx;
+  line-height: 88rpx;
+  bottom: 10rpx;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  font-size: 30rpx;
+}
 
