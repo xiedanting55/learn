@@ -30,4 +30,47 @@
 .goods .border-color.data-v-5566b618 {
   border-color: #00332a;
 }
+.goods .left-view.data-v-5566b618 {
+  line-height: 90rpx;
+  background-color: #e4e4e4;
+}
+.goods .text1.data-v-5566b618 {
+  font-size: 30rpx;
+  color: #333;
+}
+.goods .text2.data-v-5566b618 {
+  font-size: 24rpx;
+  color: #343434;
+}
+.goods .rightScroll image.data-v-5566b618 {
+  width: 100%;
+}
+.goods .rightScroll .col-4.data-v-5566b618 {
+  width: 49%;
+}
+.goods .rightScroll .col-4 image.data-v-5566b618 {
+  height: 280rpx;
+}
+.goods .rightScroll .col-4 .col-4-line.data-v-5566b618 {
+  line-height: 65rpx;
+}
+.goods .rightScroll .col-4 .col-4-line image.data-v-5566b618 {
+  width: 30rpx;
+}
+.goods .rightScroll .col-4 .col-4-line text.data-v-5566b618:nth-of-type(1) {
+  font-size: 20rpx;
+}
+.goods .rightScroll .col-4 .col-4-line text.data-v-5566b618:nth-of-type(2) {
+  font-size: 30rpx;
+}
+.goods .more.data-v-5566b618 {
+  width: 150rpx;
+  margin: 0 auto;
+}
+.goods .more view.data-v-5566b618 {
+  line-height: 40rpx;
+}
+.goods .more text.data-v-5566b618 {
+  font-size: 20rpx;
+}
 

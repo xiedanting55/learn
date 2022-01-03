@@ -8,7 +8,7 @@
 
 购物车-确定订单 pages/order-confirm/order-confirm
 我的界面-售后/退换 pages/after-sale/after-sale
-我的界面-售后类型 pages/after-sale/after-sale-type
+我的界面-售后类型 pages/after-sale-type/after-sale-type
 我的界面-售后退款 pages/after-sale-refund/after-sale-refund
 我的界面-我的评价 pages/my-evaluate/my-evaluate
 

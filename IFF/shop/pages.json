@@ -1,9 +1,62 @@
 {
 	"pages": [
 		{
+            "path" : "pages/after-sale/after-sale",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "退换 / 售后",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+            "path" : "pages/after-sale-type/after-sale-type",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "售后类型",
+                "enablePullDownRefresh": false
+            } 
+        },
+        {
+            "path" : "pages/renew-order/renew-order",
+            "style" :  {
+                "navigationBarTitleText": "提交订单",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+		    "path" : "pages/renew-courtesy/renew-courtesy",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "换新礼遇",
+		        "enablePullDownRefresh": false
+		    }  
+		},
+		{
+            "path" : "pages/renew-code/renew-code",
+            "style" : {
+                "navigationBarTitleText": "换新编码",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+            "path" : "pages/product-info/product-info",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "产品信息",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
             "path" : "pages/goods/goods",
             "style" : {
                 "navigationBarTitleText": "全部商品",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path" : "pages/goods-detail/goods-detail",
+            "style" : {
+                "navigationBarTitleText": "购物车",
                 "enablePullDownRefresh": false
             }
         },
@@ -74,71 +127,47 @@
         },
 		{
 			"path": "pages/index/index"
-		}
-        ,{
+		},
+		{
             "path" : "pages/car/car",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
+        },
+		{
             "path" : "pages/order-confirm/order-confirm",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
-            "path" : "pages/after-sale/after-sale",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/after-sale-type/after-sale-type",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
+        },
+		{
             "path" : "pages/after-sale-refund/after-sale-refund",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
+        },
+		{
             "path" : "pages/my-evaluate/my-evaluate",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
-        }
-        ,{
+        },
+		{
             "path" : "pages/adviser/adviser",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
         }
-        
     ],
 	"tabBar": {
 		"color" : "#2e2e2e",

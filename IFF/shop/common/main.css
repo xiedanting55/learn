@@ -142,6 +142,7 @@ body{
 .j-center{ justify-content: center!important; }
 .j-end{ justify-content: flex-end; }
 .j-sb{ justify-content: space-between; }
+.j-sa{ justify-content: space-around; }
 .a-center{ align-items:center!important; }
 .a-start{ align-items: flex-start; }
 .a-end{ align-items:flex-end; }
@@ -325,6 +326,10 @@ body{
 	height: 10rpx;
 	border-left: 4rpx solid #00332A;
 	border-bottom: 4rpx solid #00332A;
+}
+.arrow-white {
+	border-left-color: #fff;
+	border-bottom-color: #fff;
 }
 .arrow-right {
 	transform: rotate(225deg);
