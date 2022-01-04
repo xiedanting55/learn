@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/after-sale-status/after-sale-status",
+    "pages/after-sale-refund/after-sale-refund",
     "pages/after-sale/after-sale",
     "pages/after-sale-type/after-sale-type",
     "pages/renew-order/renew-order",
@@ -20,7 +22,6 @@
     "pages/index/index",
     "pages/car/car",
     "pages/order-confirm/order-confirm",
-    "pages/after-sale-refund/after-sale-refund",
     "pages/my-evaluate/my-evaluate",
     "pages/adviser/adviser"
   ],

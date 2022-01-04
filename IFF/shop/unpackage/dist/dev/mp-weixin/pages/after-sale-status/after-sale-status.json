@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "退款成功",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "uni-steps": "/components/uni-ui/uni-steps/uni-steps"
+  }
+}

@@ -1,17 +1,29 @@
 {
 	"pages": [
+        {
+            "path" : "pages/after-sale-status/after-sale-status",
+            "style" : {
+                "navigationBarTitleText": "退款成功",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+            "path" : "pages/after-sale-refund/after-sale-refund",
+            "style" : {
+                "navigationBarTitleText": "申请退款",
+                "enablePullDownRefresh": false
+            }
+        },
 		{
             "path" : "pages/after-sale/after-sale",
-            "style" :                                                                                    
-            {
+            "style" : {
                 "navigationBarTitleText": "退换 / 售后",
                 "enablePullDownRefresh": false
             }
         },
 		{
             "path" : "pages/after-sale-type/after-sale-type",
-            "style" :                                                                                    
-            {
+            "style" : {
                 "navigationBarTitleText": "售后类型",
                 "enablePullDownRefresh": false
             } 
@@ -25,8 +37,7 @@
         },
 		{
 		    "path" : "pages/renew-courtesy/renew-courtesy",
-		    "style" :                                                                                    
-		    {
+		    "style" : {
 		        "navigationBarTitleText": "换新礼遇",
 		        "enablePullDownRefresh": false
 		    }  
@@ -40,8 +51,7 @@
         },
 		{
             "path" : "pages/product-info/product-info",
-            "style" :                                                                                    
-            {
+            "style" : {
                 "navigationBarTitleText": "产品信息",
                 "enablePullDownRefresh": false
             }
@@ -130,40 +140,28 @@
 		},
 		{
             "path" : "pages/car/car",
-            "style" :                                                                                    
-            {
+            "style" : {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
         },
 		{
             "path" : "pages/order-confirm/order-confirm",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-            "path" : "pages/after-sale-refund/after-sale-refund",
-            "style" :                                                                                    
-            {
+            "style" : {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
         },
 		{
             "path" : "pages/my-evaluate/my-evaluate",
-            "style" :                                                                                    
-            {
+            "style" : {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
         },
 		{
             "path" : "pages/adviser/adviser",
-            "style" :                                                                                    
-            {
+            "style" : {
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
