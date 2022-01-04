@@ -1,5 +1,11 @@
 {
   "pages": [
+    "pages/order-confirm/order-confirm",
+    "pages/my-order/my-order",
+    "pages/publish-evaluationz/publish-evaluationz",
+    "pages/publish-evaluation/publish-evaluation",
+    "pages/my-evaluate-status/my-evaluate-status",
+    "pages/my-evaluate/my-evaluate",
     "pages/after-sale-status/after-sale-status",
     "pages/after-sale-refund/after-sale-refund",
     "pages/after-sale/after-sale",
@@ -21,8 +27,6 @@
     "pages/relevant-policies/relevant-policies",
     "pages/index/index",
     "pages/car/car",
-    "pages/order-confirm/order-confirm",
-    "pages/my-evaluate/my-evaluate",
     "pages/adviser/adviser"
   ],
   "subPackages": [],

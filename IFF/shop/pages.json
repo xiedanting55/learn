@@ -1,5 +1,47 @@
 {
 	"pages": [
+		{
+            "path" : "pages/order-confirm/order-confirm",
+            "style" : {
+                "navigationBarTitleText": "确认订单",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+		    "path" : "pages/my-order/my-order",
+		    "style" : {
+		        "navigationBarTitleText": "我的订单",
+		        "enablePullDownRefresh": false
+		    }
+		},
+        {
+            "path" : "pages/publish-evaluationz/publish-evaluationz",
+            "style" : {
+                "navigationBarTitleText": "发表追评",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+            "path" : "pages/publish-evaluation/publish-evaluation",
+            "style" : {
+                "navigationBarTitleText": "发表评价",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path" : "pages/my-evaluate-status/my-evaluate-status",
+            "style" :  {
+                "navigationBarTitleText": "评价成功",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+            "path" : "pages/my-evaluate/my-evaluate",
+            "style" : {
+                "navigationBarTitleText": "我的评价",
+                "enablePullDownRefresh": false
+            }
+        },
         {
             "path" : "pages/after-sale-status/after-sale-status",
             "style" : {
@@ -141,21 +183,7 @@
 		{
             "path" : "pages/car/car",
             "style" : {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-            "path" : "pages/order-confirm/order-confirm",
-            "style" : {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-            "path" : "pages/my-evaluate/my-evaluate",
-            "style" : {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "购物车",
                 "enablePullDownRefresh": false
             }
         },

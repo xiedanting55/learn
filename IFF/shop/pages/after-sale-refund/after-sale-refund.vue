@@ -42,7 +42,6 @@
 			}
 		},
 		methods: {
-			
 		}
 	}
 </script>

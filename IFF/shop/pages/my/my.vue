@@ -48,11 +48,11 @@
 				</view>
 				<view class="span-4 row a-center flex-column">
 					<image src="/static/images/my_2.png" mode="widthFix"></image>
-					<text>代发货</text>
+					<text>待发货</text>
 				</view>
 				<view class="span-4 row a-center flex-column">
 					<image src="/static/images/my_3.png" mode="widthFix"></image>
-					<text>代收货</text>
+					<text>待收货</text>
 				</view>
 				<view class="span-4 row a-center flex-column">
 					<image src="/static/images/my_4.png" mode="widthFix"></image>
