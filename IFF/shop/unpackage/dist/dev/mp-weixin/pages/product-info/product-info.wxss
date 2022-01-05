@@ -24,61 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.product-info .text1.data-v-6a9f6386 {
-  font-size: 30rpx;
-  color: #444;
-}
-.product-info .info.data-v-6a9f6386 {
-  background-color: #e4e4e4;
-}
-.product-info .info view.data-v-6a9f6386 {
-  line-height: 64rpx;
-  border-bottom-color: #fff;
-}
-.product-info .info view text.data-v-6a9f6386 {
-  font-size: 24rpx;
-  color: #393939;
-}
-.product-info .info view.price text.data-v-6a9f6386 {
-  font-size: 30rpx;
-}
-.product-info .hx-list text.data-v-6a9f6386 {
-  font-size: 30rpx;
-}
-.product-info .hx-list .text2.data-v-6a9f6386 {
-  color: #2c2c2c;
-}
-.product-info .hx-list .item.data-v-6a9f6386 {
-  background-color: #e4e4e4;
-}
-.product-info .hx-list .item .item-head text.data-v-6a9f6386 {
-  color: #2b2a2a;
-}
 .product-info .hx-list .item .item-body image.data-v-6a9f6386 {
   width: 175rpx;
   height: 175rpx;
 }
 .product-info .hx-list .item .item-body .content.data-v-6a9f6386 {
   width: 330rpx;
-}
-.product-info .hx-list .item .item-body .content text.data-v-6a9f6386:nth-of-type(1) {
-  font-size: 30rpx;
-  color: #292929;
-}
-.product-info .hx-list .item .item-body .content text.data-v-6a9f6386:nth-of-type(2) {
-  font-size: 24rpx;
-  color: #424242;
-}
-.product-info .hx-list .item .item-body .item-body-re .price text.data-v-6a9f6386:nth-of-type(1) {
-  font-size: 24rpx;
-}
-.product-info .hx-list .item .item-body .item-body-re .price text.data-v-6a9f6386:nth-of-type(2) {
-  font-size: 36rpx;
-}
-.product-info .hx-list .item .item-body .item-body-re .count text.data-v-6a9f6386:nth-of-type(1) {
-  font-size: 60rpx;
-}
-.product-info .hx-list .item .item-body .item-body-re .count text.data-v-6a9f6386:nth-of-type(2) {
-  font-size: 36rpx;
 }
 

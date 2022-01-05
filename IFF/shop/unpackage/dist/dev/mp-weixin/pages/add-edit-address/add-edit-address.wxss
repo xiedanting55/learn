@@ -24,23 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.add-edit-address .d-flex.data-v-01ca3f26 {
-  background-color: #e4e4e4;
-}
 .add-edit-address .d-flex.row-max.data-v-01ca3f26 {
   height: 102rpx;
 }
-.add-edit-address text.data-v-01ca3f26, .add-edit-address input.data-v-01ca3f26 {
-  display: block;
-  font-size: 24rpx;
-}
 .add-edit-address .text1.data-v-01ca3f26 {
-  width: 120rpx;
-  color: #2f2f2f;
-}
-.add-edit-address .text2.data-v-01ca3f26 {
-  width: 425rpx;
-  color: #2d2d2d;
+  width: 130rpx;
 }
 .add-edit-address image.data-v-01ca3f26 {
   width: 30rpx;
@@ -51,21 +39,13 @@
 .add-edit-address .row-re.data-v-01ca3f26 {
   width: 115rpx;
 }
-.add-edit-address .item-row .item-chose text.data-v-01ca3f26 {
-  font-size: 18rpx;
-  line-height: 40rpx;
-}
 .add-edit-address .item-row .add-icon.data-v-01ca3f26 {
   line-height: 40rpx;
 }
 .add-edit-address .item-row .add-icon image.data-v-01ca3f26 {
   width: 20rpx;
 }
-.add-edit-address .text4.data-v-01ca3f26 {
-  font-size: 18rpx;
-}
 .add-edit-address .text5.data-v-01ca3f26 {
-  font-size: 16rpx;
   color: #909090;
 }
 .add-edit-address .btn.data-v-01ca3f26 {
@@ -75,6 +55,5 @@
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  font-size: 30rpx;
 }
 

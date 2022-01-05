@@ -71,4 +71,17 @@
   line-height: 88rpx;
   font-size: 30rpx;
 }
+.order-confirm .line text.data-v-3d28758a {
+  font-size: 24rpx;
+  color: #4a4a4a;
+}
+.order-confirm .line .line-text1.data-v-3d28758a {
+  font-size: 30rpx;
+}
+.order-confirm .line .line-text2.data-v-3d28758a {
+  font-size: 36rpx;
+}
+.order-confirm .line .line-text3.data-v-3d28758a {
+  margin-bottom: 5rpx;
+}
 

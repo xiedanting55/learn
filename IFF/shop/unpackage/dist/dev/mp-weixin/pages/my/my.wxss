@@ -24,17 +24,14 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.my-head .row.data-v-0be17cc6 {
+.my-head .portrait-head.data-v-0be17cc6 {
   top: 75rpx;
   left: 60rpx;
 }
-.my-head .row .portrait.data-v-0be17cc6 {
+.my-head .portrait-head .portrait.data-v-0be17cc6 {
   margin-right: 24rpx;
   width: 134rpx;
   height: 134rpx;
-}
-.my-head .row text.data-v-0be17cc6 {
-  font-size: 30rpx;
 }
 .my-vip-card.data-v-0be17cc6 {
   margin: -140rpx 60rpx 0;
@@ -42,48 +39,31 @@
 .my-vip-card .my-vip-list.data-v-0be17cc6 {
   bottom: 50rpx;
 }
-.my-vip-card .my-vip-list .row.data-v-0be17cc6 {
-  margin-top: 20rpx;
-}
-.my-vip-card .my-vip-list .row image.data-v-0be17cc6 {
+.my-vip-card .my-vip-list image.data-v-0be17cc6 {
   width: 60rpx;
 }
-.my-vip-card .my-vip-list .row .text1.data-v-0be17cc6 {
-  font-size: 24rpx;
-}
-.my-vip-card .my-vip-list .row .text2.data-v-0be17cc6 {
-  font-size: 18rpx;
+.my-vip-card .my-vip-list .text2.data-v-0be17cc6 {
   line-height: 42rpx;
 }
-.my-order.data-v-0be17cc6 {
-  background-color: #e4e4e4;
-}
 .my-order .my-order-head .text1.data-v-0be17cc6 {
-  font-size: 30rpx;
   color: #333;
 }
 .my-order .my-order-head .text2.data-v-0be17cc6 {
-  font-size: 20rpx;
   color: #202020;
 }
 .my-order .my-order-row image.data-v-0be17cc6 {
   width: 65rpx;
 }
 .my-order .my-order-row text.data-v-0be17cc6 {
-  font-size: 24rpx;
   color: #363636;
 }
-.my-list .row-line.data-v-0be17cc6 {
-  margin: 0 60rpx;
+.my-list image.data-v-0be17cc6 {
+  width: 30rpx;
 }
-.my-list .row-line image.data-v-0be17cc6 {
-  width: 28rpx;
-}
-.my-list .row-line text.data-v-0be17cc6 {
-  font-size: 24rpx;
+.my-list text.data-v-0be17cc6 {
   color: #333;
 }
-.my-list .row-line .row-re.data-v-0be17cc6 {
+.my-list .row-re.data-v-0be17cc6 {
   width: 582rpx;
   border-color: #e4e4e4;
 }

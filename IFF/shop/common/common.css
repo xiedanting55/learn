@@ -26,3 +26,13 @@ image{  width: 100%;  }
 .input-border-color{
 	border-color: #00332a;
 }
+
+.main-bg-gray-color{ background-color: #e4e4e4; }
+
+.main-text-60 {font-size: 60rpx;}
+.main-text-36 {font-size: 36rpx;}
+.main-text-30 {font-size: 30rpx;}
+.main-text-24 {font-size: 24rpx;}
+.main-text-20 {font-size: 20rpx;}
+.main-text-18 {font-size: 18rpx;}
+.main-text-16 {font-size: 16rpx;}

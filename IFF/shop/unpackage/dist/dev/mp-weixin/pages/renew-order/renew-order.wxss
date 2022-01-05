@@ -1,3 +1,17 @@
+
+checkbox .wx-checkbox-input {
+		border-radius: 50% !important;
+		color: #ffffff !important;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+		color: #fff;
+		background: #00332A;
+}
+.wx-checkbox-input.wx-checkbox-input-checked {
+		border-color: #00332A !important;
+}
+
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -24,14 +38,8 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.renew-order .renew-list.data-v-10ef72a4 {
-  background-color: #e4e4e4;
-}
 .renew-order .renew-list .item.data-v-10ef72a4 {
   border-bottom-color: #fff;
-}
-.renew-order .renew-list .item .text1.data-v-10ef72a4 {
-  font-size: 30rpx;
 }
 .renew-order .renew-list .item .item-body image.data-v-10ef72a4 {
   width: 175rpx;
@@ -39,48 +47,5 @@
 }
 .renew-order .renew-list .item .item-body .content.data-v-10ef72a4 {
   width: 330rpx;
-}
-.renew-order .renew-list .item .item-body .content text.data-v-10ef72a4 {
-  font-size: 24rpx;
-  color: #424242;
-}
-.renew-order .renew-list .item .item-body .content text.data-v-10ef72a4:nth-of-type(1) {
-  font-size: 30rpx;
-  color: #292929;
-}
-.renew-order .renew-list .item .item-body .item-body-re .price text.data-v-10ef72a4:nth-of-type(1) {
-  font-size: 24rpx;
-}
-.renew-order .renew-list .item .item-body .item-body-re .price text.data-v-10ef72a4:nth-of-type(2) {
-  font-size: 36rpx;
-}
-.renew-order .renew-list .item .item-body .item-body-re .count text.data-v-10ef72a4:nth-of-type(1) {
-  font-size: 60rpx;
-}
-.renew-order .renew-list .item .item-body .item-body-re .count text.data-v-10ef72a4:nth-of-type(2) {
-  font-size: 36rpx;
-}
-.renew-order .renew-list .item-all .item-all-le text.data-v-10ef72a4:nth-of-type(1) {
-  font-size: 30rpx;
-}
-.renew-order .renew-list .item-all .item-all-le text.data-v-10ef72a4:nth-of-type(1) {
-  font-size: 24rpx;
-}
-.renew-order .renew-list .item-all .item-all-re .text2.data-v-10ef72a4 {
-  font-size: 30rpx;
-}
-.renew-order .renew-list .item-all .item-all-re .price text.data-v-10ef72a4:nth-of-type(1) {
-  font-size: 24rpx;
-}
-.renew-order .renew-list .item-all .item-all-re .price text.data-v-10ef72a4:nth-of-type(2) {
-  font-size: 36rpx;
-}
-.renew-order .xieyi.data-v-10ef72a4 {
-  font-size: 24rpx;
-  color: #3d3d3d;
-}
-.renew-order .send.data-v-10ef72a4 {
-  line-height: 88rpx;
-  font-size: 30rpx;
 }
 

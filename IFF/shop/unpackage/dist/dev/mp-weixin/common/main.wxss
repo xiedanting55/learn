@@ -362,6 +362,7 @@ page{
 .mx-3 { margin-left: 30rpx;margin-right: 30rpx;}
 .mx-4 { margin-left: 40rpx;margin-right: 40rpx;}
 .mx-5 { margin-left: 50rpx;margin-right: 50rpx;}
+.mx-6 { margin-left: 60rpx;margin-right: 60rpx;}
 .my-0 { margin-top: 0;margin-bottom: 0;}
 .my { margin-top: 5rpx;margin-bottom: 5rpx;}
 .my-1 { margin-top: 10rpx;margin-bottom: 10rpx;}
@@ -369,6 +370,7 @@ page{
 .my-3 { margin-top: 30rpx;margin-bottom: 30rpx;}
 .my-4 { margin-top: 40rpx;margin-bottom: 40rpx;}
 .my-5 { margin-top: 50rpx;margin-bottom: 50rpx;}
+.my-6 { margin-top: 60rpx;margin-bottom: 60rpx;}
 .mt-0 { margin-top: 0;}
 .mt { margin-top: 5rpx;}
 .mt-auto { margin-top: auto;}
@@ -463,6 +465,10 @@ page{
 	-webkit-transform: rotate(225deg);
 	        transform: rotate(225deg);
 }
+.arrow-bottom {
+	-webkit-transform: rotate(-45deg);
+	        transform: rotate(-45deg);
+}
 /* 公共样式 */
 
 /* 设置全局样式 */
@@ -495,4 +501,13 @@ image{  width: 100%;
 .input-border-color{
 	border-color: #00332a;
 }
+.main-bg-gray-color{ background-color: #e4e4e4;
+}
+.main-text-60 {font-size: 60rpx;}
+.main-text-36 {font-size: 36rpx;}
+.main-text-30 {font-size: 30rpx;}
+.main-text-24 {font-size: 24rpx;}
+.main-text-20 {font-size: 20rpx;}
+.main-text-18 {font-size: 18rpx;}
+.main-text-16 {font-size: 16rpx;}
 

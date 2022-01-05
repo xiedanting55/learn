@@ -1,6 +1,111 @@
 {
 	"pages": [
 		{
+            "path" : "pages/goods/goods",
+            "style" : {
+                "navigationBarTitleText": "全部商品",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+			"path": "pages/index/index"
+		},
+		{
+            "path" : "pages/my/my",
+            "style" : {
+                "app-plus": {
+					"titleNView": false
+				},
+				"navigationStyle":"custom"
+            }
+        },
+		{
+		    "path" : "pages/my-info/my-info",
+		    "style" :  {
+		        "navigationBarTitleText": "个人信息",
+		        "enablePullDownRefresh": false
+		    }
+		},
+		{
+		    "path" : "pages/renew-courtesy/renew-courtesy",
+		    "style" : {
+		        "navigationBarTitleText": "换新礼遇",
+		        "enablePullDownRefresh": false
+		    }  
+		},
+		{
+            "path" : "pages/renew-code/renew-code",
+            "style" : {
+                "navigationBarTitleText": "换新编码",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+            "path" : "pages/product-info/product-info",
+            "style" : {
+                "navigationBarTitleText": "产品信息",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path" : "pages/renew-order/renew-order",
+            "style" :  {
+                "navigationBarTitleText": "提交订单",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path" : "pages/address/address",
+            "style" : {
+                "navigationBarTitleText": "地址管理",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+		    "path" : "pages/add-edit-address/add-edit-address",
+		    "style" :  {
+		        "navigationBarTitleText": "新建收货地址",
+		        "enablePullDownRefresh": false
+		    }
+		},
+        {
+            "path" : "pages/maintenance/maintenance",
+            "style" : {
+                "navigationBarTitleText": "维修保养",
+                "enablePullDownRefresh": false
+            } 
+        },
+        {
+            "path" : "pages/maintenance-appointment/maintenance-appointment",
+            "style" :   {
+                "navigationBarTitleText": "维修预约",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+		    "path" : "pages/order-confirm-status/order-confirm-status",
+		    "style" : {
+		        "navigationBarTitleText": "提交成功",
+		        "enablePullDownRefresh": false
+		    } 
+		},
+		{
+            "path" : "pages/coupon/coupon",
+            "style" : {
+                "navigationBarTitleText": "我的优惠卷",
+                "enablePullDownRefresh": false
+            } 
+        },
+		{
+            "path" : "pages/relevant-policies/relevant-policies",
+            "style" :  {
+                "navigationBarTitleText": "相关政策",
+                "enablePullDownRefresh": false
+            }
+        },
+		
+		
+		{
             "path" : "pages/order-confirm/order-confirm",
             "style" : {
                 "navigationBarTitleText": "确认订单",
@@ -71,115 +176,12 @@
             } 
         },
         {
-            "path" : "pages/renew-order/renew-order",
-            "style" :  {
-                "navigationBarTitleText": "提交订单",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-		    "path" : "pages/renew-courtesy/renew-courtesy",
-		    "style" : {
-		        "navigationBarTitleText": "换新礼遇",
-		        "enablePullDownRefresh": false
-		    }  
-		},
-		{
-            "path" : "pages/renew-code/renew-code",
-            "style" : {
-                "navigationBarTitleText": "换新编码",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-            "path" : "pages/product-info/product-info",
-            "style" : {
-                "navigationBarTitleText": "产品信息",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-            "path" : "pages/goods/goods",
-            "style" : {
-                "navigationBarTitleText": "全部商品",
-                "enablePullDownRefresh": false
-            }
-        },
-        {
             "path" : "pages/goods-detail/goods-detail",
             "style" : {
                 "navigationBarTitleText": "购物车",
                 "enablePullDownRefresh": false
             }
         },
-		{
-            "path" : "pages/my/my",
-            "style" : {
-                "app-plus": {
-					"titleNView": false
-				},
-				"navigationStyle":"custom"
-            }
-        },
-        {
-            "path" : "pages/my-info/my-info",
-            "style" :  {
-                "navigationBarTitleText": "个人信息",
-                "enablePullDownRefresh": false
-            }
-        },
-        {
-            "path" : "pages/address/address",
-            "style" : {
-                "navigationBarTitleText": "地址管理",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-		    "path" : "pages/add-edit-address/add-edit-address",
-		    "style" :  {
-		        "navigationBarTitleText": "新建收货地址",
-		        "enablePullDownRefresh": false
-		    }
-		},
-        {
-            "path" : "pages/maintenance/maintenance",
-            "style" : {
-                "navigationBarTitleText": "维修保养",
-                "enablePullDownRefresh": false
-            } 
-        },
-        {
-            "path" : "pages/maintenance-appointment/maintenance-appointment",
-            "style" :   {
-                "navigationBarTitleText": "维修预约",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-		    "path" : "pages/order-confirm-status/order-confirm-status",
-		    "style" : {
-		        "navigationBarTitleText": "提交成功",
-		        "enablePullDownRefresh": false
-		    } 
-		},
-		{
-            "path" : "pages/coupon/coupon",
-            "style" : {
-                "navigationBarTitleText": "我的优惠卷",
-                "enablePullDownRefresh": false
-            } 
-        },
-		{
-            "path" : "pages/relevant-policies/relevant-policies",
-            "style" :  {
-                "navigationBarTitleText": "相关政策",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-			"path": "pages/index/index"
-		},
 		{
             "path" : "pages/car/car",
             "style" : {

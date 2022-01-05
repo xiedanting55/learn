@@ -1,0 +1,1 @@
+<view class="count d-flex a-center j-end data-v-d9652ab8"><text class="main-text-color font-weight data-v-d9652ab8" style="{{'font-size:'+(sizeBol+'rpx')+';'}}">x</text><text class="main-text-color font-weight ml-1 data-v-d9652ab8" style="{{'font-size:'+(sizeNumber+'rpx')+';'}}">{{countValue}}</text></view>

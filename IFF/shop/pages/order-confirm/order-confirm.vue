@@ -28,57 +28,58 @@
 			</view>
 		</view>
 		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text>优惠券</text>
+			<text class="font-weight">优惠券</text>
 			<view class="line-re d-flex a-center j-center">
-				<text>0张</text>
+				<text class="font-weight mr-1">0张</text>
 				<view class="arrow arrow-right"></view>
 			</view>
 		</view>
 		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text>(优惠券代码)</text>
+			<text class="font-weight">(优惠券代码)</text>
 			<view class="line-re d-flex a-center j-center">
-				<text>确认</text>
+				<text class="font-weight">确认</text>
 			</view>
 		</view>
 		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text>发票</text>
+			<text class="font-weight">发票</text>
 			<view class="line-re d-flex a-center j-center">
-				<text>不需要发票</text>
+				<text class="font-weight mr-1">不需要发票</text>
 				<view class="arrow arrow-right"></view>
 			</view>
 		</view>
 		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text>订单备注</text>
+			<text class="font-weight">订单备注</text>
 			<view class="line-re d-flex a-center j-center">
-				<text>无备注</text>
+				<text class="font-weight mr-1">无备注</text>
 				<view class="arrow arrow-right"></view>
 			</view>
 		</view>
 		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text>商品总额</text>
+			<text class="font-weight">商品总额</text>
 			<view class="line-re d-flex a-center j-center">
-				<text>¥ 999</text>
+				<text class="font-weight">¥ 999</text>
 			</view>
 		</view>
 		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text>促销优惠</text>
+			<text class="font-weight">促销优惠</text>
 			<view class="line-re d-flex a-center j-center">
-				<text>-¥ 0</text>
+				<text class="font-weight">-¥ 0</text>
 			</view>
 		</view>
 		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text>运费</text>
+			<text class="font-weight">运费</text>
 			<view class="line-re d-flex a-center j-center">
-				<text>¥ 0.00</text>
+				<text class="font-weight">¥ 0.00</text>
 			</view>
 		</view>
 		<view class="line d-flex a-center j-sb mx-3 my-1">
 			<view class="line-le">
-				<text>合计</text>
-				<text>(共1件)</text>
+				<text class="font-weight main-text-color line-text1">合计</text>
+				<text class="main-text-color">(共1件)</text>
 			</view>
-			<view class="line-re d-flex a-center j-center">
-				<text>¥ 999</text>
+			<view class="line-re d-flex a-end j-center">
+				<text class="font-weight main-text-color mr-1 line-text3">¥ </text>
+				<text class="font-weight main-text-color line-text2">999</text>
 			</view>
 		</view>
 		<view class="main-bg-color text-white position-fixed bottom-0 left-0 w-100 send font-weight rounded-4 text-center">微信支付</view>
@@ -168,6 +169,21 @@
 		.send {
 			line-height: 88rpx;
 			font-size: 30rpx;
+		}
+		.line {
+			text {
+				font-size: 24rpx;
+				color: #4a4a4a;
+			}
+			.line-text1 {
+				font-size: 30rpx;
+			}
+			.line-text2 {
+				font-size: 36rpx;
+			}
+			.line-text3 {
+				margin-bottom: 5rpx;
+			}
 		}
 	}
 </style>

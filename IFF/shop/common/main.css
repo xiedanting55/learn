@@ -221,6 +221,7 @@ body{
 .mx-3 { margin-left: 30upx;margin-right: 30upx;}
 .mx-4 { margin-left: 40upx;margin-right: 40upx;}
 .mx-5 { margin-left: 50upx;margin-right: 50upx;}
+.mx-6 { margin-left: 60upx;margin-right: 60upx;}
 
 .my-0 { margin-top: 0;margin-bottom: 0;}
 .my { margin-top: 5upx;margin-bottom: 5upx;}
@@ -229,6 +230,7 @@ body{
 .my-3 { margin-top: 30upx;margin-bottom: 30upx;}
 .my-4 { margin-top: 40upx;margin-bottom: 40upx;}
 .my-5 { margin-top: 50upx;margin-bottom: 50upx;}
+.my-6 { margin-top: 60upx;margin-bottom: 60upx;}
 
 .mt-0 { margin-top: 0;}
 .mt { margin-top: 5upx;}
@@ -333,4 +335,7 @@ body{
 }
 .arrow-right {
 	transform: rotate(225deg);
+}
+.arrow-bottom {
+	transform: rotate(-45deg);
 }

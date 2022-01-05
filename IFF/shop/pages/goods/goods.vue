@@ -1,49 +1,63 @@
 <template>
 	<view class="goods">
-		<view class="mx-3 my-2">
-			<uni-easyinput class="col-9" :inputBorder="false" :colorIcon="'#515151'" :size="20" suffixIcon="search" v-model="value" placeholder="搜索..." @iconClick="iconClick"></uni-easyinput>
+		<view class="mx-3 py-2 top" style="z-index: 1000">
+			<view class="line d-flex a-center j-sb rounded-4 main-bg-gray-color py-2">
+				<input type="text" value="" placeholder="搜索..." class="ml-1 pl-3 main-text-24" />
+				<image src="/static/images/search.png" class="search mr-3" mode="widthFix"></image>
+			</view>
 		</view>  
 		<view class="d-flex">
 			<scroll-view id="leftScroll" scroll-y style="flex: 1;height: 100%;" :scroll-top="leftScrollTop">
-				<view class="left-view border-bottom left-scroll-item border-color" hover-class="bg-light-secondary" v-for="(item,index) in cate" :key="index" @tap="changeCate(index)">
-					<view class="text1 font-md text-muted text-center" :class="activeIndex === index ? 'main-bg-color text-white' : ''">{{item.name}}</view>
+				<view class="left-view border-bottom left-scroll-item border-color main-bg-gray-color" hover-class="bg-light-secondary" v-for="(item,index) in cate" :key="index" @tap="changeCate(index)">
+					<view class="font-md text-muted text-center main-text-30" :class="activeIndex === index ? 'main-bg-color text-white' : ''">{{item.name}}</view>
 				</view>
 			</scroll-view>
-			<scroll-view class="rightScroll text-center" scroll-y style="flex: 2.5;height: 100%;" :scroll-top="rightScrollTop" :scroll-with-animation="true" @scroll="onRightScroll">
+			<scroll-view class="rightScroll text-center" scroll-y style="flex: 2.5;" :style="{'height':scrollHeight + 'px'}" :scroll-with-animation="true">
 				<view class="px-3">
-					<text class="text2">每月月底上新，提前解锁珠宝潮流趋势</text>
+					<text class="main-text-24">每月月底上新，提前解锁珠宝潮流趋势</text>
 					<image src="/static/images/my_bg.png" mode="widthFix"></image>
+					
 					<view class="rightScroll-list d-flex a-center j-sb flex-wrap">
 						<view class="col-4 mt-1" @click="linkTo">
 							<image src="/static/images/my_vip_4.png" mode=""></image>
 							<view class="col-4-line d-flex a-center j-center main-bg-color">
-								<image src="/static/images/icon1-white.png" mode="widthFix"></image>
-								<text class="text-white ml-1">¥</text>
-								<text class="text-white font-weight ml-1">199</text>
+								<image src="/static/images/icon1-white.png" mode="widthFix" class="mr-1"></image>
+								<price :sizeBol="20" :priceValue="999" :mainTextColor="'#fff'" />
 							</view>
 						</view>
-						<view class="col-4 mt-1">
+						<view class="col-4 mt-1" @click="linkTo">
 							<image src="/static/images/my_vip_4.png" mode=""></image>
 							<view class="col-4-line d-flex a-center j-center main-bg-color">
-								<image src="/static/images/icon1-white.png" mode="widthFix"></image>
-								<text class="text-white ml-1">¥</text>
-								<text class="text-white font-weight ml-1">199</text>
+								<image src="/static/images/icon1-white.png" mode="widthFix" class="mr-1"></image>
+								<price :sizeBol="20" :priceValue="999" :mainTextColor="'#fff'" />
 							</view>
 						</view>
-						<view class="col-4 mt-1">
+						<view class="col-4 mt-1" @click="linkTo">
 							<image src="/static/images/my_vip_4.png" mode=""></image>
 							<view class="col-4-line d-flex a-center j-center main-bg-color">
-								<image src="/static/images/icon1-white.png" mode="widthFix"></image>
-								<text class="text-white ml-1">¥</text>
-								<text class="text-white font-weight ml-1">199</text>
+								<image src="/static/images/icon1-white.png" mode="widthFix" class="mr-1"></image>
+								<price :sizeBol="20" :priceValue="999" :mainTextColor="'#fff'" />
 							</view>
 						</view>
-						<view class="col-4 mt-1">
+						<view class="col-4 mt-1" @click="linkTo">
 							<image src="/static/images/my_vip_4.png" mode=""></image>
 							<view class="col-4-line d-flex a-center j-center main-bg-color">
-								<image src="/static/images/icon1-white.png" mode="widthFix"></image>
-								<text class="text-white ml-1">¥</text>
-								<text class="text-white font-weight ml-1">199</text>
+								<image src="/static/images/icon1-white.png" mode="widthFix" class="mr-1"></image>
+								<price :sizeBol="20" :priceValue="999" :mainTextColor="'#fff'" />
+							</view>
+						</view>
+						<view class="col-4 mt-1" @click="linkTo">
+							<image src="/static/images/my_vip_4.png" mode=""></image>
+							<view class="col-4-line d-flex a-center j-center main-bg-color">
+								<image src="/static/images/icon1-white.png" mode="widthFix" class="mr-1"></image>
+								<price :sizeBol="20" :priceValue="999" :mainTextColor="'#fff'" />
+							</view>
+						</view>
+						<view class="col-4 mt-1" @click="linkTo">
+							<image src="/static/images/my_vip_4.png" mode=""></image>
+							<view class="col-4-line d-flex a-center j-center main-bg-color">
+								<image src="/static/images/icon1-white.png" mode="widthFix" class="mr-1"></image>
+								<price :sizeBol="20" :priceValue="999" :mainTextColor="'#fff'" />
 							</view>
 						</view>
 					</view>
@@ -60,7 +74,7 @@
 </template>
 
 <script>
-	import uniEasyinput from '@/components/uni-ui/uni-easyinput/uni-easyinput.vue'
+	import price from '@/components/price/price'
 	export default {
 		data() {
 			return {
@@ -105,28 +119,32 @@
 					}
 				],
 				leftScrollTop: 0,
-				rightScrollTop: 0
+				rightScrollTop: 0,
+				scrollHeight: 0
 			}
 		},
 		components:{
-			uniEasyinput
+			price
+		},
+		onReady: function () {
+			let _self = this;
+			uni.getSystemInfo({
+				success: function (res) {
+					var windowHeight = res.windowHeight;
+					//获取顶部搜索高度
+					var dom = uni.createSelectorQuery().select('.top')
+					dom.fields({size: true}, res2 => {
+						if(!res2){return ;}
+						//计算得出滚动区域的高度
+						_self.scrollHeight = windowHeight - res2.height;
+					}).exec();
+				}
+			});
 		},
 		methods: {
 			// 点击左边分类
 			changeCate(index){
-				this.activeIndex = index
-				// 右边scroll-view滚动到对应区块
-				// this.rightScrollTop = this.rightDomsTop[index]
-			},
-			// 监听右边滚动事件
-			async onRightScroll(e){
-				// 匹配当前scrollTop所处的索引
-				this.rightDomsTop.forEach((v,k)=>{
-					if (v < e.detail.scrollTop + 3) {
-						this.activeIndex = k
-						return false
-					}
-				})
+				this.activeIndex = index;
 			},
 			linkTo() {
 				uni.navigateTo({
@@ -136,26 +154,24 @@
 		}
 	}
 </script>
-
+<style>
+	page {
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+</style>
 <style lang="scss" scoped>
 	.goods {
-		.uni-easyinput {
-			background-color: #e4e4e4 !important;
+		overflow: hidden;
+		.search {
+			width: 34rpx;
 		}
 		.border-color {
 			border-color: #00332a;
 		}
 		.left-view {
 			line-height: 90rpx;
-			background-color: #e4e4e4;
-		}
-		.text1 {
-			font-size: 30rpx;
-			color: #333;
-		}
-		.text2 {
-			font-size: 24rpx;
-			color: #343434;
 		}
 		.rightScroll {
 			image {
@@ -170,14 +186,6 @@
 					line-height: 65rpx;
 					image {
 						width: 30rpx;
-					}
-					text {
-						&:nth-of-type(1) {
-							font-size: 20rpx;
-						}
-						&:nth-of-type(2) {
-							font-size: 30rpx;
-						}
 					}
 				}
 			}

@@ -1,8 +1,3 @@
-
-page {
-	background-color: #e4e4e4;
-}
-
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -30,7 +25,6 @@ page {
 /* 透明度 */
 /* 文章场景相关 */
 .line.data-v-3a4df126 {
-  background-color: #e4e4e4;
   padding: 4rpx 0;
 }
 .line image.data-v-3a4df126 {

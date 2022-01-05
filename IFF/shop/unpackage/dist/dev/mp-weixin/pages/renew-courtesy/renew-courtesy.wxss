@@ -24,37 +24,8 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.renew-courtesy .item.data-v-68dc84c6 {
-  background-color: #e4e4e4;
-}
-.renew-courtesy .item .item-head text.data-v-68dc84c6 {
-  font-size: 30rpx;
-}
-.renew-courtesy .item .item-head image.data-v-68dc84c6 {
-  width: 35rpx;
-}
 .renew-courtesy .item .item-body image.data-v-68dc84c6 {
   width: 174rpx;
   height: 174rpx;
-}
-.renew-courtesy .item .item-body .content.data-v-68dc84c6 {
-  width: 236rpx;
-}
-.renew-courtesy .item .item-body .content .text1.data-v-68dc84c6 {
-  font-size: 30rpx;
-}
-.renew-courtesy .item .item-body .content .text2.data-v-68dc84c6 {
-  font-size: 24rpx;
-}
-.renew-courtesy .item .item-body .content .price text.data-v-68dc84c6:nth-of-type(1) {
-  font-size: 24rpx;
-}
-.renew-courtesy .item .item-body .content .price text.data-v-68dc84c6:nth-of-type(2) {
-  font-size: 36rpx;
-}
-.renew-courtesy .item .item-body .text-status.data-v-68dc84c6 {
-  width: 196rpx;
-  line-height: 65rpx;
-  font-size: 36rpx;
 }
 

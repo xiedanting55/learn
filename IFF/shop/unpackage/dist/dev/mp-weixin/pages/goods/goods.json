@@ -2,6 +2,6 @@
   "navigationBarTitleText": "全部商品",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "uni-easyinput": "/components/uni-ui/uni-easyinput/uni-easyinput"
+    "price": "/components/price/price"
   }
 }

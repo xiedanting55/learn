@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/start/start":1,"components/uni-ui/uni-steps/uni-steps":1,"components/uni-ui/uni-easyinput/uni-easyinput":1,"components/uni-ui/uni-icons/uni-icons":1};
+/******/ 		var cssChunks = {"components/price/price":1,"components/uni-ui/uni-easyinput/uni-easyinput":1,"components/item-top/item-top":1,"components/count/count":1,"components/start/start":1,"components/uni-ui/uni-steps/uni-steps":1,"components/uni-ui/uni-number-box/uni-number-box":1,"components/uni-ui/uni-icons/uni-icons":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/start/start":"components/start/start","components/uni-ui/uni-steps/uni-steps":"components/uni-ui/uni-steps/uni-steps","components/uni-ui/uni-easyinput/uni-easyinput":"components/uni-ui/uni-easyinput/uni-easyinput","components/uni-ui/uni-icons/uni-icons":"components/uni-ui/uni-icons/uni-icons"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/price/price":"components/price/price","components/uni-ui/uni-easyinput/uni-easyinput":"components/uni-ui/uni-easyinput/uni-easyinput","components/item-top/item-top":"components/item-top/item-top","components/count/count":"components/count/count","components/start/start":"components/start/start","components/uni-ui/uni-steps/uni-steps":"components/uni-ui/uni-steps/uni-steps","components/uni-ui/uni-number-box/uni-number-box":"components/uni-ui/uni-number-box/uni-number-box","components/uni-ui/uni-icons/uni-icons":"components/uni-ui/uni-icons/uni-icons"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

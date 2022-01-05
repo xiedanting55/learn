@@ -24,19 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.my-info text.data-v-52d94f66 {
-  display: block;
-}
-.my-info .my-info-list.data-v-52d94f66 {
-  background-color: #e4e4e4;
-}
-.my-info .item .text1.data-v-52d94f66 {
-  font-size: 24rpx;
-  color: #292929;
-  width: 254rpx;
-}
 .my-info .item .text2.data-v-52d94f66 {
-  font-size: 24rpx;
   color: #b6b6b6;
 }
 .my-info .item .photo.data-v-52d94f66 {

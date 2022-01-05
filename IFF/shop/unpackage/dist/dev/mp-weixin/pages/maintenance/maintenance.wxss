@@ -25,7 +25,6 @@
 /* 透明度 */
 /* 文章场景相关 */
 .maintenance-head.data-v-5140142e {
-  background-color: #e4e4e4;
   height: 245rpx;
 }
 .maintenance-head text.data-v-5140142e {
@@ -34,10 +33,6 @@
 }
 .maintenance-head text.data-v-5140142e:nth-of-type(1) {
   padding-top: 45rpx;
-  font-size: 30rpx;
-}
-.maintenance-head text.data-v-5140142e:nth-of-type(2) {
-  font-size: 18rpx;
 }
 .maintenance-item.data-v-5140142e {
   color: #333333;
@@ -45,17 +40,10 @@
 .maintenance-item.data-v-5140142e:last-of-type {
   margin-bottom: 30rpx;
 }
-.maintenance-item .maintenance-title.data-v-5140142e {
-  font-size: 24rpx;
-}
 .maintenance-item image.data-v-5140142e {
   width: 132rpx;
 }
-.maintenance-item .text1.data-v-5140142e {
-  font-size: 18rpx;
-}
 .maintenance-item .text2.data-v-5140142e {
-  font-size: 14rpx;
   color: #4f4f4f;
 }
 

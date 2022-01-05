@@ -31,7 +31,6 @@
   width: 23rpx;
 }
 .address text.data-v-db675620 {
-  font-size: 24rpx;
   color: #909090;
 }
 .address .btn.data-v-db675620 {
@@ -44,8 +43,5 @@
 }
 .address .btn image.data-v-db675620 {
   width: 28rpx;
-}
-.address .btn text.data-v-db675620 {
-  font-size: 30rpx;
 }
 
