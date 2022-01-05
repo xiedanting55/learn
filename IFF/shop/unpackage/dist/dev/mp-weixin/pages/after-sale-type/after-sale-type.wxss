@@ -24,15 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.after-sale-type .item.data-v-48cd84b4 {
-  background-color: #e4e4e4;
-}
-.after-sale-type .item .item-head text.data-v-48cd84b4 {
-  font-size: 30rpx;
-}
-.after-sale-type .item .item-head image.data-v-48cd84b4 {
-  width: 35rpx;
-}
 .after-sale-type .item .item-body image.data-v-48cd84b4 {
   width: 175rpx;
   height: 175rpx;
@@ -41,34 +32,18 @@
   width: 330rpx;
 }
 .after-sale-type .item .item-body .content text.data-v-48cd84b4:nth-of-type(1) {
-  font-size: 30rpx;
   color: #292929;
 }
 .after-sale-type .item .item-body .content text.data-v-48cd84b4:nth-of-type(2) {
-  font-size: 24rpx;
   color: #424242;
 }
-.after-sale-type .item .item-body .item-body-re .price text.data-v-48cd84b4:nth-of-type(1) {
-  font-size: 24rpx;
-}
-.after-sale-type .item .item-body .item-body-re .price text.data-v-48cd84b4:nth-of-type(2) {
-  font-size: 36rpx;
-}
-.after-sale-type .item .item-body .item-body-re .count text.data-v-48cd84b4:nth-of-type(1) {
-  font-size: 60rpx;
-}
-.after-sale-type .item .item-body .item-body-re .count text.data-v-48cd84b4:nth-of-type(2) {
-  font-size: 36rpx;
-}
 .after-sale-type .list-item.data-v-48cd84b4 {
-  background-color: #e4e4e4;
   line-height: 110rpx;
 }
 .after-sale-type .list-item image.data-v-48cd84b4 {
   width: 48rpx;
 }
 .after-sale-type .list-item text.data-v-48cd84b4 {
-  font-size: 30rpx;
   color: #282828;
 }
 

@@ -24,15 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.after-sale-status .item-1.data-v-4f9461d4 {
-  background-color: #e4e4e4;
-}
-.after-sale-status .item-2.data-v-4f9461d4 {
-  background-color: #e4e4e4;
-}
-.after-sale-status .item-2 text.data-v-4f9461d4 {
-  font-size: 24rpx;
-}
 .after-sale-status .item-2 .item-head-text.data-v-4f9461d4 {
   color: #353535;
 }
@@ -42,11 +33,5 @@
 }
 .after-sale-status .item-2 .item-body .content.data-v-4f9461d4 {
   color: #2b2b2b;
-}
-.after-sale-status .item-2 .item-body .item-body-re .price text.data-v-4f9461d4:nth-of-type(2) {
-  font-size: 30rpx;
-}
-.after-sale-status .item-2 .item-body .item-body-re .count text.data-v-4f9461d4:nth-of-type(1) {
-  font-size: 30rpx;
 }
 

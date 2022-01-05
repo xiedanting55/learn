@@ -18,8 +18,8 @@
 </template>
 
 <script>
-	import itemTop from "@/components/item-top/item-top.vue"
-	import price from "@/components/price/price.vue"
+	import itemTop from "@/components/item-top/item-top"
+	import price from "@/components/price/price"
 	export default {
 		data() {
 			return {

@@ -65,7 +65,4 @@ page {
 .goods .more view.data-v-5566b618 {
   line-height: 40rpx;
 }
-.goods .more text.data-v-5566b618 {
-  font-size: 20rpx;
-}
 

@@ -7,6 +7,13 @@
                 "enablePullDownRefresh": false
             }
         },
+        {
+            "path" : "pages/goods-detail/goods-detail",
+            "style" : {
+                "navigationBarTitleText": "商品详情",
+                "enablePullDownRefresh": false
+            }
+        },
 		{
 			"path": "pages/index/index"
 		},
@@ -103,6 +110,34 @@
                 "enablePullDownRefresh": false
             }
         },
+		{
+            "path" : "pages/after-sale-type/after-sale-type",
+            "style" : {
+                "navigationBarTitleText": "售后类型",
+                "enablePullDownRefresh": false
+            } 
+        },
+		{
+            "path" : "pages/after-sale/after-sale",
+            "style" : {
+                "navigationBarTitleText": "退换 / 售后",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+            "path" : "pages/after-sale-refund/after-sale-refund",
+            "style" : {
+                "navigationBarTitleText": "申请退款",
+                "enablePullDownRefresh": false
+            }
+        },
+        {
+            "path" : "pages/after-sale-status/after-sale-status",
+            "style" : {
+                "navigationBarTitleText": "退款成功",
+                "enablePullDownRefresh": false
+            }
+        },
 		
 		
 		{
@@ -144,41 +179,6 @@
             "path" : "pages/my-evaluate/my-evaluate",
             "style" : {
                 "navigationBarTitleText": "我的评价",
-                "enablePullDownRefresh": false
-            }
-        },
-        {
-            "path" : "pages/after-sale-status/after-sale-status",
-            "style" : {
-                "navigationBarTitleText": "退款成功",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-            "path" : "pages/after-sale-refund/after-sale-refund",
-            "style" : {
-                "navigationBarTitleText": "申请退款",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-            "path" : "pages/after-sale/after-sale",
-            "style" : {
-                "navigationBarTitleText": "退换 / 售后",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-            "path" : "pages/after-sale-type/after-sale-type",
-            "style" : {
-                "navigationBarTitleText": "售后类型",
-                "enablePullDownRefresh": false
-            } 
-        },
-        {
-            "path" : "pages/goods-detail/goods-detail",
-            "style" : {
-                "navigationBarTitleText": "购物车",
                 "enablePullDownRefresh": false
             }
         },

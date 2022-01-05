@@ -24,18 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.after-sale-refund text.data-v-675bb2a2 {
-  font-size: 24rpx;
-}
-.after-sale-refund .item-1.data-v-675bb2a2 {
-  background-color: #e4e4e4;
-}
-.after-sale-refund .item-1 .text1.data-v-675bb2a2 {
-  font-size: 18rpx;
-}
-.after-sale-refund .item-1 .text2.data-v-675bb2a2 {
-  font-size: 30rpx;
-}
 .after-sale-refund .item-2.data-v-675bb2a2 {
   background-color: #e4e4e4;
 }
@@ -43,7 +31,6 @@
   width: 28rpx;
 }
 .after-sale-refund .item-2 .limite.data-v-675bb2a2 {
-  font-size: 18rpx;
   color: #aaa;
 }
 .after-sale-refund .item-2 .upload.data-v-675bb2a2 {
@@ -52,14 +39,7 @@
 .after-sale-refund .item-2 .upload image.data-v-675bb2a2 {
   width: 74rpx;
 }
-.after-sale-refund .item-2 .upload text.data-v-675bb2a2:nth-of-type(1) {
-  font-size: 18rpx;
-}
-.after-sale-refund .item-2 .upload text.data-v-675bb2a2:nth-of-type(2) {
-  font-size: 14rpx;
-}
 .after-sale-refund .send.data-v-675bb2a2 {
   line-height: 88rpx;
-  font-size: 30rpx;
 }
 

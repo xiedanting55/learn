@@ -28,7 +28,6 @@
   border-bottom: 3rpx solid #00332a;
 }
 .after-sale .search.data-v-e830ff74 {
-  background-color: #e4e4e4;
   line-height: 56rpx;
 }
 .after-sale .search image.data-v-e830ff74 {
@@ -40,15 +39,6 @@
   line-height: 56rpx;
   width: 580rpx;
 }
-.after-sale .item.data-v-e830ff74 {
-  background-color: #e4e4e4;
-}
-.after-sale .item .item-head text.data-v-e830ff74 {
-  font-size: 30rpx;
-}
-.after-sale .item .item-head image.data-v-e830ff74 {
-  width: 35rpx;
-}
 .after-sale .item .item-body image.data-v-e830ff74 {
   width: 175rpx;
   height: 175rpx;
@@ -56,30 +46,13 @@
 .after-sale .item .item-body .content.data-v-e830ff74 {
   width: 330rpx;
 }
-.after-sale .item .item-body .content text.data-v-e830ff74 {
-  font-size: 30rpx;
-}
 .after-sale .item .item-body .content text.data-v-e830ff74:nth-of-type(1) {
   color: #292929;
 }
 .after-sale .item .item-body .content text.data-v-e830ff74:nth-of-type(2) {
-  font-size: 24rpx;
   color: #424242;
 }
-.after-sale .item .item-body .item-body-re .price text.data-v-e830ff74:nth-of-type(1) {
-  font-size: 24rpx;
-}
-.after-sale .item .item-body .item-body-re .price text.data-v-e830ff74:nth-of-type(2) {
-  font-size: 36rpx;
-}
-.after-sale .item .item-body .item-body-re .count text.data-v-e830ff74:nth-of-type(1) {
-  font-size: 32rpx;
-}
-.after-sale .item .item-body .item-body-re .count text.data-v-e830ff74:nth-of-type(2) {
-  font-size: 36rpx;
-}
 .after-sale .item .item-body .item-body-re .btn.data-v-e830ff74 {
-  font-size: 30rpx;
   width: 156rpx;
 }
 

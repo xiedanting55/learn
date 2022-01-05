@@ -63,7 +63,7 @@
 					</view>
 					<view class="more">
 						<view class="main-bg-color my-3 d-flex a-center j-center">
-							<text class="text-white">查看更多</text>
+							<text class="text-white main-text-20">查看更多</text>
 							<view class="arrow arrow-white arrow-right"></view>
 						</view>
 					</view>
@@ -132,11 +132,12 @@
 				success: function (res) {
 					var windowHeight = res.windowHeight;
 					//获取顶部搜索高度
-					var dom = uni.createSelectorQuery().select('.top')
-					dom.fields({size: true}, res2 => {
+					// 有bug，有时候获取不到dom高度
+					uni.createSelectorQuery().select('.top').fields({size: true}, res2 => {
 						if(!res2){return ;}
 						//计算得出滚动区域的高度
 						_self.scrollHeight = windowHeight - res2.height;
+					console.log(_self.scrollHeight)
 					}).exec();
 				}
 			});
@@ -195,9 +196,6 @@
 			margin: 0 auto;
 			view {
 				line-height: 40rpx;
-			}
-			text {
-				font-size: 20rpx;
 			}
 		}
 	}
