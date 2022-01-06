@@ -1,128 +1,129 @@
 <template>
 	<view class="my-evaluate" style="height: 100vh;display: flex;flex-direction: column;">
-		<view class="item-head m-3 d-flex a-center">
-			<image src="/static/images/my_head.png" class="photo rounded-circle"></image>
-			<view class="item-head-re ml-2">
-				<view class="d-flex a-center">
-					<text class="text1 font-weight">小米米</text>
-					<view class="start">
-						<image src="/static/images/start.png" mode="widthFix" class="ml-1"></image>
-						<image src="/static/images/start.png" mode="widthFix" class="ml-1"></image>
-						<image src="/static/images/start.png" mode="widthFix" class="ml-1"></image>
+		<view class="top">
+			<view class="item-head m-3 d-flex a-center">
+				<image src="/static/images/my_head.png" class="photo rounded-circle"></image>
+				<view class="item-head-re ml-2">
+					<view class="d-flex a-center">
+						<text class="text1 font-weight main-text-24">小米米</text>
+						<view class="start">
+							<image src="/static/images/start.png" mode="widthFix" class="ml-1"></image>
+							<image src="/static/images/start.png" mode="widthFix" class="ml-1"></image>
+							<image src="/static/images/start.png" mode="widthFix" class="ml-1"></image>
+						</view>
 					</view>
+					<text class="font-weight main-text-16">您是钻3级用户，信誉优秀</text>
 				</view>
-				<text class="text2 font-weight">您是钻3级用户，信誉优秀</text>
 			</view>
+			<scroll-view scroll-x class="border-bottom scroll-row mx-3" style="height: 80rpx;" :scroll-into-view="scrollinto" :scroll-with-animation="true">
+				<view class="scroll-row-item px-3" @click="changeTab(index)" style="height: 72rpx;line-height: 80rpx;" v-for="(item,index) in tabBars" :key="index" :class="tabIndex === index ? 'active':''" :id="'tab'+index">
+					<text class="font-md">{{item.name}}</text>
+				</view>
+			</scroll-view>
 		</view>
-		<scroll-view scroll-x class="border-bottom scroll-row mx-3" style="height: 80rpx;"
-			:scroll-into-view="scrollinto" :scroll-with-animation="true">
-			<view class="scroll-row-item px-3" @click="changeTab(index)" style="height: 72rpx;line-height: 80rpx;"
-				v-for="(item,index) in tabBars" :key="index" :class="tabIndex === index ? 'active':''"
-				:id="'tab'+index">
-				<text class="font-md">{{item.name}}</text>
-			</view>
-		</scroll-view>
 		<swiper :duration="150" :current="tabIndex" style="flex: 1;" @change="onChangeTab">
 			<swiper-item v-for="(item,index) in tabBars" :key="index">
-				<template v-if="index == 0">
-					<view class="list m-3 rounded">
-						<view class="item p-3 d-flex a-center border-bottom position-relative">
-							<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-							<text class="d-block text3 ml-1">精美项链 金色，中号</text>
-							<view class="position-absolute">
-								<view class="main-bg-color text-white font-weight rounded text-center btn">评价</view>
-							</view>
-						</view>
-						<view class="item p-3 d-flex a-center border-bottom position-relative">
-							<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-							<text class="d-block text3 ml-1">精美项链 金色，中号</text>
-							<view class="position-absolute">
-								<view class="main-bg-color text-white font-weight rounded text-center btn">评价</view>
-							</view>
-						</view>
-						<view class="item p-3 d-flex a-center border-bottom position-relative">
-							<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-							<text class="d-block text3 ml-1">精美项链 金色，中号</text>
-							<view class="position-absolute">
-								<view class="main-bg-color text-white font-weight rounded text-center btn">评价</view>
-							</view>
-						</view>
-						<view class="item p-3 d-flex a-center border-bottom position-relative">
-							<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-							<text class="d-block text3 ml-1">精美项链 金色，中号</text>
-							<view class="position-absolute">
-								<view class="main-bg-color text-white font-weight rounded text-center btn">评价</view>
-							</view>
-						</view>
-					</view>
-				</template>
-				<template v-if="index == 1">
-					<view class="list m-3 rounded pt-4">
-						<text class="text4 font-weight mx-3">追评夸夸那些超棒的宝贝吧~</text>
-						<view class="item p-3 d-flex a-center border-bottom position-relative">
-							<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-							<text class="d-block text3 ml-1">精美项链 金色，中号</text>
-							<view class="position-absolute">
-								<view class="main-bg-color text-white font-weight rounded text-center btn">追评</view>
-							</view>
-						</view>
-						<view class="item p-3 d-flex a-center border-bottom position-relative">
-							<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-							<text class="d-block text3 ml-1">精美项链 金色，中号</text>
-							<view class="position-absolute">
-								<view class="main-bg-color text-white font-weight rounded text-center btn">追评</view>
-							</view>
-						</view>
-						<view class="item p-3 d-flex a-center border-bottom position-relative">
-							<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-							<text class="d-block text3 ml-1">精美项链 金色，中号</text>
-							<view class="position-absolute">
-								<view class="main-bg-color text-white font-weight rounded text-center btn">追评</view>
-							</view>
-						</view>
-						<view class="item p-3 d-flex a-center border-bottom position-relative">
-							<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-							<text class="d-block text3 ml-1">精美项链 金色，中号</text>
-							<view class="position-absolute">
-								<view class="main-bg-color text-white font-weight rounded text-center btn">追评</view>
-							</view>
-						</view>
-					</view>
-				</template>
-				<template v-if="index == 2">
-					<view class="list m-3 rounded">
-						<view class="item p-3 border-bottom position-relative">
-							<text class="text4 mb-2 font-weight d-block">此用户没有填写评价</text>
-							<view class="d-flex a-center">
+				<scroll-view scroll-y="true" :style="'height:'+scrollH+'px;'" @scrolltolower="loadmore(index)" :show-scrollbar="false">
+					<template v-if="index == 0">
+						<view class="list m-3 rounded main-bg-gray-color">
+							<view class="item p-3 d-flex a-center border-bottom position-relative">
 								<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-								<text class="d-block text3 ml-1">精美项链 金色，中号</text>
+								<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
 								<view class="position-absolute">
-									<view class="main-bg-color text-white font-weight rounded text-center btn">写追评</view>
+									<view class="main-bg-color text-white font-weight rounded text-center btn">评价</view>
+								</view>
+							</view>
+							<view class="item p-3 d-flex a-center border-bottom position-relative">
+								<image src="/static/images/my_1.png" mode="" class="rounded"></image>
+								<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
+								<view class="position-absolute">
+									<view class="main-bg-color text-white font-weight rounded text-center btn">评价</view>
+								</view>
+							</view>
+							<view class="item p-3 d-flex a-center border-bottom position-relative">
+								<image src="/static/images/my_1.png" mode="" class="rounded"></image>
+								<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
+								<view class="position-absolute">
+									<view class="main-bg-color text-white font-weight rounded text-center btn">评价</view>
+								</view>
+							</view>
+							<view class="item p-3 d-flex a-center border-bottom position-relative">
+								<image src="/static/images/my_1.png" mode="" class="rounded"></image>
+								<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
+								<view class="position-absolute">
+									<view class="main-bg-color text-white font-weight rounded text-center btn">评价</view>
 								</view>
 							</view>
 						</view>
-						<view class="item p-3 border-bottom position-relative">
-							<text class="text4 mb-2 font-weight d-block">此用户没有填写评价</text>
-							<view class="d-flex a-center">
+					</template>
+					<template v-if="index == 1">
+						<view class="list m-3 rounded pt-4 main-bg-gray-color">
+							<text class="font-weight mx-3 main-text-24">追评夸夸那些超棒的宝贝吧~</text>
+							<view class="item p-3 d-flex a-center border-bottom position-relative">
 								<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-								<text class="d-block text3 ml-1">精美项链 金色，中号</text>
+								<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
 								<view class="position-absolute">
-									<view class="main-bg-color text-white font-weight rounded text-center btn">写追评</view>
+									<view class="main-bg-color text-white font-weight rounded text-center btn main-text-30">追评</view>
+								</view>
+							</view>
+							<view class="item p-3 d-flex a-center border-bottom position-relative">
+								<image src="/static/images/my_1.png" mode="" class="rounded"></image>
+								<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
+								<view class="position-absolute">
+									<view class="main-bg-color text-white font-weight rounded text-center btn main-text-30">追评</view>
+								</view>
+							</view>
+							<view class="item p-3 d-flex a-center border-bottom position-relative">
+								<image src="/static/images/my_1.png" mode="" class="rounded"></image>
+								<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
+								<view class="position-absolute">
+									<view class="main-bg-color text-white font-weight rounded text-center btn main-text-30">追评</view>
+								</view>
+							</view>
+							<view class="item p-3 d-flex a-center border-bottom position-relative">
+								<image src="/static/images/my_1.png" mode="" class="rounded"></image>
+								<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
+								<view class="position-absolute">
+									<view class="main-bg-color text-white font-weight rounded text-center btn main-text-30">追评</view>
 								</view>
 							</view>
 						</view>
-						<view class="item p-3 border-bottom position-relative">
-							<text class="text4 mb-2 font-weight d-block">此用户没有填写评价</text>
-							<view class="d-flex a-center">
-								<image src="/static/images/my_1.png" mode="" class="rounded"></image>
-								<text class="d-block text3 ml-1">精美项链 金色，中号</text>
-								<view class="position-absolute">
-									<view class="main-bg-color text-white font-weight rounded text-center btn">写追评</view>
+					</template>
+					<template v-if="index == 2">
+						<view class="list m-3 rounded main-bg-gray-color">
+							<view class="item p-3 border-bottom position-relative">
+								<text class=" mb-2 font-weight d-block main-text-24">此用户没有填写评价</text>
+								<view class="d-flex a-center">
+									<image src="/static/images/my_1.png" mode="" class="rounded"></image>
+									<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
+									<view class="position-absolute">
+										<view class="main-bg-color text-white font-weight rounded text-center btn main-text-30">写追评</view>
+									</view>
+								</view>
+							</view>
+							<view class="item p-3 border-bottom position-relative">
+								<text class="mb-2 font-weight d-block main-text-24">此用户没有填写评价</text>
+								<view class="d-flex a-center">
+									<image src="/static/images/my_1.png" mode="" class="rounded"></image>
+									<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
+									<view class="position-absolute">
+										<view class="main-bg-color text-white font-weight rounded text-center btn main-text-30">写追评</view>
+									</view>
+								</view>
+							</view>
+							<view class="item p-3 border-bottom position-relative">
+								<text class="mb-2 font-weight d-block main-text-24">此用户没有填写评价</text>
+								<view class="d-flex a-center">
+									<image src="/static/images/my_1.png" mode="" class="rounded"></image>
+									<text class="d-block text3 ml-1 main-text-24">精美项链 金色，中号</text>
+									<view class="position-absolute">
+										<view class="main-bg-color text-white font-weight rounded text-center btn main-text-30">写追评</view>
+									</view>
 								</view>
 							</view>
 						</view>
-					</view>
-				</template>
+					</template>
+				</scroll-view>
 			</swiper-item>
 		</swiper>
 	</view>
@@ -157,7 +158,7 @@
 					// #ifdef MP
 					let navbarH = uni.upx2px(90)
 					// #endif
-					this.scrollH = res.windowHeight - uni.upx2px(82) - navbarH
+					this.scrollH = res.windowHeight - uni.upx2px(132) - navbarH
 				}
 			})
 		},
@@ -175,7 +176,11 @@
 		}
 	}
 </script>
-
+<style>
+	page {
+		overflow: hidden;
+	}
+</style>
 <style lang="scss" scoped>
 	.my-evaluate {
 		.item-head {
@@ -189,18 +194,10 @@
 					color: #515151;
 				}
 
-				.text1 {
-					font-size: 24rpx;
-				}
-
 				.start {
 					image {
 						width: 20rpx;
 					}
-				}
-
-				.text2 {
-					font-size: 16rpx;
 				}
 			}
 		}
@@ -211,7 +208,6 @@
 			}
 		}
 		.list {
-			background-color: #e4e4e4;
 			.item {
 				border-bottom-color: #fff;
 				image {
@@ -219,7 +215,6 @@
 					height: 175rpx;
 				}
 				.text3 {
-					font-size: 24rpx;
 					color: #3d3d3d;
 					width: 345rpx;
 				}
@@ -227,14 +222,9 @@
 					right: 30rpx;
 					bottom: 30rpx;
 					.btn {
-						font-size: 30rpx;
 						width: 156rpx;
 					}
 				}
-			}
-			.text4 {
-				font-size: 24rpx;
-				color: #333333;
 			}
 		}
 	}

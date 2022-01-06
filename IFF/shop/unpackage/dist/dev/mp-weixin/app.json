@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/car/car",
+    "pages/index/index",
     "pages/goods/goods",
     "pages/goods-detail/goods-detail",
-    "pages/index/index",
     "pages/my/my",
     "pages/my-info/my-info",
     "pages/renew-courtesy/renew-courtesy",
@@ -20,13 +21,12 @@
     "pages/after-sale/after-sale",
     "pages/after-sale-refund/after-sale-refund",
     "pages/after-sale-status/after-sale-status",
-    "pages/order-confirm/order-confirm",
-    "pages/my-order/my-order",
-    "pages/publish-evaluationz/publish-evaluationz",
+    "pages/my-evaluate/my-evaluate",
     "pages/publish-evaluation/publish-evaluation",
     "pages/my-evaluate-status/my-evaluate-status",
-    "pages/my-evaluate/my-evaluate",
-    "pages/car/car",
+    "pages/publish-evaluationz/publish-evaluationz",
+    "pages/my-order/my-order",
+    "pages/order-confirm/order-confirm",
     "pages/adviser/adviser"
   ],
   "subPackages": [],
@@ -74,5 +74,6 @@
       }
     ]
   },
+  "permission": {},
   "usingComponents": {}
 }

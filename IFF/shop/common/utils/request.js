@@ -2,12 +2,7 @@ import $store from '@/store/index.js'
 export default {
 	// 全局配置
 	common:{
-		// #ifndef H5
-		baseUrl:"http://ceshi6.dishait.cn/api",
-		// #endif
-		// #ifdef H5
-		baseUrl:"/api",
-		// #endif
+		baseUrl:"https://api.iffjewelry.com/Api/",
 		header:{
 			'Content-Type':'application/json;charset=UTF-8',
 		},

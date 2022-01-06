@@ -1,6 +1,9 @@
 <template>
 	<view class="item-top coupon-title d-flex a-center j-sb py-1" :class="isBorder ? 'border-bottom' : ''">
 		<view class="item-top-le d-flex a-center">
+			<label v-if="needCheckbox">
+				<checkbox color="#00332A" />
+			</label>
 			<image :src="pic" mode="widthFix"></image>
 			<text class="ml-2 font-weight main-text-30">{{name}}</text>
 		</view>
@@ -14,6 +17,10 @@
 	export default {
 		name:"item-head",
 		props: {
+			needCheckbox: {
+				type: Boolean,
+				default: false
+			},
 			pic: {
 				type: String
 			},
@@ -32,7 +39,6 @@
 		}
 	}
 </script>
-
 <style lang="scss" scoped>
 	image {
 		width: 36rpx;

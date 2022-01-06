@@ -1,10 +1,10 @@
 <template>
 	<view class="goods-detail">
-		<image src="/static/images/my_vip_4.png" mode="widthFix" class="w-100"></image>
+		<image :src="goodsObj.images" mode="widthFix" class="w-100"></image>
 		<view class="goods-info m-3 d-flex flex-column">
 			<view class="ml-3">
-				<text class="text1 mt-3 main-text-36">玫瑰金项链</text>
-				<price :priceValue="999" />
+				<text class="text1 mt-3 main-text-36">{{goodsObj.goods_name}}</text>
+				<price :priceValue="goodsObj.price" />
 			</view>
 			<view class="goods-discout d-flex a-center rounded-4 px-3 main-bg-gray-color">
 				<view class="circle rounded-circle bg-white"></view>
@@ -13,23 +13,23 @@
 			<text class="mt-2 font-weight main-text-24">商品信息</text>
 			<view class="goods-text mt-2">
 				<text class="main-text-24">商品名称</text>
-				<text class="ml-3 main-text-18">玫瑰金项链</text>
+				<text class="ml-3 main-text-24">{{goodsObj.goods_name}}</text>
 			</view>
 			<view class="goods-text mt-2">
 				<text class="main-text-24">商品编号</text>
-				<text class="ml-3 main-text-18">123456</text>
+				<text class="ml-3 main-text-24">{{goodsObj.goods_sn}}</text>
 			</view>
 			<view class="goods-text mt-2">
 				<text class="main-text-24">商品材质</text>
-				<text class="ml-3 main-text-18">玫瑰金********</text>
+				<text class="ml-3 main-text-24">{{goodsObj.material}}</text>
 			</view>
 			<view class="goods-text mt-2">
 				<text class="main-text-24">特别说明</text>
-				<text class="ml-3 main-text-18">这款项链采用******</text>
+				<text class="ml-3 main-text-24">{{goodsObj.goods_remark}}</text>
 			</view>
 			<view class="goods-text mt-2">
 				<text class="main-text-24">商品规格</text>
-				<text class="ml-3 main-text-18">长度：20cm；宽度：1cm</text>
+				<text class="ml-3 main-text-24">{{goodsObj.goods_size}}</text>
 			</view>
 		</view>
 		<view class="goods-xq">
@@ -51,20 +51,10 @@
 		<view class="goods-xlcp m-3">
 			<text class="font-weight main-text-30">系列产品</text>
 			<view class="cp-list d-flex a-center j-sb mt-3">
-				<view class="item span24-8 d-flex flex-column">
-					<image src="/static/images/my_1.png" mode="widthFix" class="w-100"></image>
-					<text class="main-text-18 text3">玫瑰金项链</text>
-					<price :sizeNumber="24" :priceValue="999" />
-				</view>
-				<view class="item span24-8 d-flex flex-column">
-					<image src="/static/images/my_1.png" mode="widthFix" class="w-100"></image>
-					<text class="main-text-18 text3">玫瑰金项链</text>
-					<price :sizeNumber="24" :priceValue="999" />
-				</view>
-				<view class="item span24-8 d-flex flex-column">
-					<image src="/static/images/my_1.png" mode="widthFix" class="w-100"></image>
-					<text class="main-text-18 text3">玫瑰金项链</text>
-					<price :sizeNumber="24" :priceValue="999" />
+				<view class="item span24-8 d-flex flex-column" v-for="(item,index) in goodsObj.is_recommend" :key="index">
+					<image :src="item.images" mode="widthFix" class="w-100"></image>
+					<text class="main-text-18 text3">{{item.goods_name}}</text>
+					<price :sizeNumber="24" :priceValue="item.price" />
 				</view>
 			</view>
 		</view>
@@ -99,14 +89,21 @@
 	export default {
 		data() {
 			return {
-				
+				goodsObj: {}
 			}
 		},
 		components: {
 			price
 		},
+		onLoad(option) {
+			if(option) this.__init(option.id);
+		},
 		methods: {
-			
+			__init(goodsId) {
+				this.$H.get(`Goods/detail?goods_id=${goodsId}`).then((res)=> {
+					this.goodsObj = res.goods;
+				})
+			}
 		}
 	}
 </script>

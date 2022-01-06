@@ -72,7 +72,7 @@
 			margin: {
 				// 星星的间距
 				type: [Number, String],
-				default: '0 5'
+				default: '0 8'
 			},
 		},
 		data() {

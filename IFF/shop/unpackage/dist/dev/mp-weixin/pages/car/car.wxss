@@ -30,60 +30,24 @@
 .empty image.data-v-51e9b630 {
   width: 180rpx;
 }
-.empty text.data-v-51e9b630 {
-  font-size: 30rpx;
-}
-.car-list .item.data-v-51e9b630 {
-  background-color: #e4e4e4;
-}
-.car-list .item .item-head text.data-v-51e9b630 {
-  font-size: 30rpx;
-}
-.car-list .item .item-head image.data-v-51e9b630 {
-  width: 35rpx;
-}
-.car-list .item .item-head .success.data-v-51e9b630 {
-  font-size: 20rpx;
-}
 .car-list .item image.data-v-51e9b630 {
   width: 175rpx;
   height: 175rpx;
 }
-.car-list .item .text1.data-v-51e9b630 {
-  font-size: 30rpx;
+.car-list .tuijian .title image.data-v-51e9b630 {
+  width: 260rpx;
 }
-.car-list .price text.data-v-51e9b630:nth-of-type(1) {
-  font-size: 24rpx;
-}
-.car-list .price text.data-v-51e9b630:nth-of-type(2) {
-  font-size: 36rpx;
-}
-.car-list .tuijian .text2.data-v-51e9b630 {
-  font-size: 30rpx;
+.car-list .tuijian .title text.data-v-51e9b630 {
+  width: 152rpx;
 }
 .car-list .tuijian .text4.data-v-51e9b630 {
-  font-size: 24rpx;
   line-height: 38rpx;
 }
 .car-list .tuijian .tuijian-item.data-v-51e9b630 {
   width: 48%;
 }
-.car-list .tuijian .text5.data-v-51e9b630 {
-  font-size: 18rpx;
-}
-.count.data-v-51e9b630 {
-  background-color: #e4e4e4;
-}
-.count text.data-v-51e9b630 {
-  color: #333;
-}
-.count .text1.data-v-51e9b630 {
-  font-size: 30rpx;
-}
-.count .text2.data-v-51e9b630 {
-  font-size: 36rpx;
-}
-.count .text3.data-v-51e9b630 {
-  font-size: 24rpx;
+.count .btn.data-v-51e9b630 {
+  width: 180rpx;
+  line-height: 80rpx;
 }
 

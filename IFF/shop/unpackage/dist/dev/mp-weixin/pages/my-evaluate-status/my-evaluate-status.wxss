@@ -27,20 +27,13 @@
 .my-evaluate-status .my-evaluate-head image.data-v-68798226 {
   width: 50rpx;
 }
-.my-evaluate-status .my-evaluate-head text.data-v-68798226 {
-  font-size: 24rpx;
-}
 .my-evaluate-status .my-evaluate-head .text1.data-v-68798226 {
   color: #515151;
 }
 .my-evaluate-status .my-evaluate-head .more.data-v-68798226 {
   width: 212rpx;
   line-height: 56rpx;
-  background-color: #e4e4e4;
   color: #464646;
-}
-.my-evaluate-status .list.data-v-68798226 {
-  background-color: #e4e4e4;
 }
 .my-evaluate-status .list .item.data-v-68798226 {
   border-bottom-color: #fff;
@@ -50,7 +43,6 @@
   height: 175rpx;
 }
 .my-evaluate-status .list .item .text3.data-v-68798226 {
-  font-size: 24rpx;
   color: #3d3d3d;
   width: 345rpx;
 }
@@ -59,11 +51,6 @@
   bottom: 30rpx;
 }
 .my-evaluate-status .list .item .position-absolute .btn.data-v-68798226 {
-  font-size: 30rpx;
   width: 156rpx;
-}
-.my-evaluate-status .list .text4.data-v-68798226 {
-  font-size: 24rpx;
-  color: #333333;
 }
 

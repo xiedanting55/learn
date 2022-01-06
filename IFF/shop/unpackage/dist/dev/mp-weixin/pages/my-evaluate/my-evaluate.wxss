@@ -1,3 +1,8 @@
+
+page {
+	overflow: hidden;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -31,20 +36,11 @@
 .my-evaluate .item-head .item-head-re text.data-v-77e22bbc {
   color: #515151;
 }
-.my-evaluate .item-head .item-head-re .text1.data-v-77e22bbc {
-  font-size: 24rpx;
-}
 .my-evaluate .item-head .item-head-re .start image.data-v-77e22bbc {
   width: 20rpx;
 }
-.my-evaluate .item-head .item-head-re .text2.data-v-77e22bbc {
-  font-size: 16rpx;
-}
 .my-evaluate .scroll-row-item.active.data-v-77e22bbc {
   border-bottom: 3rpx solid #00332a;
-}
-.my-evaluate .list.data-v-77e22bbc {
-  background-color: #e4e4e4;
 }
 .my-evaluate .list .item.data-v-77e22bbc {
   border-bottom-color: #fff;
@@ -54,7 +50,6 @@
   height: 175rpx;
 }
 .my-evaluate .list .item .text3.data-v-77e22bbc {
-  font-size: 24rpx;
   color: #3d3d3d;
   width: 345rpx;
 }
@@ -63,11 +58,6 @@
   bottom: 30rpx;
 }
 .my-evaluate .list .item .position-absolute .btn.data-v-77e22bbc {
-  font-size: 30rpx;
   width: 156rpx;
-}
-.my-evaluate .list .text4.data-v-77e22bbc {
-  font-size: 24rpx;
-  color: #333333;
 }
 

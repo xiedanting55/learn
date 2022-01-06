@@ -28,17 +28,7 @@
   width: 42rpx;
 }
 .order-confirm .add-addr text.data-v-3d28758a {
-  font-size: 30rpx;
   color: #3f3f3f;
-}
-.order-confirm .item.data-v-3d28758a {
-  background-color: #e4e4e4;
-}
-.order-confirm .item .item-head text.data-v-3d28758a {
-  font-size: 30rpx;
-}
-.order-confirm .item .item-head image.data-v-3d28758a {
-  width: 35rpx;
 }
 .order-confirm .item .item-body image.data-v-3d28758a {
   width: 175rpx;
@@ -48,40 +38,15 @@
   width: 330rpx;
 }
 .order-confirm .item .item-body .content text.data-v-3d28758a:nth-of-type(1) {
-  font-size: 30rpx;
   color: #292929;
 }
 .order-confirm .item .item-body .content text.data-v-3d28758a:nth-of-type(2) {
-  font-size: 24rpx;
   color: #424242;
-}
-.order-confirm .item .item-body .item-body-re .price text.data-v-3d28758a:nth-of-type(1) {
-  font-size: 24rpx;
-}
-.order-confirm .item .item-body .item-body-re .price text.data-v-3d28758a:nth-of-type(2) {
-  font-size: 36rpx;
-}
-.order-confirm .item .item-body .item-body-re .count text.data-v-3d28758a:nth-of-type(1) {
-  font-size: 60rpx;
-}
-.order-confirm .item .item-body .item-body-re .count text.data-v-3d28758a:nth-of-type(2) {
-  font-size: 36rpx;
 }
 .order-confirm .send.data-v-3d28758a {
   line-height: 88rpx;
-  font-size: 30rpx;
 }
 .order-confirm .line text.data-v-3d28758a {
-  font-size: 24rpx;
   color: #4a4a4a;
-}
-.order-confirm .line .line-text1.data-v-3d28758a {
-  font-size: 30rpx;
-}
-.order-confirm .line .line-text2.data-v-3d28758a {
-  font-size: 36rpx;
-}
-.order-confirm .line .line-text3.data-v-3d28758a {
-  margin-bottom: 5rpx;
 }
 

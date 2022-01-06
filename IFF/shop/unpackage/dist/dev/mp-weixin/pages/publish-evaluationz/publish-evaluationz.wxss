@@ -24,45 +24,19 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.publish-evaluation .item-2.data-v-42490ef0 {
-  background-color: #e4e4e4;
-}
-.publish-evaluation .item-2 .text1.data-v-42490ef0,
-.publish-evaluation .item-2 textarea.data-v-42490ef0 {
-  font-size: 24rpx;
-}
-.publish-evaluation .item-2 image.data-v-42490ef0 {
+.publish-evaluation image.data-v-42490ef0 {
   width: 28rpx;
 }
-.publish-evaluation .item-2 .limite.data-v-42490ef0 {
-  font-size: 18rpx;
+.publish-evaluation .limite.data-v-42490ef0 {
   color: #aaa;
 }
-.publish-evaluation .item-2 .upload.data-v-42490ef0 {
+.publish-evaluation .upload.data-v-42490ef0 {
   height: 224rpx;
 }
-.publish-evaluation .item-2 .upload image.data-v-42490ef0 {
+.publish-evaluation .upload image.data-v-42490ef0 {
   width: 74rpx;
-}
-.publish-evaluation .item-2 .upload text.data-v-42490ef0:nth-of-type(1) {
-  font-size: 18rpx;
-}
-.publish-evaluation .item-2 .upload text.data-v-42490ef0:nth-of-type(2) {
-  font-size: 14rpx;
-}
-.publish-evaluation .item-2 .item-2-text text.data-v-42490ef0:nth-of-type(1) {
-  font-size: 30rpx;
-}
-.publish-evaluation .item-2 .item-2-text text.data-v-42490ef0:nth-of-type(2) {
-  font-size: 20rpx;
-}
-.publish-evaluation .item-2 .line .text3.data-v-42490ef0 {
-  font-size: 24rpx;
-  color: #2f2f2f;
-  width: 190rpx;
 }
 .publish-evaluation .send.data-v-42490ef0 {
   line-height: 88rpx;
-  font-size: 30rpx;
 }
 

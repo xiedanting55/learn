@@ -204,6 +204,7 @@ body{
 .bg-dark{ background-color: var(--dark)!important; }
 .bg-white{ background-color: #FFFFFF!important; }
 .bg-light-secondary{background-color: #F1F1F1!important;}
+.bg-light-opacity{opacity: 0.9;}
 
 /* Spacing */
 .m-0 { margin-left: 0;margin-right: 0;margin-top: 0;margin-bottom: 0;}
@@ -250,6 +251,7 @@ body{
 .mb-4 { margin-bottom: 40upx;}
 .mb-5 { margin-bottom: 50upx;}
 .mb-6 { margin-bottom: 60upx;}
+.mb-10 { margin-bottom: 100upx;}
 
 .ml-0 { margin-left: 0;}
 .ml { margin-left: 5upx;}

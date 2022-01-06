@@ -49,9 +49,6 @@ page {
 .goods .rightScroll .col-4.data-v-5566b618 {
   width: 49%;
 }
-.goods .rightScroll .col-4 image.data-v-5566b618 {
-  height: 280rpx;
-}
 .goods .rightScroll .col-4 .col-4-line.data-v-5566b618 {
   line-height: 65rpx;
 }

@@ -40,8 +40,8 @@
 		<view class="my-list my-3">
 			<view class="d-flex a-center mx-6" hover-class="bg-light-secondary" v-for="item in myList" :key="item.id" @click="linkTo(item)">
 				<image :src="item.src" mode="widthFix"></image>
-				<view class="row-re d-flex a-center j-sb p-1 border-bottom">
-					<text class="main-text-24">{{item.text}}</text>
+				<view class="row-re d-flex a-center j-sb px-1 py-2 border-bottom">
+					<text class="main-text-30">{{item.text}}</text>
 					<view class="arrow arrow-right"></view>
 				</view>
 			</view>
@@ -208,7 +208,7 @@
 	}
 	.my-list {
 		image {
-			width: 30rpx;
+			width: 36rpx;
 		}
 		text {
 			color: #333;

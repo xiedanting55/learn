@@ -2,97 +2,94 @@
 	<view class="order-confirm">
 		<view class="add-addr m-5 d-flex a-center j-center">
 			<image src="/static/images/add-circle.png" mode="widthFix"></image>
-			<text class="ml-1 font-weight">添加收货地址</text>
+			<text class="ml-1 font-weight main-text-30">添加收货地址</text>
 		</view>
-		<view class="item p-3 rounded m-3">
-			<view class="item-head border-bottom d-flex a-center pb-3">
-				<image src="/static/images/icon1.png" mode="widthFix"></image>
-				<text class="ml-2">项链</text>
-			</view>
+		<view class="item p-3 rounded m-3 main-bg-gray-color">
+			<itemTop :pic="'/static/images/icon1.png'" :name="'项链'" isBorder />
 			<view class="item-body my-3 d-flex a-center j-sb">
 				<image src="/static/images/my_1.png" mode="" class="rounded"></image>
 				<view class="content ml-3">
-					<text class="d-block">精美项链</text>
-					<text class="bg-white px-1 rounded">金色，中号</text>
+					<text class="d-block main-text-30">精美项链</text>
+					<view class="d-inline-block">
+						<view class="d-flex a-center bg-white px-1 rounded">
+							<text class="main-text-24 mr-1">金色，中号</text>
+							<view class="arrow arrow-bottom"></view>
+						</view>
+					</view>
 				</view>
 				<view class="item-body-re">
-					<view class="price">
-						<text class="main-text-color font-weight">¥</text>
-						<text class="main-text-color font-weight ml-1">999</text>
-					</view>
-					<view class="count d-flex a-center j-center">
-						<text class="main-text-color font-weight">*</text>
-						<text class="main-text-color font-weight ml-1">1</text>
-					</view>
+					<price :sizeNumber="36" :priceValue="999" />
+					<count :sizeBol="30" :sizeNumber="36" :countValue="1" />
 				</view>
 			</view>
 		</view>
-		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text class="font-weight">优惠券</text>
+		<view class="line d-flex a-center j-sb ml-3 mr-4 my-1">
+			<text class="font-weight main-text-24">优惠券</text>
 			<view class="line-re d-flex a-center j-center">
-				<text class="font-weight mr-1">0张</text>
+				<text class="font-weight mr-1 main-text-24">0张</text>
 				<view class="arrow arrow-right"></view>
 			</view>
 		</view>
-		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text class="font-weight">(优惠券代码)</text>
+		<view class="line d-flex a-center j-sb ml-3 mr-4 my-1">
+			<text class="font-weight main-text-24">(优惠券代码)</text>
 			<view class="line-re d-flex a-center j-center">
-				<text class="font-weight">确认</text>
+				<text class="font-weight main-text-24">确认</text>
 			</view>
 		</view>
-		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text class="font-weight">发票</text>
+		<view class="line d-flex a-center j-sb ml-3 mr-4 my-1">
+			<text class="font-weight main-text-24">发票</text>
 			<view class="line-re d-flex a-center j-center">
-				<text class="font-weight mr-1">不需要发票</text>
+				<text class="font-weight mr-1 main-text-24">不需要发票</text>
 				<view class="arrow arrow-right"></view>
 			</view>
 		</view>
-		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text class="font-weight">订单备注</text>
+		<view class="line d-flex a-center j-sb ml-3 mr-4 my-1">
+			<text class="font-weight main-text-24">订单备注</text>
 			<view class="line-re d-flex a-center j-center">
-				<text class="font-weight mr-1">无备注</text>
+				<text class="font-weight mr-1 main-text-24">无备注</text>
 				<view class="arrow arrow-right"></view>
 			</view>
 		</view>
-		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text class="font-weight">商品总额</text>
+		<view class="line d-flex a-center j-sb ml-3 mr-4 my-1">
+			<text class="font-weight main-text-24">商品总额</text>
+			<price :sizeBol="20" :sizeNumber="24":mainTextColor="'#4a4a4a'" :priceValue="999" />
+		</view>
+		<view class="line d-flex a-center j-sb ml-3 mr-4 my-1">
+			<text class="font-weight main-text-24">促销优惠</text>
 			<view class="line-re d-flex a-center j-center">
-				<text class="font-weight">¥ 999</text>
+				<text class="font-weight main-text-20">-</text>
+				<price :sizeBol="20" :sizeNumber="24" :mainTextColor="'#4a4a4a'" :priceValue="999" />
 			</view>
 		</view>
-		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text class="font-weight">促销优惠</text>
-			<view class="line-re d-flex a-center j-center">
-				<text class="font-weight">-¥ 0</text>
-			</view>
+		<view class="line d-flex a-center j-sb ml-3 mr-4 my-1">
+			<text class="font-weight main-text-24">运费</text>
+			<price :sizeBol="20" :sizeNumber="24":mainTextColor="'#4a4a4a'" :priceValue="999" />
 		</view>
-		<view class="line d-flex a-center j-sb mx-3 my-1">
-			<text class="font-weight">运费</text>
-			<view class="line-re d-flex a-center j-center">
-				<text class="font-weight">¥ 0.00</text>
-			</view>
-		</view>
-		<view class="line d-flex a-center j-sb mx-3 my-1">
+		<view class="line d-flex a-center j-sb ml-3 mr-4 my-1">
 			<view class="line-le">
-				<text class="font-weight main-text-color line-text1">合计</text>
-				<text class="main-text-color">(共1件)</text>
+				<text class="font-weight main-text-color main-text-30">合计</text>
+				<text class="main-text-color main-text-24">(共1件)</text>
 			</view>
-			<view class="line-re d-flex a-end j-center">
-				<text class="font-weight main-text-color mr-1 line-text3">¥ </text>
-				<text class="font-weight main-text-color line-text2">999</text>
-			</view>
+			<price :sizeNumber="36" :priceValue="999" />
 		</view>
-		<view class="main-bg-color text-white position-fixed bottom-0 left-0 w-100 send font-weight rounded-4 text-center">微信支付</view>
+		<view class="main-bg-color text-white position-fixed bottom-0 left-0 w-100 send font-weight rounded-4 text-center main-text-30">微信支付</view>
 	</view>
 </template>
 
 <script>
-	// 文字样式还没有写
+	import itemTop from "@/components/item-top/item-top"
+	import price from "@/components/price/price"
+	import count from "@/components/count/count"
 	export default {
 		data() {
 			return {
 				
 			}
+		},
+		components: {
+			itemTop,
+			price,
+			count
 		},
 		methods: {
 			
@@ -107,20 +104,10 @@
 				width: 42rpx;
 			}
 			text {
-				font-size: 30rpx;
 				color: #3f3f3f;
 			}
 		}
 		.item {
-			background-color: #e4e4e4;
-			.item-head {
-				text {
-					font-size: 30rpx;
-				}
-				image {
-					width: 35rpx;
-				}
-			}
 			.item-body {
 				image {
 					width: 175rpx;
@@ -130,37 +117,11 @@
 					width: 330rpx;
 					text {
 						&:nth-of-type(1) {
-							font-size: 30rpx;
 							color: #292929;
 						}
 		
 						&:nth-of-type(2) {
-							font-size: 24rpx;
 							color: #424242;
-						}
-					}
-				}
-				.item-body-re {
-					.price {
-						text {
-							&:nth-of-type(1) {
-								font-size: 24rpx;
-							}
-		
-							&:nth-of-type(2) {
-								font-size: 36rpx;
-							}
-						}
-					}
-					.count {
-						text {
-							&:nth-of-type(1) {
-								font-size: 60rpx;
-							}
-		
-							&:nth-of-type(2) {
-								font-size: 36rpx;
-							}
 						}
 					}
 				}
@@ -168,21 +129,10 @@
 		}
 		.send {
 			line-height: 88rpx;
-			font-size: 30rpx;
 		}
 		.line {
 			text {
-				font-size: 24rpx;
 				color: #4a4a4a;
-			}
-			.line-text1 {
-				font-size: 30rpx;
-			}
-			.line-text2 {
-				font-size: 36rpx;
-			}
-			.line-text3 {
-				margin-bottom: 5rpx;
 			}
 		}
 	}

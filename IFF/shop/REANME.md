@@ -19,6 +19,11 @@
 我的-售后类型-退换/售后 pages/after-sale/after-sale
 我的-售后类型-申请退款 pages/after-sale-refund/after-sale-refund
 我的-售后类型-退款成功 pages/after-sale-status/after-sale-status
+我的-我的评价 pages/my-evaluate/my-evaluate
+我的-发表追评 pages/publish-evaluationz/publish-evaluationz
+我的-发表评价 pages/publish-evaluation/publish-evaluation
+我的-评价成功 pages/my-evaluate-status/my-evaluate-status
+我的-我的订单 全部 / 待支付 / 待发货 / 待收货 / 待评价 pages/my-order/my-order
 
 
 成功状态 pages/order-confirm-status/order-confirm-status
@@ -30,4 +35,3 @@
 专属顾问 pages/adviser/adviser
 
 购物车-确定订单 pages/order-confirm/order-confirm
-我的界面-我的评价 pages/my-evaluate/my-evaluate

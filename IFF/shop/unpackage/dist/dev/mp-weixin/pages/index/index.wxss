@@ -27,8 +27,8 @@
 .top.data-v-57280228 {
   z-index: 1000;
 }
-.top .easyinput.data-v-57280228 {
-  width: 88%;
+.top .search.data-v-57280228 {
+  width: 40rpx;
 }
 .top image.data-v-57280228 {
   width: 55rpx;

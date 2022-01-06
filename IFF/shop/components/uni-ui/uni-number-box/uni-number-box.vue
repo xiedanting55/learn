@@ -1,5 +1,5 @@
 <template>
-	<view class="uni-numbox rounded">
+	<view class="uni-numbox">
 		<view @click.stop="_calcValue('minus')" class="uni-numbox__minus">
 			<text class="uni-numbox--text" :class="{ 'uni-numbox--disabled': inputValue <= min || disabled }">-</text>
 		</view>
@@ -127,8 +127,8 @@
 		display: flex;
 		/* #endif */
 		flex-direction: row;
-		height: 30px;
-		line-height: 32px;
+		height: 20px;
+		line-height: 20px;
 		background-color: #ffffff;
 		overflow: hidden;
 	}
@@ -136,14 +136,9 @@
 	.uni-numbox__value {
 		/* background-color: #ffffff; */
 		width: 40px;
-		height: 30px;
+		height: 22px;
 		text-align: center;
-		font-size: 32rpx;
-		border-width: 1rpx;
-		border-style: solid;
-		border-color: #e5e5e5;
-		border-left-width: 0;
-		border-right-width: 0;
+		font-size: 20rpx;
 	}
 
 	.uni-numbox__minus {
@@ -153,21 +148,10 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		width: 30px;
-		height: 30px;
-		/* line-height: $box-line-height;
- */
-		/* text-align: center;
- */
-		font-size: 20px;
+		width: 20px;
+		height: 20px;
+		font-size: 14px;
 		color: #333;
-		/* background-color: #f8f8f8; */
-	/* 	border-width: 1rpx;
-		border-style: solid;
-		border-color: #e5e5e5;
-		border-top-left-radius: 6rpx;
-		border-bottom-left-radius: 6rpx;
-		border-right-width: 0; */
 	}
 
 	.uni-numbox__plus {
@@ -177,15 +161,8 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		width: 30px;
-		height: 30px;
-/* 		border-width: 1rpx;
-		border-style: solid;
-		border-color: #e5e5e5;
-		border-top-right-radius: 6rpx;
-		border-bottom-right-radius: 6rpx; */
-		/* background-color: #f8f8f8; */
-		/* border-left-width: 0; */
+		width: 20px;
+		height: 20px;
 	}
 
 	.uni-numbox--text {
