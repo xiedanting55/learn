@@ -1,1 +1,0 @@
-<view class="price d-flex a-end data-v-84d004d0"><text class="font-weight data-v-84d004d0" style="{{'font-size:'+(sizeBol+'rpx')+';'+('color:'+(mainTextColor)+';')}}">¥</text><text class="font-weight ml-1 data-v-84d004d0" style="{{'font-size:'+(sizeNumber+'rpx')+';'+('color:'+(mainTextColor)+';')}}">{{priceValue}}</text></view>

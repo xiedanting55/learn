@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "发表评价",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "start": "/components/start/start"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "提交订单",
-  "enablePullDownRefresh": false,
-  "usingComponents": {
-    "price": "/components/price/price",
-    "count": "/components/count/count"
-  }
-}
