@@ -2334,6 +2334,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 14));
 
 var _car = _interopRequireDefault(__webpack_require__(/*! @/store/modules/car.js */ 332));
+
 var _user = _interopRequireDefault(__webpack_require__(/*! @/store/modules/user.js */ 15));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 _vue.default.use(_vuex.default);var _default =
