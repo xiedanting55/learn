@@ -4,7 +4,7 @@
 			<image src="/static/images/my_bg.png" mode="widthFix" class="w-100"></image>
 			<view class="position-absolute d-flex w-100 a-center portrait-head">
 				<image src="/static/images/my_head.png" class="portrait rounded-circle"></image>
-				<text class="text-white main-text-30">登录/注册</text>
+				<text class="text-white main-text-30" @click="login">登录/注册</text>
 			</view>
 		</view>
 		
@@ -154,6 +154,22 @@
 			}
 		},
 		methods: {
+			login() {
+				uni.login({
+					provider: 'weixin',
+					success: loginRes => {
+						console.log(JSON.stringify(loginRes));
+						// this.$H.post('Index/getUserPhone',{
+						// 	code: loginRes.code
+						// }).then(result => {
+						// 	console.log(result)
+						// })
+					},
+					fail: res => {
+						console.log("App微信获取用户信息失败", res);
+					}
+				});
+			},
 			linkTo(data) {
 				console.log(typeof data)
 				uni.navigateTo({

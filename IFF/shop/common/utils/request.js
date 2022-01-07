@@ -45,7 +45,7 @@ export default {
 						return res(result)
 					}
 					// 服务端失败
-					if(result.statusCode !== 200){
+					if(result.statusCode !== '0002'){
 						if (options.toast !== false) {
 							uni.showToast({
 								title: result.data.msg || '服务端失败',
