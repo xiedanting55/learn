@@ -4,7 +4,7 @@ export default {
 	common:{
 		baseUrl:"https://api.iffjewelry.com/Api/",
 		header:{
-			'Content-Type':'application/json;charset=UTF-8',
+			'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8',
 		},
 		data:{},
 		method:'GET',
@@ -21,17 +21,18 @@ export default {
 		
 		// 请求
 		return new Promise((res,rej)=>{
+			// console.log(options)
 			// 请求之前... todo
 			if (options.token) {// token
 				options.header.token = $store.state.user.token
-				// 二次验证
+				// 二次验证  用于退出登录checkToken
 				if (options.checkToken && !options.header.token) {
 					uni.showToast({
 						title: '请先登录',
 						icon: 'none'
 					});
 					uni.navigateTo({
-						url: '/pages/login/login',
+						url: '/pages/my/my',
 					});
 					return rej('请先登录')
 				}
@@ -40,12 +41,10 @@ export default {
 			uni.request({
 				...options,
 				success: (result) => {
-					// 返回原始数据
-					if(options.native){
-						return res(result)
-					}
+					// console.log(result)
 					// 服务端失败
-					if(result.statusCode !== '0002'){
+					if(result.data.code !== '0000'){
+						// console.log(options)
 						if (options.toast !== false) {
 							uni.showToast({
 								title: result.data.msg || '服务端失败',
@@ -54,14 +53,13 @@ export default {
 						}
 						if(options.checkToken && result.data.msg == '非法token，请先登录！'){
 							uni.navigateTo({
-								url: '/pages/login/login',
+								url: '/pages/my/my',
 							});
 						}
 						return rej(result.data) 
 					}
 					// 成功
-					let data = result.data.data
-					res(data)
+					res(result.data.data)
 				},
 				fail: (error) => {
 					uni.showToast({

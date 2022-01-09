@@ -3,8 +3,9 @@
 		<view class="my-head position-relative">
 			<image src="/static/images/my_bg.png" mode="widthFix" class="w-100"></image>
 			<view class="position-absolute d-flex w-100 a-center portrait-head">
-				<image src="/static/images/my_head.png" class="portrait rounded-circle"></image>
-				<text class="text-white main-text-30" @click="login">登录/注册</text>
+				<image :src="loginStatus ? userInfo.avataUrl : '/static/images/my_head.png'" class="portrait rounded-circle"></image>
+				<text v-if="!loginStatus" class="text-white main-text-30" @click="getLogin">登录/注册</text>
+				<text v-else class="text-white main-text-30">{{userInfo.nickName}}</text>
 			</view>
 		</view>
 		
@@ -51,6 +52,7 @@
 </template>
 
 <script>
+	import {mapState, mapMutations} from 'vuex';
 	export default {
 		name: "My",
 		data() {
@@ -153,17 +155,43 @@
 				]
 			}
 		},
+		computed: {
+			...mapState({
+				loginStatus:state=>state.user.loginStatus,
+				userInfo:state=>state.user.userInfo
+			})
+		},
 		methods: {
-			login() {
+			...mapMutations(['login']),
+			getLogin() {
 				uni.login({
 					provider: 'weixin',
 					success: loginRes => {
-						console.log(JSON.stringify(loginRes));
-						// this.$H.post('Index/getUserPhone',{
-						// 	code: loginRes.code
-						// }).then(result => {
-						// 	console.log(result)
-						// })
+						uni.getUserInfo({
+							desc: '获取用户头像和名称',
+							success: infoRes => {
+								let data = infoRes.userInfo;
+								this.$H.post('Index/getUserInfo',{
+									code: loginRes.code
+								}).then(res => {
+									// 状态存储
+									res.avataUrl = data.avatarUrl;
+									res.nickName = data.nickName;
+									this.login(res)
+									uni.showToast({
+										title: '登录成功'
+									});
+								}).catch(err=>{
+									if(err.msg){
+										uni.showToast({
+											title: err.msg,
+											icon: 'none'
+										});
+									}
+									uni.hideLoading()
+								})
+							}
+						});
 					},
 					fail: res => {
 						console.log("App微信获取用户信息失败", res);

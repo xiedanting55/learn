@@ -34,14 +34,12 @@
 		</view>
 		<view class="goods-xq">
 			<text class="my-2 ml-3 font-weight main-text-24 d-block">图片详情</text>
-			<image src="/static/images/coupon-bg.png" mode="widthFix" class="w-100"></image>
+			<u-parse className="uparse" :content="goodsObj.introduction"></u-parse>
 		</view>
 		<view class="goods-ld text-center mx-3 mt-3">
 			<text class="font-weight main-text-30">产品亮点</text>
 			<view class="goods-ld-image d-flex a-center j-sb flex-wrap mt-3">
-				<image src="/static/images/coupon-bg.png" mode="widthFix" class="mb-3"></image>
-				<image src="/static/images/coupon-bg.png" mode="widthFix"></image>
-				<image src="/static/images/coupon-bg.png" mode="widthFix"></image>
+				<image v-for="(item,index) in goodsObj.images_list" :key="index" :src="item" mode="widthFix"></image>
 			</view>
 		</view>
 		<view class="goods-ld text-center mx-3 mt-3">
@@ -77,7 +75,7 @@
 				</view>
 			</view>
 			<view class="detail-re d-flex a-center j-center mr-3">
-				<view class="add-cart text-center">加入购物车</view>
+				<view class="add-cart text-center" hover-class="bg-light-secondary" @click="addCar">加入购物车</view>
 				<view class="main-bg-color font-weight text-white text-center pay">立即支付</view>
 			</view>
 		</view>
@@ -86,6 +84,7 @@
 
 <script>
 	import price from "@/components/price/price"
+	import uParse from "@/components/uni-ui/uParse/src/wxParse"
 	export default {
 		data() {
 			return {
@@ -93,7 +92,8 @@
 			}
 		},
 		components: {
-			price
+			price,
+			uParse
 		},
 		onLoad(option) {
 			if(option) this.__init(option.id);
@@ -102,6 +102,15 @@
 			__init(goodsId) {
 				this.$H.get(`Goods/detail?goods_id=${goodsId}`).then((res)=> {
 					this.goodsObj = res.goods;
+				})
+			},
+			// 加入购物车
+			addCar() {
+				this.$H.post("Cart/addCart", {
+					goods_id: "goods_id",
+					goods_spec: []
+				}, {token: true}).then(res=> {
+					console.log(res)
 				})
 			}
 		}

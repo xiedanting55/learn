@@ -1,5 +1,19 @@
 {
 	"pages": [
+        {
+            "path" : "pages/address/address",
+            "style" : {
+                "navigationBarTitleText": "地址管理",
+                "enablePullDownRefresh": false
+            }
+        },
+		{
+		    "path" : "pages/add-edit-address/add-edit-address",
+		    "style" :  {
+		        "navigationBarTitleText": "新建收货地址",
+		        "enablePullDownRefresh": false
+		    }
+		},
 		{
             "path" : "pages/my/my",
             "style" : {
@@ -68,20 +82,6 @@
                 "enablePullDownRefresh": false
             }
         },
-        {
-            "path" : "pages/address/address",
-            "style" : {
-                "navigationBarTitleText": "地址管理",
-                "enablePullDownRefresh": false
-            }
-        },
-		{
-		    "path" : "pages/add-edit-address/add-edit-address",
-		    "style" :  {
-		        "navigationBarTitleText": "新建收货地址",
-		        "enablePullDownRefresh": false
-		    }
-		},
         {
             "path" : "pages/maintenance/maintenance",
             "style" : {

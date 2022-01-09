@@ -1,8 +1,8 @@
 <template>
 	<view class="goods">
 		<view class="mx-3 py-2 top" style="z-index: 1000">
-			<view class="line d-flex a-center j-sb rounded-4 main-bg-gray-color py-2">
-				<input type="text" v-model="goodsValue" placeholder="搜索..." class="ml-1 pl-3 main-text-24" />
+			<view class="line d-flex a-center j-sb rounded-4 main-bg-gray-color">
+				<input type="text" v-model="goodsValue" placeholder="搜索..." class="ml-1 pl-3 main-text-24 line-h-md" />
 				<image src="/static/images/search.png" class="search mr-3" mode="widthFix" @click="searchList"></image>
 			</view>
 		</view>  
@@ -15,7 +15,7 @@
 			<scroll-view class="rightScroll text-center" scroll-y="true" style="flex: 2.5;" :style="{'height':scrollHeight + 'px'}" :scroll-with-animation="true">
 				<view class="px-3">
 					<text class="main-text-24">每月月底上新，提前解锁珠宝潮流趋势</text>
-					<image :src="categoryList[activeIndex].images" mode="widthFix" v-if="categoryList[activeIndex].images.length > 0"></image>
+					<image :src="categoryList[activeIndex].images2" mode="widthFix" v-if="categoryList[activeIndex].images2.length > 0"></image>
 					
 					<view class="rightScroll-list d-flex a-center j-sb flex-wrap">
 						<view class="col-4 mt-1" v-for="(item,index) in categoryList[activeIndex].goods" :key="index" @click="linkTo(item)">
@@ -26,8 +26,8 @@
 							</view>
 						</view>
 					</view>
-					<view class="more" v-if="categoryList[activeIndex].goods.length > 0">
-						<view class="main-bg-color my-3 d-flex a-center j-center" @click="linkTo">
+					<view class="more" v-if="categoryList[activeIndex].id != 0">
+						<view class="main-bg-color my-3 d-flex a-center j-center">
 							<text class="text-white main-text-24">查看更多</text>
 							<view class="arrow arrow-white arrow-right"></view>
 						</view>
@@ -78,14 +78,13 @@
 					this.categoryList = res.categorylist;
 				})
 			},
-			// 接口不懂，得问问
 			searchList() {
 				this.$H.get('Goods/goodsList', {
 					cat_id: this.activeIndex,
 					keywords: this.goodsValue
 				}).then((res)=> {
-					console.log(res)
-					// this.categoryList = res.categorylist;
+					console.log(res.goodsList)
+					this.$set(this.categoryList[this.activeIndex], 'goods', res.goodsList)
 				})
 			},
 			// 点击左边分类
@@ -113,11 +112,17 @@
 		.search {
 			width: 34rpx;
 		}
+		input {
+			line-height: 80rpx;
+		}
 		.border-color {
 			border-color: #00332a;
 		}
 		.left-view {
 			line-height: 90rpx;
+			&:last-of-type {
+				border-bottom: none;
+			}
 		}
 		.rightScroll {
 			image {
