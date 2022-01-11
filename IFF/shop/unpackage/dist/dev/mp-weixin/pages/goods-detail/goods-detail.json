@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "商品详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "price": "/components/price/price",
+    "u-parse": "/components/uni-ui/uParse/src/wxParse"
+  }
+}

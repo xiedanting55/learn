@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/address/address",
+    "pages/add-edit-address/add-edit-address",
+    "pages/my/my",
+    "pages/car/car",
+    "pages/goods/goods",
+    "pages/goods-detail/goods-detail",
+    "pages/my-info/my-info",
+    "pages/renew-courtesy/renew-courtesy",
+    "pages/renew-code/renew-code",
+    "pages/product-info/product-info",
+    "pages/renew-order/renew-order",
+    "pages/maintenance/maintenance",
+    "pages/maintenance-appointment/maintenance-appointment",
+    "pages/order-confirm-status/order-confirm-status",
+    "pages/coupon/coupon",
+    "pages/relevant-policies/relevant-policies",
+    "pages/after-sale-type/after-sale-type",
+    "pages/after-sale/after-sale",
+    "pages/after-sale-refund/after-sale-refund",
+    "pages/after-sale-status/after-sale-status",
+    "pages/my-evaluate/my-evaluate",
+    "pages/publish-evaluation/publish-evaluation",
+    "pages/my-evaluate-status/my-evaluate-status",
+    "pages/publish-evaluationz/publish-evaluationz",
+    "pages/my-order/my-order",
+    "pages/order-confirm/order-confirm",
+    "pages/adviser/adviser"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "IFF",
+    "navigationBarBackgroundColor": "#00332a",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#2e2e2e",
+    "selectedColor": "#00332a",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/goods/goods",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/car/car",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/adviser/adviser",
+        "text": ""
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": ""
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取用户当前位置进行定位操作"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

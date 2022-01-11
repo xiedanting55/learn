@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "产品信息",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "price": "/components/price/price",
+    "count": "/components/count/count"
+  }
+}

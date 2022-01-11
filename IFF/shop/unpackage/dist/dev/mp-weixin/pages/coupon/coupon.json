@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "我的优惠卷",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "price": "/components/price/price",
+    "item-top": "/components/item-top/item-top"
+  }
+}

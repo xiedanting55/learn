@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "换新礼遇",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "price": "/components/price/price",
+    "item-top": "/components/item-top/item-top"
+  }
+}

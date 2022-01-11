@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "全部商品",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "price": "/components/price/price",
+    "tabbar": "/components/tabbar/tabbar"
+  }
+}

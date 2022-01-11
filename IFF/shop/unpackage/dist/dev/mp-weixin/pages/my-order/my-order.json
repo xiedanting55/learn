@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "price": "/components/price/price",
+    "count": "/components/count/count",
+    "item-top": "/components/item-top/item-top"
+  }
+}
