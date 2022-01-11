@@ -59,7 +59,7 @@ export default {
 						return rej(result.data) 
 					}
 					// 成功
-					res(result.data.data)
+					res(result.data)
 				},
 				fail: (error) => {
 					uni.showToast({

@@ -52,17 +52,11 @@
 			</view>
 		</view>
 		<view class="btn position-fixed main-bg-color text-white text-center rounded-4 font-weight main-text-30" @click="save">保存</view>
-		<uni-popup ref="inputDialog" type="dialog">
-			<uni-popup-dialog ref="inputClose" mode="input" title="输入内容" value="对话框预置提示内容!"
-				placeholder="请输入内容" @confirm="dialogInputConfirm"></uni-popup-dialog>
-		</uni-popup>
 	</view>
 </template>
 
 <script>
 	import utils from "@/common/utils/util"
-	import uniPopup from "@/components/uni-ui/uni-popup/uni-popup"
-	import uniPopupDialog from "@/components/uni-ui/uni-popup-dialog/uni-popup-dialog"
 	export default {
 		data() {
 			return {
@@ -78,10 +72,6 @@
 				tagList: [],
 				checked: false
 			}
-		},
-		components: {
-			uniPopup,
-			uniPopupDialog
 		},
 		onLoad(option) {
 			this.getTag();

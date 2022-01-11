@@ -48,10 +48,12 @@
 			</view>
 		</view>
 		
+		<tabbar :current="4"></tabbar>
 	</view>
 </template>
 
 <script>
+    import tabbar from '@/components/tabbar/tabbar'
 	import {mapState, mapMutations} from 'vuex';
 	export default {
 		name: "My",
@@ -154,6 +156,14 @@
 					}
 				]
 			}
+		},
+		components: {
+			tabbar
+		},
+		onShow() {
+			uni.hideTabBar({
+			    animation: false
+			})
 		},
 		computed: {
 			...mapState({

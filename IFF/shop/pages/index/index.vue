@@ -6,21 +6,23 @@
 					<input type="text" value="" placeholder="搜索..." class="ml-1 px-2 main-text-24 span-18" />
 					<image src="/static/images/search.png" class="search mr-2" mode="widthFix"></image>
 				</view>
-				<image src="/static/images/ewm.png" class="ewm ml-1"></image>
+				<image src="/static/images/ewm.png" class="ewm ml-1" @click="ewm"></image>
 				<image src="/static/images/txm.png" class="txm ml-2"></image>
 			</view>
 		</view>
-		<swiper indicator-dots autoplay :interval="3000" :duration="200" :indicator-active-color="'#00332a'" circular class="w-100" style="height: 100vh;">
+		<swiper indicator-dots autoplay :interval="3000" :duration="200" :indicator-active-color="'#00332a'" circular class="w-100" style="height: calc(100vh - 50px);">
 			<block v-for="(item,index) in bannerList" :key="index">
 				<swiper-item>
 					<image :src="item.images" lazy-load class="w-100" style="height: 100vh;"></image>
 				</swiper-item>
 			</block>
 		</swiper>
+		<tabbar :current="2"></tabbar>
 	</view>
 </template>
 
 <script>
+    import tabbar from '@/components/tabbar/tabbar'
 	export default {
 		data() {
 			return {
@@ -31,11 +33,31 @@
 		mounted() {
 			this.__init();
 		},
+		components: {
+			tabbar
+		},
+		onShow() {
+			uni.hideTabBar({
+			    animation: false
+			})
+		},
 		methods: {
 			__init() {
 				this.$H.get('Index/config').then((res)=> {
-					this.bannerList = res.bannerlist;
+					this.bannerList = res.data.bannerlist;
 				})
+			},
+			// 扫描二维码
+			ewm() {
+				uni.scanCode({
+				    success: function (res) {
+				        console.log('条码类型：' + res.scanType);
+				        console.log('条码内容：' + res.result);
+						this.$H.post('Goods/detail', {goods_id: "goods_id"}).then((res)=> {
+							console.log(res)
+						})
+				    }
+				});
 			}
 		}
 	}

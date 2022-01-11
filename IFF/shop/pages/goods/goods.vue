@@ -35,10 +35,12 @@
 				</view>
 			</scroll-view>
 		</view>
+		<tabbar :current="0"></tabbar>
 	</view>
 </template>
 
 <script>
+    import tabbar from '@/components/tabbar/tabbar'
 	import price from '@/components/price/price'
 	export default {
 		data() {
@@ -51,7 +53,13 @@
 			}
 		},
 		components:{
+			tabbar,
 			price
+		},
+		onShow() {
+			uni.hideTabBar({
+			    animation: false
+			})
 		},
 		// onReady: function () {
 		// 	let _self = this;
@@ -75,7 +83,7 @@
 		methods: {
 			__init() {
 				this.$H.get('Index/config').then((res)=> {
-					this.categoryList = res.categorylist;
+					this.categoryList = res.data.categorylist;
 				})
 			},
 			searchList() {
@@ -83,8 +91,7 @@
 					cat_id: this.activeIndex,
 					keywords: this.goodsValue
 				}).then((res)=> {
-					console.log(res.goodsList)
-					this.$set(this.categoryList[this.activeIndex], 'goods', res.goodsList)
+					this.$set(this.categoryList[this.activeIndex], 'goods', res.data.goodsList)
 				})
 			},
 			// 点击左边分类

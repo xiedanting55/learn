@@ -56,19 +56,16 @@
 				</view>
 			</view>
 		</view>
-		<view class="goods-xq" style="margin-bottom: 60px;">
-			<image src="/static/images/coupon-bg.png" mode="widthFix" class="w-100"></image>
-		</view>
 		<view class="detail-fixed d-flex j-sb position-fixed bottom-0 left-0 w-100 bg-white py-1 border-top">
 			<view class="detail-le span-9 d-flex a-center j-sa ml-3">
 				<view class="item d-flex flex-column a-center">
 					<image src="/static/images/xq_06.png" mode="widthFix"></image>
 					<text class="main-text-20">店铺</text>
 				</view>
-				<view class="item d-flex flex-column a-center">
+				<button open-type="contact" class="item d-flex a-center j-center flex-column" show-message-card session-from send-message-path send-message-title>
 					<image src="/static/images/xq_08.png" mode="widthFix"></image>
 					<text class="main-text-20">顾问</text>
-				</view>
+				</button>
 				<view class="item d-flex flex-column a-center">
 					<image src="/static/images/xq_03.png" mode="widthFix"></image>
 					<text class="main-text-20">收藏</text>
@@ -88,6 +85,7 @@
 	export default {
 		data() {
 			return {
+				goods_id: "",
 				goodsObj: {}
 			}
 		},
@@ -96,21 +94,25 @@
 			uParse
 		},
 		onLoad(option) {
-			if(option) this.__init(option.id);
+			if(option) {
+				this.goods_id = option.id;
+				this.__init(this.goods_id);
+			}
 		},
 		methods: {
 			__init(goodsId) {
 				this.$H.get(`Goods/detail?goods_id=${goodsId}`).then((res)=> {
-					this.goodsObj = res.goods;
+					this.goodsObj = res.data.goods;
 				})
 			},
 			// 加入购物车
 			addCar() {
 				this.$H.post("Cart/addCart", {
-					goods_id: "goods_id",
-					goods_spec: []
-				}, {token: true}).then(res=> {
-					console.log(res)
+					goods_id: this.goods_id,
+					goods_spec: [],
+					token: this.$store.state.user.token
+				}).then(res=> {
+					uni.showToast({title: res.msg});
 				})
 			}
 		}
@@ -149,12 +151,16 @@
 		.detail-fixed {
 			border-top-color: #e4e4e4;
 			.detail-le {
+				.item {
+					width: 33.33%;
+				}
 				image {
 					width: 46rpx;
 					height: 46rpx;
 				}
 				text {
 					color: #3b3b3b;
+					line-height: 40rpx;
 				}
 			}
 			.detail-re {
@@ -172,4 +178,13 @@
 			}
 		}
 	}
+		button {
+			background: none;
+			height: 100rpx;
+			padding: 0 !important;
+			&::after {
+				border: none;
+				height: 100rpx;
+			}
+		}
 </style>
