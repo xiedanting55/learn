@@ -34,4 +34,11 @@
 .my-info .item .item-re.data-v-52d94f66 {
   width: 436rpx;
 }
+.my-info .phone.data-v-52d94f66 {
+  background-color: #00332A !important;
+  border: none !important;
+}
+.my-info .send.data-v-52d94f66 {
+  line-height: 88rpx;
+}
 

@@ -1,3 +1,13 @@
+
+page {
+	height: calc(100vh - 100rpx);
+	/* overflow-y: scroll !important; */
+}
+.car-scroll {
+	height: calc(100vh - 230rpx);
+	overflow-y: scroll !important;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -25,7 +35,10 @@
 /* 透明度 */
 /* 文章场景相关 */
 .empty.data-v-51e9b630 {
-  margin-top: 100rpx;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .empty image.data-v-51e9b630 {
   width: 180rpx;
@@ -44,13 +57,21 @@
   line-height: 38rpx;
 }
 .car-list .tuijian .tuijian-item.data-v-51e9b630 {
-  width: 48%;
+  width: 335rpx;
+}
+.car-list .tuijian .tuijian-item image.data-v-51e9b630 {
+  width: 335rpx;
+  height: 335rpx;
 }
 .count.data-v-51e9b630 {
-  bottom: 100rpx;
+  bottom: 140rpx;
+  height: 130rpx;
 }
 .count .btn.data-v-51e9b630 {
   width: 180rpx;
   line-height: 80rpx;
+}
+.popup-top image.data-v-51e9b630 {
+  border-color: #e4e4e4;
 }
 

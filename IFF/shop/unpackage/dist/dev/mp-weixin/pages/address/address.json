@@ -1,7 +1,9 @@
 {
   "navigationBarTitleText": "地址管理",
   "enablePullDownRefresh": false,
+  "disableScroll": true,
   "usingComponents": {
-    "no-thing": "/components/no-thing/no-thing"
+    "no-thing": "/components/no-thing/no-thing",
+    "address-item": "/components/address-item/address-item"
   }
 }

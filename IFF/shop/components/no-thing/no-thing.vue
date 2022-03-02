@@ -2,7 +2,7 @@
 	<view class="position-absolute d-flex flex-column a-center j-center top-0 left-0 right-0 bottom-0" style="background-color: #F5F5F5;">
 		<template v-if="!loading">
 			<image :src="getIcon" mode="widthFix" style="width: 250rpx;"></image>
-			<view style="color: #B2B2B2;">{{msg}}</view>
+			<view style="color: #B2B2B2;" class="main-text-24">{{msg}}</view>
 		</template>
 		<text v-else class="text-muted">加载中...</text>
 	</view>
@@ -31,6 +31,3 @@
 		},
 	}
 </script>
-
-<style>
-</style>

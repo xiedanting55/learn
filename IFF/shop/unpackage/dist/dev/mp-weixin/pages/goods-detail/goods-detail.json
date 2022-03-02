@@ -1,8 +1,12 @@
 {
   "navigationBarTitleText": "商品详情",
   "enablePullDownRefresh": false,
+  "disableScroll": true,
   "usingComponents": {
     "price": "/components/price/price",
-    "u-parse": "/components/uni-ui/uParse/src/wxParse"
+    "uni-badge": "/uni_modules/uni-badge/components/uni-badge/uni-badge",
+    "common-popup": "/components/common-popup/common-popup",
+    "u-parse": "/components/uni-ui/uParse/src/wxParse",
+    "uni-number-box": "/components/uni-ui/uni-number-box/uni-number-box"
   }
 }

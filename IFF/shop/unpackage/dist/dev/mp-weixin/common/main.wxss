@@ -413,6 +413,7 @@ page{
 .p-3 {padding-left: 30rpx;padding-right: 30rpx;padding-top: 30rpx;padding-bottom: 30rpx;}
 .p-4 {padding-left: 40rpx;padding-right: 40rpx;padding-top: 40rpx;padding-bottom: 40rpx;}
 .p-5 {padding-left: 50rpx;padding-right: 50rpx;padding-top: 50rpx;padding-bottom: 50rpx;}
+.p-6 {padding-left: 60rpx;padding-right: 60rpx;padding-top: 60rpx;padding-bottom: 60rpx;}
 .px-0 { padding-left: 0;padding-right: 0;}
 .px { padding-left: 5rpx;padding-right: 5rpx;}
 .px-1 { padding-left: 10rpx;padding-right: 10rpx;}
@@ -458,8 +459,8 @@ page{
 .arrow {
 	width: 10rpx;
 	height: 10rpx;
-	border-left: 4rpx solid #00332A;
-	border-bottom: 4rpx solid #00332A;
+	border-left: 3rpx solid #7f8c60;
+	border-bottom: 3rpx solid #7f8c60;
 }
 .arrow-white {
 	border-left-color: #fff;
@@ -510,7 +511,9 @@ image{  width: 100%;
 .main-text-60 {font-size: 60rpx;}
 .main-text-36 {font-size: 36rpx;}
 .main-text-30 {font-size: 30rpx;}
+.main-text-26 {font-size: 26rpx;}
 .main-text-24 {font-size: 24rpx;}
+.main-text-22 {font-size: 22rpx;}
 .main-text-20 {font-size: 20rpx;}
 .main-text-18 {font-size: 18rpx;}
 .main-text-16 {font-size: 16rpx;}

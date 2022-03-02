@@ -36,5 +36,11 @@
 }
 .line .input input.data-v-3a4df126 {
   width: 468rpx;
+  line-height: 76rpx;
+  height: 76rpx;
+}
+.item .item-body image.data-v-3a4df126 {
+  width: 174rpx;
+  height: 174rpx;
 }
 

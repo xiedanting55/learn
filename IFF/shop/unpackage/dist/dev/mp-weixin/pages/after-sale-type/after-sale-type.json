@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "售后类型",
   "enablePullDownRefresh": false,
+  "disableScroll": true,
   "usingComponents": {
     "price": "/components/price/price",
     "count": "/components/count/count",

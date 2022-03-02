@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "维修预约",
   "enablePullDownRefresh": false,
+  "disableScroll": true,
   "usingComponents": {}
 }

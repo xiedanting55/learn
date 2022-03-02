@@ -1,3 +1,13 @@
+
+page {
+	height: 100vh;
+	overflow: hidden;
+}
+.scroll-line{
+	height: calc(100vh - 100rpx);
+	overflow-y: scroll !important;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -24,6 +34,19 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.after-sale-refund .item .item-body image.data-v-675bb2a2 {
+  width: 175rpx;
+  height: 175rpx;
+}
+.after-sale-refund .item .item-body .content.data-v-675bb2a2 {
+  width: 330rpx;
+}
+.after-sale-refund .item .item-body .content text.data-v-675bb2a2:nth-of-type(1) {
+  color: #292929;
+}
+.after-sale-refund .item .item-body .content text.data-v-675bb2a2:nth-of-type(2) {
+  color: #424242;
+}
 .after-sale-refund .item-2.data-v-675bb2a2 {
   background-color: #e4e4e4;
 }
@@ -38,6 +61,25 @@
 }
 .after-sale-refund .item-2 .upload image.data-v-675bb2a2 {
   width: 74rpx;
+}
+.after-sale-refund .uni-list-cell.data-v-675bb2a2 {
+  line-height: 100rpx;
+  border-bottom-color: #e4e4e4;
+  flex-direction: row-reverse !important;
+}
+.after-sale-refund .img-list .item.data-v-675bb2a2 {
+  margin-right: 17rpx;
+}
+.after-sale-refund .img-list .item.data-v-675bb2a2:nth-of-type(3n) {
+  margin-right: 0 !important;
+}
+.after-sale-refund .img-list .item image.data-v-675bb2a2 {
+  width: 179rpx;
+  height: 179rpx;
+}
+.after-sale-refund .img-list .item .icon.data-v-675bb2a2 {
+  top: -10rpx;
+  z-index: 1;
 }
 .after-sale-refund .send.data-v-675bb2a2 {
   line-height: 88rpx;

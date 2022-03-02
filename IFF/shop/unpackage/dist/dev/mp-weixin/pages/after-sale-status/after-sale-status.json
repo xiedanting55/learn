@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "退款成功",
   "enablePullDownRefresh": false,
+  "disableScroll": true,
   "usingComponents": {
     "price": "/components/price/price",
     "count": "/components/count/count",

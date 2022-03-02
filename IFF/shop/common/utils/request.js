@@ -21,23 +21,40 @@ export default {
 		
 		// 请求
 		return new Promise((res,rej)=>{
-			// console.log(options)
 			// 请求之前... todo
 			if (options.token) {// token
 				options.header.token = $store.state.user.token
 				// 二次验证  用于退出登录checkToken
 				if (options.checkToken && !options.header.token) {
-					uni.showToast({
-						title: '请先登录',
-						icon: 'none'
-					});
-					uni.navigateTo({
-						url: '/pages/my/my',
-					});
+					uni.showModal({
+						title: "提示",
+						content: "请先登录",
+						success(res) {
+							if(res.confirm) {
+								uni.switchTab({
+									url: "/pages/my/my"
+								})
+							} else {
+								uni.navigateBack({
+									delta: 1
+								})
+							}
+						}
+					})
+					// uni.showToast({
+					// 	title: '请先登录',
+					// 	icon: 'none'
+					// });
+					// uni.navigateTo({
+					// 	url: '/pages/my/my',
+					// });
 					return rej('请先登录')
 				}
 			}
 			// 请求中...
+			uni.showLoading({
+				title:"加载中..."
+			})
 			uni.request({
 				...options,
 				success: (result) => {
@@ -46,10 +63,30 @@ export default {
 					if(result.data.code !== '0000'){
 						// console.log(options)
 						if (options.toast !== false) {
-							uni.showToast({
-								title: result.data.msg || '服务端失败',
-								icon: 'none'
-							});
+							uni.hideLoading();
+							if(result.data.msg == '请先登陆！') {
+								uni.showModal({
+									title: "提示",
+									content: result.data.msg || '服务端失败',
+									success(res) {
+										if(res.confirm) {
+											uni.switchTab({
+												url: "/pages/my/my"
+											})
+											$store.commit('logout');
+										} else {
+											uni.navigateBack({
+												delta: 1
+											})
+										}
+									}
+								})
+							} else {
+								uni.showToast({
+									title: result.data.msg || '服务端失败',
+									icon: 'none'
+								});
+							}
 						}
 						if(options.checkToken && result.data.msg == '非法token，请先登录！'){
 							uni.navigateTo({
@@ -60,6 +97,7 @@ export default {
 					}
 					// 成功
 					res(result.data)
+					uni.hideLoading();
 				},
 				fail: (error) => {
 					uni.showToast({

@@ -9,4 +9,5 @@ export default {
 		var reg=/^(.{3}).*(.{4})$/;
 		return val.replace(reg, "$1****$2");
 	},
+	
 }

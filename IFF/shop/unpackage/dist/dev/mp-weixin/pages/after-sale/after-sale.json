@@ -1,9 +1,11 @@
 {
   "navigationBarTitleText": "退换 / 售后",
   "enablePullDownRefresh": false,
+  "disableScroll": true,
   "usingComponents": {
     "price": "/components/price/price",
     "count": "/components/count/count",
+    "no-thing": "/components/no-thing/no-thing",
     "item-top": "/components/item-top/item-top"
   }
 }

@@ -1,3 +1,12 @@
+
+page {
+	height: 100vh;
+}
+.address-list {
+	height: calc(100vh - 110rpx);
+	overflow-y: scroll;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -24,7 +33,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.address .row.data-v-db675620 {
+.address .d-flex.data-v-db675620 {
   border-color: #e4e4e4;
 }
 .address image.data-v-db675620 {
@@ -36,7 +45,7 @@
 .address .btn.data-v-db675620 {
   width: 400rpx;
   line-height: 88rpx;
-  bottom: 20px;
+  bottom: 20rpx;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
           transform: translate(-50%, 0);

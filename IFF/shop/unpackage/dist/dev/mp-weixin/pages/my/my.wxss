@@ -1,3 +1,13 @@
+
+page {
+	height: 100vh;
+	overflow: hidden;
+}
+.scroll-line{
+	height: calc(100vh - 100rpx);
+	overflow-y: scroll !important;
+}
+
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -24,8 +34,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.my-head .top-image.data-v-0be17cc6 {
+  height: 500rpx !important;
+}
 .my-head .portrait-head.data-v-0be17cc6 {
-  top: 75rpx;
+  top: 120rpx;
   left: 60rpx;
 }
 .my-head .portrait-head .portrait.data-v-0be17cc6 {
@@ -34,16 +47,32 @@
   height: 134rpx;
 }
 .my-vip-card.data-v-0be17cc6 {
-  margin: -140rpx 60rpx 0;
+  margin: -186rpx 60rpx 0;
+}
+.my-vip-card .vip-image.data-v-0be17cc6 {
+  height: 385rpx;
 }
 .my-vip-card .my-vip-list.data-v-0be17cc6 {
-  bottom: 50rpx;
+  height: 100%;
 }
 .my-vip-card .my-vip-list image.data-v-0be17cc6 {
-  width: 60rpx;
+  width: 50rpx;
 }
-.my-vip-card .my-vip-list .text2.data-v-0be17cc6 {
-  line-height: 42rpx;
+.my-vip-card .my-vip-list image.my_iff.data-v-0be17cc6 {
+  width: 96rpx;
+  margin-top: 62rpx;
+}
+.my-vip-card .my-vip-list text.data-v-0be17cc6 {
+  color: #988067;
+}
+.my-vip-card .my-vip-list .item-list.data-v-0be17cc6 {
+  margin-left: 120rpx;
+}
+.my-vip-card .my-vip-list .item-list .item.data-v-0be17cc6 {
+  width: 110rpx;
+}
+.my-vip-card .my-vip-list .item-list .item text.data-v-0be17cc6 {
+  line-height: 24rpx;
 }
 .my-order .my-order-head .text1.data-v-0be17cc6 {
   color: #333;
@@ -52,19 +81,41 @@
   color: #202020;
 }
 .my-order .my-order-row image.data-v-0be17cc6 {
-  width: 65rpx;
+  width: 45rpx;
+  height: 45rpx;
 }
 .my-order .my-order-row text.data-v-0be17cc6 {
   color: #363636;
 }
-.my-list image.data-v-0be17cc6 {
-  width: 36rpx;
+.my-list .item.data-v-0be17cc6 {
+  height: 150rpx;
 }
-.my-list text.data-v-0be17cc6 {
+.my-list .item.data-v-0be17cc6::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2rpx;
+  height: 100%;
+  background-color: #7f8c60;
+}
+.my-list .item.data-v-0be17cc6:nth-of-type(1)::after, .my-list .item.data-v-0be17cc6:nth-of-type(2)::after, .my-list .item.data-v-0be17cc6:nth-of-type(3)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2rpx;
+  background-color: #7f8c60;
+}
+.my-list .item.data-v-0be17cc6:nth-of-type(3n)::before {
+  background-color: #FFFFFF;
+}
+.my-list .item image.data-v-0be17cc6 {
+  width: 50rpx;
+  height: 50rpx;
+}
+.my-list .item text.data-v-0be17cc6 {
   color: #333;
-}
-.my-list .row-re.data-v-0be17cc6 {
-  width: 582rpx;
-  border-color: #e4e4e4;
 }
 

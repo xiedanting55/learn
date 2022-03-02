@@ -5,7 +5,13 @@ export default {
 		// token
 		token:null,
 		// 用户信息
-		userInfo:{}
+		userInfo:{},
+		freight: "",  //运费
+		freight_free: "",  //包邮额度
+		express_list: {}, //物流编码
+		send_back_address: "", //联系地址
+		send_back_contact: "", //联系人
+		send_back_phone: "", //联系电话
 	},
 	mutations:{
 		// 初始化登录状态
@@ -25,6 +31,14 @@ export default {
 			state.token = userinfo.token
 			// 持久化存储
 			uni.setStorageSync('userInfo',JSON.stringify(userinfo))
+		},
+		update(state,userinfo) {
+			if(userinfo.head_pic) {
+				state.userInfo.avataUrl = userinfo.head_pic;
+				state.userInfo.nickName = userinfo.nickName;
+			}
+			// 持久化存储
+			uni.setStorageSync('userInfo',JSON.stringify(state.userInfo))
 		},
 		// 退出登录
 		logout(state){

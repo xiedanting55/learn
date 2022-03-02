@@ -34,10 +34,13 @@ page {
 .goods.data-v-5566b618 {
   overflow: hidden;
 }
-.goods .search.data-v-5566b618 {
+.goods .top.data-v-5566b618 {
+  height: 120rpx;
+}
+.goods .top .search.data-v-5566b618 {
   width: 34rpx;
 }
-.goods input.data-v-5566b618 {
+.goods .top input.data-v-5566b618 {
   line-height: 80rpx;
 }
 .goods .border-color.data-v-5566b618 {
@@ -52,6 +55,9 @@ page {
 .goods .rightScroll image.data-v-5566b618 {
   width: 100%;
 }
+.goods .rightScroll .bigIamge.data-v-5566b618 {
+  height: 232rpx !important;
+}
 .goods .rightScroll .col-4.data-v-5566b618 {
   width: 49%;
 }
@@ -61,11 +67,24 @@ page {
 .goods .rightScroll .col-4 .col-4-line image.data-v-5566b618 {
   width: 30rpx;
 }
+.goods .rightScroll .item-series.data-v-5566b618 {
+  height: 450rpx;
+  overflow: hidden;
+}
+.goods .rightScroll .item-series image.data-v-5566b618 {
+  height: 450rpx;
+}
+.goods .rightScroll .item-series text.data-v-5566b618 {
+  bottom: 20rpx;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
 .goods .more.data-v-5566b618 {
   width: 150rpx;
   margin: 0 auto;
 }
 .goods .more view.data-v-5566b618 {
-  line-height: 40rpx;
+  line-height: 46rpx;
 }
 

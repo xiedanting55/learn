@@ -37,6 +37,13 @@
 .add-edit-address .text1.data-v-01ca3f26 {
   width: 130rpx;
 }
+.add-edit-address .text1.data-v-01ca3f26, .add-edit-address input.data-v-01ca3f26 {
+  height: 94rpx !important;
+  line-height: 94rpx;
+}
+.add-edit-address textarea.data-v-01ca3f26 {
+  height: 94rpx !important;
+}
 .add-edit-address image.data-v-01ca3f26 {
   width: 30rpx;
 }

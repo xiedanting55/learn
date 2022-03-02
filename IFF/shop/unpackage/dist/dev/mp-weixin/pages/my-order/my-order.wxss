@@ -1,17 +1,3 @@
-
-checkbox .wx-checkbox-input {
-	border-radius: 50% !important;
-	color: #ffffff !important;
-}
-checkbox .wx-checkbox-input.wx-checkbox-input-checked {
-	color: #fff;
-	background: #00332A;
-}
-.wx-checkbox-input.wx-checkbox-input-checked {
-	border-color: #00332A !important;
-}
-
-
 @charset "UTF-8";
 /**
  * 这里是uni-app内置的常用样式变量
@@ -57,7 +43,7 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked {
   height: 175rpx;
 }
 .my-order .item .item-body .content.data-v-143b2126 {
-  width: 330rpx;
+  width: 295rpx;
 }
 .my-order .item .item-body .content text.data-v-143b2126:nth-of-type(1) {
   color: #292929;
@@ -65,9 +51,15 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked {
 .my-order .item .item-body .content text.data-v-143b2126:nth-of-type(2) {
   color: #424242;
 }
+.my-order .item .item-body .item-body-re.data-v-143b2126 {
+  width: 160rpx;
+}
 .my-order .item .item-more text.data-v-143b2126 {
   width: 140rpx;
   line-height: 40rpx;
+}
+.my-order .item .item-more text.data-v-143b2126:nth-of-type(1) {
+  margin-left: 0 !important;
 }
 .my-order .list-1 .item.data-v-143b2126 {
   border-bottom-color: #fff;
@@ -104,5 +96,13 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked {
 }
 .my-order .tuijian .tuijian-item.data-v-143b2126 {
   width: 48%;
+}
+.my-order .uni-list-cell.data-v-143b2126 {
+  line-height: 100rpx;
+  border-bottom-color: #e4e4e4;
+  flex-direction: row-reverse !important;
+}
+.my-order .send.data-v-143b2126 {
+  line-height: 88rpx;
 }
 

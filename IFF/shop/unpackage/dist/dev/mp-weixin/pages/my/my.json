@@ -1,5 +1,6 @@
 {
   "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
   "disableScroll": true,
   "usingComponents": {
     "tabbar": "/components/tabbar/tabbar"

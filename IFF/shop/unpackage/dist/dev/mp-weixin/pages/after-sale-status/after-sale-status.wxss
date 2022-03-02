@@ -34,4 +34,8 @@
 .after-sale-status .item-2 .item-body .content.data-v-4f9461d4 {
   color: #2b2b2b;
 }
+.after-sale-status .imgs.data-v-4f9461d4 {
+  width: 150rpx;
+  height: 150rpx;
+}
 

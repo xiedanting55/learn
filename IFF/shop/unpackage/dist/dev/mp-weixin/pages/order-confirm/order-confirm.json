@@ -1,9 +1,12 @@
 {
   "navigationBarTitleText": "确认订单",
   "enablePullDownRefresh": false,
+  "disableScroll": true,
   "usingComponents": {
     "price": "/components/price/price",
     "count": "/components/count/count",
-    "item-top": "/components/item-top/item-top"
+    "uni-popup": "/uni_modules/uni-popup/components/uni-popup/uni-popup",
+    "item-top": "/components/item-top/item-top",
+    "address-item": "/components/address-item/address-item"
   }
 }

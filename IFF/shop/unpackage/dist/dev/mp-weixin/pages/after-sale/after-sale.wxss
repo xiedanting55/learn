@@ -24,9 +24,6 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.after-sale .scroll-row-item.active.data-v-e830ff74 {
-  border-bottom: 3rpx solid #00332a;
-}
 .after-sale .search.data-v-e830ff74 {
   line-height: 56rpx;
 }
@@ -34,10 +31,12 @@
   width: 42rpx;
 }
 .after-sale .search input.data-v-e830ff74 {
-  color: #fff;
   height: 56rpx;
   line-height: 56rpx;
   width: 580rpx;
+}
+.after-sale .scroll-row-item.active.data-v-e830ff74 {
+  border-bottom: 3rpx solid #00332a;
 }
 .after-sale .item .item-body image.data-v-e830ff74 {
   width: 175rpx;

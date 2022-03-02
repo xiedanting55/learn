@@ -1,0 +1,103 @@
+<template>
+	<view class="relevant-policies m-3">
+		<text class="text-center font-weight main-text-30">IFF商城会员注册协议</text>
+		<view class="mt-3 d-flex flex-column">
+			<text class="font-weight main-text-24">一、会员注册：</text>
+			<text class="main-text-24">(1）费用：在IFF官方商城注册是完全免费的！</text>
+			<text class="main-text-24">(2）注册资格：</text>
+			<text class="main-text-24">必须是依据法律具有完全民事行为能力的自然人在不限制前述规定的前提下，我们的服务不向18周岁以下或被临时或无限期中止的用户提供；如用户不符合前述要求的，请不要注册成周大福官方商城的用户，本站也不提供相关服务。</text>
+			<text class="main-text-24">(3）资料填写：</text>
+			<text class="main-text-24">a.提供准确，真实，有效的个人资料；如果会员提供的资料包含有不正确的信息，本站保留结束会员使用网络服务资格的权利。</text>
+			<text class="main-text-24">b. 由于用户提供的注册资料不真实或不准确而致使本公司或任何其他方受到任何性质的损失，该用户应承担全部损失的赔偿责任；如果仅对用户自身造成任何性质的损失，则由用户自行承担。</text>
+			<text class="main-text-24">C.允许本网站不定时向您的电子邮箱发送各种信息；</text>
+			<text class="main-text-24">(1） 会员的帐号，密码和安全性</text>
+			<text class="main-text-24">(2） 本站会员帐号请用您的电子邮件地址登录，请牢记您的帐号密码，不要透露给任何第三方。</text>
+			<text class="main-text-24">(3） 会员将对会员名和密码安全以及用其会员名进行的所有活动和事件负全责。</text>
+			<text class="main-text-24">(4） 会员若发现任何非法盗用会员帐号或存在安全漏洞的情况，请立即通告本站</text>
+		</view>
+		<view class="mt-3 d-flex flex-column">
+			<text class="font-weight main-text-24">二、有任何以下行为之一的会员将被取消会员资格</text>
+			<text class="main-text-24">(1）违反注册条款</text>
+			<text class="main-text-24">(2）提供虚假个人资料</text>
+			<text class="main-text-24">(3）会员有损公司利益的行为</text>
+			<text class="main-text-24">(4）违反中国的法律、法规、违反互联网相关规定的行为</text>
+			<text class="main-text-24">(5） 将会员帐号用于出售、拍卖等，拿会员帐号当作商品进行交易的行为</text>
+			<text class="main-text-24">(6） 出借、转让 会员帐号给其他会员等不怡当行使会员权利的行为</text>
+			<text class="main-text-24">(7） 通过盗取密码、诈骗等不正当手段获得会员帐号的行为</text>
+			<text class="main-text-24">(8）不遵守本站的退换货、物流政策或其他政策</text>
+			<text class="main-text-24">(9）其他对本站造成直接或间接损失的行为</text>
+		</view>
+		<view class="mt-3 d-flex flex-column">
+			<text class="font-weight main-text-24">三、会员隐私制度：</text>
+			<text class="main-text-24">本站重视对会员隐私保护，尊重会员个人隐私是本站的一项基本政策。您提供的登记资料及本网站保留的有关您的若干其他个人资料将受到中国有关隐私的法律保护</text>
+			<text class="main-text-24">(1） 为了尊重会员，公司一定不会在末经会员同意授权的情况下公开、编辑及透露会员的个人信息。</text>
+			<text class="main-text-24">(2） 本站不公开会员个人信息，除以下情况外：</text>
+			<text class="main-text-24">• 会员授权本站透露这些信息。</text>
+			<text class="main-text-24">• 相应法律及程序要求本站提供会员个人资料。</text>
+			<text class="main-text-24">• 在紧急情况下竭力维护会员个人和社会大众隐私安全。</text>
+			<text class="main-text-24">• 符合其他相关要求。</text>
+		</view>
+		<view class="mt-3 d-flex flex-column">
+			<text class="font-weight main-text-24">四、交易：</text>
+			<text class="main-text-24">会员在本网进行物品购买时必须遵守以下条款：</text>
+			<text class="main-text-24">(1） 订单、价格和付款产品或服务价格、付款条件和配送在订单中以书面形式明确约定为准。</text>
+			<text class="main-text-24">(2）所有权和风险产品所有权和风险在产品交付买方或其指定收货人时转移给买方。</text>
+			<text class="main-text-24">(3）常规保证</text>
+			<text class="main-text-24">a. 质量保证</text>
+			<text class="main-text-24">我们出售的商品与您亲临线下商场分店选购商品享受同样质量保证。如果发现商品短缺、配送错误、破损等问题，请您当时向配送员指出，并立即与客服中心联系，问题核实后可以安排退换货服务，如果更换过商品再次出现质量问题，可再提供退换服务。</text>
+			<text class="main-text-24">b.退换货处理</text>
+			<text class="main-text-24">详见“帮助中心” 退换货政策</text>
+			<text class="main-text-24">(4）其他</text>
+			<text class="main-text-24">a.本站将尽最大努力保证用户所购商品与网站站上公布的价格一致，但价目表和声明并不构成要约。</text>
+			<text class="main-text-24">b. 本网站有权在发现了网站上显现的产品及订单的明显错误或缺货的情况下，单方面撤回该信息或撤销订单。在下订单的同时，您应该对订单中提供的所有信息的真实性负责</text>
+			<text class="main-text-24">c.本站保留对产品订购的数量的限制权。</text>
+		</view>
+		<view class="mt-3 d-flex flex-column">
+			<text class="font-weight main-text-24">五、服务条款的修改：</text>
+			<text class="main-text-24">本站的服务条款用于为用户提供的产品销售服务，这些条款将有可能不时被修正、删除。服务条款一旦发生变动，将会在重要页面上提示修改内容。如果不同意所改动的内容，用户可以主动取消获得的网站络服务。如果用户继续享用网站络服务，则视为接受服务条款的变动。本站保留随时修改或中断服务而不需事先通知用户的权利。本站行使修改或中断服务的权利，不需对用户或第三方负责。</text>
+		</view>
+		<view class="mt-3 d-flex flex-column">
+			<text class="font-weight main-text-24">六、知识产权声明：</text>
+			<text class="main-text-24">本网站提供的所有内容，如文字、图片、图像、视频、软件等都是本公司财产。同时，本网站相关著作权、专利权、商标及其它任何所有权或权利，均属本网所有，受中国 《商标法》、《著作权法》和国际版权法等相关法律的保护。除非中国法律另有规定，未经本网的同意，任何企业或个人均无权复制、下载、传输、再造本网站任何内容，也不得提供给第三者使用，否则应负所有法律责任。违反上述声明而给本公司造成损失的，本公司将依法追究其法律责任。</text>
+		</view>
+		<view class="mt-3 d-flex flex-column">
+			<text class="font-weight main-text-24">七、免责声明：</text>
+			<text class="main-text-24">本网有义务在技术上确保网站的正常运行，尽力避免服务中断或将中断时间限制在最短时间内，保证会员网上交易活动的顺利进行。但以下情况，本网站无需承担任何责任：</text>
+			<text class="main-text-24">(1） 由于您将会员密码告知他人或与他人共享注册账户，由此导致任何个人资料泄露。</text>
+			<text class="main-text-24">(2） 任何由于黑客攻击、计算机病毒侵入或发作、因政府管理而造成暂时性关闭等影响网络正常经营之不可抗力而造成本网站崩溃或无法正常使用导致网上交易无法完成或丢失有关的信息、记录等，本网不承担责任；</text>
+			<text class="main-text-24">(3） 任何会员向本网提供错误、不完整、不实信息等造成不能正常使用本网服务或遭受任何其他损失，概与本网无关。</text>
+		</view>
+		<view class="mt-3 d-flex flex-column">
+			<text class="font-weight main-text-24">八、结束服务：</text>
+			<text class="main-text-24">(1） 用户或本站可随时根据实际情况中断一项或多项网站络服务。本网站不需对任何个人或第三方负责而随时中断服务。用户对后来的条款修改有异议，或对本网站的服务不满，可以行使如下权利：</text>
+			<text class="main-text-24">a. 停止使用本网站的相关服务。</text>
+			<text class="main-text-24">b.通知本网站停止对该用户的服务。</text>
+			<text class="main-text-24">(2） 结束用户服务后，用户使用网站络服务的权利立即中止。从那时起，用户没有权利，本网站也没有义务传送任何未处理的信息或末完成的服务给用户或第三方。</text>
+		</view>
+		<view class="mt-3 d-flex flex-column" :class="isFixed ? 'mb-10' : ''">
+			<text class="font-weight main-text-24">九、适用的法律和管辖权：</text>
+			<text class="main-text-24">本服务协议要与中华人民共和国的法律解释一致。会员和IFF官方商城一致同意服从周大福官方商城所在地有管辖权的法院管辖。如发生本协议中部分条款与中华人民共和国法律相抵触时，则这些条款将完全按法律规定重新解释，而其它条款则依旧保持对会员的约束力。</text>
+		</view>
+		<button class="mt-3 main-bg-color main-border-color text-white rounded-4 font-weight main-text-30" :class="isFixed ? 'position-fixed bottom-0 left-0 w-100' : ''" @click="back">同意</button>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				isFixed: false
+			}
+		},
+		onPageScroll(e) {
+			e.scrollTop > 400 ? this.isFixed = true : this.isFixed = false;
+		},
+		methods: {
+			back() {
+				uni.navigateBack({
+					delta: 1
+				})
+			}
+		}
+	}
+</script>

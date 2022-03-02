@@ -2,9 +2,18 @@
 	<view class="tabbar" :style="{'padding-bottom': paddingBottomHeight + 'rpx'}">
 		<view class="tabbar-item d-flex a-center j-center flex-column" v-for="(item, index) in list" :key="index" @click="tabbarChange(item.path,index)">
 			<template v-if="index != 3">
-				<cover-image class="item-img" :src="item.icon_a" v-if="current == index"></cover-image>
-				<cover-image class="item-img" :src="item.icon" v-else></cover-image>
-				<cover-view class="item-name" :class="{'tabbarActive': current == index}" v-if="item.text">{{item.text}}</cover-view>
+				<uni-badge class="uni-badge-left-margin" :text="1" absolute="rightTop" size="small" v-if="index == 1">
+					<view class="d-flex a-center j-center flex-column">
+						<cover-image class="item-img" :src="item.icon_a" v-if="current == index"></cover-image>
+						<cover-image class="item-img" :src="item.icon" v-else></cover-image>
+						<cover-view class="item-name" :class="{'tabbarActive': current == index}" v-if="item.text">{{item.text}}</cover-view>
+					</view>
+				</uni-badge>
+				<template v-else>
+					<cover-image class="item-img" :src="item.icon_a" v-if="current == index"></cover-image>
+					<cover-image class="item-img" :src="item.icon" v-else></cover-image>
+					<cover-view class="item-name" :class="{'tabbarActive': current == index}" v-if="item.text">{{item.text}}</cover-view>
+				</template>
 			</template>
 			<template v-else>
 				<button open-type="contact" class="d-flex a-center j-center flex-column" show-message-card session-from send-message-path send-message-title>
@@ -28,12 +37,12 @@
 				list: [{
 					text: '全部商品',
 					icon: '/static/tabbar/goods.png',
-					icon_a: '/static/tabbar/goods.png',
+					icon_a: '/static/tabbar/goods-active.png',
 					path: "/pages/goods/goods", //页面路径
 				}, {
 					text: '购物车',
 					icon: '/static/tabbar/car.png',
-					icon_a: '/static/tabbar/car.png',
+					icon_a: '/static/tabbar/car-active.png',
 					path: "/pages/car/car",
 				}, {
 					text: '首页',

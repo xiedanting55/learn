@@ -10,7 +10,14 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked {
 .wx-checkbox-input.wx-checkbox-input-checked {
 		border-color: #00332A !important;
 }
-
+page {
+	height: 100vh;
+	overflow: hidden;
+}
+.scroll-line{
+	height: calc(100vh - 100rpx);
+	overflow-y: scroll !important;
+}
 
 @charset "UTF-8";
 /**
@@ -38,6 +45,12 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked {
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.renew-order .add-addr image.data-v-10ef72a4 {
+  width: 42rpx;
+}
+.renew-order .add-addr text.data-v-10ef72a4 {
+  color: #3f3f3f;
+}
 .renew-order .renew-list .item.data-v-10ef72a4 {
   border-bottom-color: #fff;
 }
